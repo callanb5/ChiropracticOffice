@@ -1,0 +1,54 @@
+/*
+copy and paste into head of .jps files
+<link href="styles.css" rel="stylesheet> 
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+header, main, footer{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* Font ****************/
+
+/* h1, h2, nav a, header a{
+  font-family: Major Mono Display;
+} */
+
+
+/* Nav **********************************************/
+
+
+/* Header **********************************************/
+
+
+/* Main ************************************************/
+
+
+
+
+/* Footer ************************************************/
+
+/* Table Form ************************************************/
+
+/* media queries ************************/
+@media (max-width: 768px) and (min-width: 480px) { /* iPad and smaller */
+  
+
+}
+
+@media (max-width: 480px) { /* iPhone */
+
+
+}
+
+@media (min-width: 769px) { /* Desktop */  
+
+}
