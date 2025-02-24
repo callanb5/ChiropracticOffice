@@ -121,4 +121,66 @@ public class Doctors {
         
     }//end updateDB()
 
+    public void insertDB(Int docid, Int pwd, String firstname, String lastname, String email, Boolean admin) {
+
+        try {
+            //Load Driver
+
+            //Creating Connection
+        
+            //SQL statement
+            String sql = ("INSERT INTO Doctors(DocID, Pwd, FirstName, Lastname, Email, Admin) Values(?,?,?,?,?,?)");
+            System.out.println(sql);
+
+            //Create Statement
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            //Creating new doctor in Doctors Database
+            stmt.setINT(1, docid);
+            stmt.setINT(2, pwd);
+            stmt.setString(3, firstname);
+            stmt.setString(4, lastname);
+            stmt.setString(5, email);
+            stmt.setBoolean(6, admin);
+            
+
+            //Execute Statement
+            stmt.executeUpdate();
+
+            //Close Connection
+            con.close();
+            
+        } catch (Exception e) {
+            System.out.println("Exception:" + e);
+        }//end try/catch
+        
+    }//end insertDB()
+
+    public void deleteDB(Int docid) {
+        DocID = docid;
+
+        try {
+            //Load Driver
+
+            //Creating Connection
+
+            //SQL statement
+            String sql = ("DELETE * FROM Doctors WHERE DocID = '" + DocID + "'");
+
+            //Create Statement
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            //Execute Statement
+            stmt.executeUpdate();
+            System.out.println("Doctor" + DocID + "has been removed");
+
+            //Close Connection
+            con.close();
+            
+        } catch (Exception e) {
+            System.out.println("Exception:" + e);
+        }//end try/catch
+        
+    }//end deleteDB()
+
 }
