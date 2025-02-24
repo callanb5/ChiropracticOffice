@@ -58,7 +58,7 @@ public class Patients {
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
