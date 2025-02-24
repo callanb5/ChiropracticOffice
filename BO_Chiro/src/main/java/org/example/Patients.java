@@ -13,8 +13,6 @@ public class Patients {
     private String LastName;
     private String Email;
 
-
-
     public Patients() {
         PatID = 0;
         Pwd = 0;
@@ -50,5 +48,35 @@ public class Patients {
     public void setLastName(String lastname) {LastName = lastname;}         //LastName
     public void setEmail(String email) {Email = email;}                     //Email
 
+    //Database methods
+
+    /**
+     * Selects from the database from by PatID and stores in variables.
+     * @param id patient id
+     */
+    public void selectDB(String id) {
+        try {
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
+
+            Statement statement = con.createStatement();
+
+            String sql = "SELECT * FROM Patients WHERE patId='" + id + "'";
+
+            ResultSet rs = statement.executeQuery(sql);
+            rs.next();
+            this.PatID = rs.getString(1);
+            this.Pwd = rs.getString(2);
+            this.FirstName = rs.getString(3);
+            this.LastName = rs.getString(4);
+            this.Email = rs.getString(5);
+
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+    
 
 }
