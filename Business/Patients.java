@@ -4,79 +4,119 @@ package org.example;
  * Last Editor: Victorino Martinez
  * Date: 1/27/2025
  */
-
+import java.sql.*;
 public class Patients {
 
-    private int PatID;
-    private int Pwd;
-    private String FirstName;
-    private String LastName;
-    private String Email;
+    private String patid;
+    private String pwd;
+    private String firstname;
+    private String lastname;
+    private String email;
 
     public Patients() {
-        PatID = 0;
-        Pwd = 0;
-        FirstName = "";
-        LastName = "";
-        Email = "";
+        patid = "";
+        pwd = "";
+        firstname = "";
+        lastname = "";
+        email = "";
     }
 
-    public Patients(int patid, int pwd, String firstname, String lastname, String email) {
-        PatID = patid;
-        Pwd = pwd;
-        FirstName = firstname;
-        LastName = lastname;
-        Email = email;
+    public Patients(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
+        patid = PATID;
+        pwd = PWD;
+        firstname = FIRSTNAME;
+        lastname = LASTNAME;
+        email = EMAIL;
 
     }
 
 
 
     //Getter methods
-    public int getPatID() { return PatID;}                                  //PatID
-    public int getPwd() { return Pwd;}                                      //Pwd
-    public String getFirstName() { return FirstName;}                       //FirstName
-    public String getLastName() { return LastName;}                         //LastName
-    public String getEmail() { return Email;}                               //Email
+    public String getpatid() { return patid;}                                  //PatID
+    public String getpwd() { return pwd;}                                      //Pwd
+    public String getfirstname() { return firstname;}                       //FirstName
+    public String getlastname() { return lastname;}                         //LastName
+    public String getemail() { return email;}                               //Email
 
 
 
     //Setter methods
-    public void setPatID(int patid) {PatID = patid;}                        //PatID
-    public void setPwd(int pwd) {Pwd = pwd;}                                //Pwd
-    public void setFirstName(String firstname) {FirstName = firstname;}     //FirstName
-    public void setLastName(String lastname) {LastName = lastname;}         //LastName
-    public void setEmail(String email) {Email = email;}                     //Email
+    public void setpatid(String PATID) {patid = PATID;}                        //PatID
+    public void setpwd(String PWD) {pwd = PWD;}                                //Pwd
+    public void setfirstname(String FIRSTNAME) {firstname = FIRSTNAME;}     //FirstName
+    public void setlastname(String LASTNAME) {lastname = LASTNAME;}         //LastName
+    public void setemail(String EMAIL) {email = EMAIL;}                     //Email
 
-    //Database methods
+    public void selectDB(String PATID) {
+        patid = PATID;
 
-    /**
-     * Selects from the database from by PatID and stores in variables.
-     * @param id patient id
-     */
-    public void selectDB(String id) {
         try {
+            //Load Driver
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
+            //Creating Connection
             Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
 
-            Statement statement = con.createStatement();
+            //SqL statement
+            String sql = "SELECT * FROM Patients WHERE PatID = '" + patid + "'";
+            System.out.println(sql);
 
-            String sql = "SELECT * FROM Patients WHERE patId='" + id + "'";
+            //Create Statement
+            Statement stmt = con.createStatement();
 
-            ResultSet rs = statement.executeQuery(sql);
+            //Execute Statement
+            ResultSet rs;
+            rs = stmt.executeQuery(sql);
+
             rs.next();
-            this.PatID = rs.getString(1);
-            this.Pwd = rs.getString(2);
-            this.FirstName = rs.getString(3);
-            this.LastName = rs.getString(4);
-            this.Email = rs.getString(5);
+            patid = rs.getString(1);
+            pwd = rs.getString(2);
+            firstname = rs.getString(3);
+            lastname = rs.getString(4);
+            email = rs.getString(5);
 
+
+            //Close Connection
             con.close();
         } catch (Exception e) {
-            System.out.println("Error: " + e);
-        }
-    }
-    
+            System.out.println("Exception:" + e);
+        }//end try/catch
+
+    }//end selectDB()
+
+    public void updateDB(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
+        patid = PATID;
+
+        try {
+            //Load Driver
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+            //Creating Connection
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+
+            //SQL statement
+            String sql = ("UPDATE Patients SET Pwd = ?, FirstName = ?, LastName = ?, Email = ? WHERE PatID = ?");
+
+            //Create Statement
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setString(2, PWD);
+            stmt.setString(3, FIRSTNAME);
+            stmt.setString(4, LASTNAME);
+            stmt.setString(5, EMAIL);
+
+
+            //Execute Statement
+            stmt.executeUpdate();
+
+            //Close Connection
+            con.close();
+
+        } catch (Exception e) {
+            System.out.println("Exception:" + e);
+        }//end try/catch
+
+    }//end updateDB()
 
 }
