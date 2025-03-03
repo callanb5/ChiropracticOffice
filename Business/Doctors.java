@@ -5,56 +5,57 @@ package org.example;
  * Date: 1/27/2025
  */
 
+import java.sql.*;
 public class Doctors {
 
-    private int DocID;
-    private int Pwd;
-    private String FirstName;
-    private String LastName;
-    private String Email;
-    private Boolean Admin;
+    private String docid;
+    private String pwd;
+    private String firstname;
+    private String lastname;
+    private String email;
+    private Boolean admin;
 
 
     public Doctors() {
-        DocID = 0;
-        Pwd = 0;
-        FirstName = "";
-        LastName = "";
-        Email = "";
-        Admin = false;
+        docid = "";
+        pwd = "";
+        firstname = "";
+        lastname = "";
+        email = "";
+        admin = false;
     }
 
 
-    public Doctors(int docid, int pwd, String firstname, String lastname, String email, Boolean admin) {
-        DocID = docid;
-        Pwd = pwd;
-        FirstName = firstname;
-        LastName = lastname;
-        Email = email;
-        Admin = admin;
+    public Doctors(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL, Boolean ADMIN) {
+        docid = DOCID;
+        pwd = PWD;
+        firstname = FIRSTNAME;
+        lastname = LASTNAME;
+        email = EMAIL;
+        admin = ADMIN;
 
     }
 
 
     //Getter methods
-    public int getDocID() { return DocID;}                                  //DocID
-    public int getPwd() { return Pwd;}                                      //Pwd
-    public String getFirstName() { return FirstName;}                       //FirstName
-    public String getLastName() { return LastName;}                         //LastName
-    public String getEmail() { return Email;}                               //Email
-    public Boolean getAdmin() { return Admin;}                              //Admin
+    public String getdocid() { return docid;}                                  //DocID
+    public String getpwd() { return pwd;}                                      //Pwd
+    public String getfirstname() { return firstname;}                       //FirstName
+    public String getlastname() { return lastname;}                         //LastName
+    public String getemail() { return email;}                               //Email
+    public Boolean getadmin() { return admin;}                              //Admin
 
 
     //Setter methods
-    public void setDocID(int docid) {DocID = docid;}                        //DocID
-    public void setPwd(int pwd) {Pwd = pwd;}                                //Pwd
-    public void setFirstName(String firstname) {FirstName = firstname;}     //FirstName
-    public void setLastName(String lastname) {LastName = lastname;}         //LastName
-    public void setEmail(String email) {Email = email;}                     //Email
-    public void setAdmin(Boolean admin) {Admin = admin;}                    //Admin
+    public void setdocid(String DOCID) {docid = DOCID;}                        //DocID
+    public void setpwd(String PWD) {pwd = PWD;}                                //Pwd
+    public void setfirstname(String FIRSTNAME) {firstname = FIRSTNAME;}     //FirstName
+    public void setlastname(String LASTNAME) {lastname = LASTNAME;}         //LastName
+    public void setemail(String EMAIL) {email = EMAIL;}                     //Email
+    public void setadmin(Boolean ADMIN) {admin = ADMIN;}                    //Admin
 
-    public void selectDB(Int docid) {
-        DocID = docid;
+    public void selectDB(String DOCID) {
+        docid = DOCID;
 
         try {
             //Load Driver
@@ -74,25 +75,25 @@ public class Doctors {
             ResultSet rs;
             rs = stmt.executeQuery(sql);
 
-            while (rs.next()) {
-                docid = rs.getInt(1);
-                pwd = rs.getInt(2);
+            rs.next();
+                docid = rs.getString(1);
+                pwd = rs.getString(2);
                 firstname = rs.getString(3);
                 lastname = rs.getString(4);
-                email = rs,getString(5);
+                email = rs.getString(5);
                 admin = rs.getBoolean(6);
-            }
+
 
             //Close Connection
             con.close();
         } catch (Exception e) {
             System.out.println("Exception:" + e);
         }//end try/catch
-                
+
     }//end selectDB()
 
-    public void updateDB(Int docid) {
-        DocID = docid;
+    public void updateDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
+        docid = DOCID;
 
         try {
             //Load Driver
@@ -101,16 +102,16 @@ public class Doctors {
             //Creating Connection
             Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
 
+            //SQL statement
+            String sql = ("UPDATE Doctors SET Pwd = ?, FirstName = ?, LastName = ?, Email = ? WHERE DocID = ?");
+
             //Create Statement
             PreparedStatement stmt = con.prepareStatement(sql);
-            
-            //SQL statement
-            String sql = ("UPDATE Doctors SET Pwd = ?, FirstName = ?, LastName = ?, Email = ? WHERE DocID = ?")
 
-            stmt.setInt(2, );
-            stmt.setString(3, );
-            stmt.setString(4, );
-            stmt.setString(5, );
+            stmt.setString(2, PWD);
+            stmt.setString(3, FIRSTNAME);
+            stmt.setString(4, LASTNAME);
+            stmt.setString(5, EMAIL);
 
 
             //Execute Statement
@@ -118,16 +119,17 @@ public class Doctors {
 
             //Close Connection
             con.close();
-            
+
         } catch (Exception e) {
             System.out.println("Exception:" + e);
         }//end try/catch
-        
+
     }//end updateDB()
 
-    public void insertDB(Int docid, Int pwd, String firstname, String lastname, String email, Boolean admin) {
+    public void insertDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL, Boolean ADMIN) {
 
-        Boolean value = getadmin()
+
+
 
         try {
             //Load Driver
@@ -135,7 +137,7 @@ public class Doctors {
 
             //Creating Connection
             Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
-        
+
             //SQL statement
             String sql = ("INSERT INTO Doctors(DocID, Pwd, FirstName, Lastname, Email, Admin) Values(?,?,?,?,?,?)");
             System.out.println(sql);
@@ -144,28 +146,28 @@ public class Doctors {
             PreparedStatement stmt = con.prepareStatement(sql);
 
             //Creating new doctor in Doctors Database
-            stmt.setINT(1, docid);
-            stmt.setINT(2, pwd);
-            stmt.setString(3, firstname);
-            stmt.setString(4, lastname);
-            stmt.setString(5, email);
-            stmt.setBoolean(6, admin);
-            
+            stmt.setString(1, DOCID);
+            stmt.setString(2, PWD);
+            stmt.setString(3, FIRSTNAME);
+            stmt.setString(4, LASTNAME);
+            stmt.setString(5, EMAIL);
+            stmt.setBoolean(6, ADMIN);
+
 
             //Execute Statement
             stmt.executeUpdate();
 
             //Close Connection
             con.close();
-            
+
         } catch (Exception e) {
             System.out.println("Exception:" + e);
         }//end try/catch
-        
+
     }//end insertDB()
 
-    public void deleteDB(Int docid) {
-        DocID = docid;
+    public void deleteDB(String DOCID) {
+        docid = DOCID;
 
         try {
             //Load Driver
@@ -175,22 +177,22 @@ public class Doctors {
             Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
 
             //SQL statement
-            String sql = ("DELETE * FROM Doctors WHERE DocID = '" + DocID + "'");
+            String sql = ("DELETE * FROM Doctors WHERE DocID = '" + docid + "'");
 
             //Create Statement
             PreparedStatement stmt = con.prepareStatement(sql);
 
             //Execute Statement
             stmt.executeUpdate();
-            System.out.println("Doctor" + DocID + "has been removed");
+            System.out.println("Doctor" + docid + "has been removed");
 
             //Close Connection
             con.close();
-            
+
         } catch (Exception e) {
             System.out.println("Exception:" + e);
         }//end try/catch
-        
+
     }//end deleteDB()
 
 }
