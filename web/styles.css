@@ -14,8 +14,6 @@ header, main, footer{
   flex-direction: column;
 }
 
-
-
 /* Font ****************/
 
 /* h1, h2, nav a, header a{
@@ -25,18 +23,236 @@ header, main, footer{
 
 /* Nav **********************************************/
 
+nav{
+  background-color: #35679B;
+}
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 8;
+  height: 80px;
+}
 
+img{
+  width: 50%;
+  height: 50%;
+}
+
+nav .logo{
+  width: 140px;
+  margin-left: 1%;
+}
+
+nav div ul{
+  display: flex;
+  gap: 2px;
+  height: 50%;
+}
+
+nav div ul li{
+  list-style-type: none;
+  padding: 0 2px;
+}
+
+nav div ul li a{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: auto;
+  padding: 0 45px;
+  color: black;
+  font-size: 14px;
+}
+
+nav div ul li a:hover{
+  cursor: pointer;
+}
+
+
+/* sub nav buttons ***************/
+nav .sNav ul li a{
+  border-radius: 4px;
+  margin-right: 100%;
+}
+nav .sNav ul li .logBtn{
+  background-color: #7EB54E;
+  color: black;
+  height: 40px;
+
+}
+nav .sNav ul li .signBtn{
+  background-color: transparent;
+  border: solid black 2px;
+  color: black;
+}
+nav .sNav ul li div{
+  display: inline-block;
+  font-size: 26px;
+  padding: 0 0 4px 9px;
+}
 /* Header **********************************************/
 
 
 /* Main ************************************************/
 
+main .mb{
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 60px 0;
+  background-color:  #00328C;
+}
 
+main .mb .mb1, main .mb .mb2{
+  display: flex;
+  justify-content: space-between;
+  height: 250px;
+  width: 90%;
+  margin: 0 auto;
+}
+main .mb .mb1 section, main .mb .mb2 section{
+  height: 50px;
+  border-radius: 10px;
+}
+main .mb .mb2 section:nth-of-type(2),
+main .mb .mb1 section:nth-of-type(1){
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 20px;
 
+padding: 0 50px;
+width: 100%;
+
+text-align: center;
+align-items: center;
+
+height: auto;   
+background-color: lightsteelblue;
+}
+main .mb .mb2 section:nth-of-type(2){
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  background-color: rgb(38, 44, 48);
+  color: white;
+}
+main .mb .mb1 section:nth-of-type(2){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  
+  text-align: center;
+
+  height: auto;
+  width: 100%;
+  background-color: steelblue;
+  color:white;
+}
+
+main .mb .mb1 section:nth-of-type(2) ul{
+  list-style-type: none;
+}
+
+main .mb .mb1 section:nth-of-type(2) ul li{
+  opacity: 80%;
+  line-height: 20px;
+  font-size: 15px;
+}
+
+main .mb .mb1 section a button,
+main .mb .mb2 section a button{
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+  color: black;
+  padding: 13px 50px;
+  font-size: 15px;
+}
+
+main .mb .mb1 section:nth-of-type(1) p,
+main .mb .mb2 section:nth-of-type(2) p{
+  width: 600px;
+  opacity: 80%;
+  font-size: 15px;
+  line-height: 20px;
+}
 
 /* Footer ************************************************/
 
-/* Table Form ************************************************/
+footer {
+  background-color: #AA8C00;
+  height: auto;
+  padding: 80px 0 20px 0;
+  width: 100%;
+}
+
+
+.mFoot{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+
+.mfoot, .fLogo img{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+.mFoot h4{
+  font-size: 18px;
+}
+.mFoot ul{
+  list-style-type: none;
+}
+.mFoot ul li{
+  line-height: 40px;
+}
+.mFoot ul li a{
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  opacity: 70%;
+}
+.mFoot ul a:hover{
+  text-decoration: underline;
+}
+
+
+
+.sFoot{
+  display: flex;
+  justify-content: space-between;
+  /* background-color: green; */
+  gap: 70px;
+}
+
+footer section:nth-of-type(2){
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+footer section:nth-of-type(2) p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 90%;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px rgba(0, 0, 0, 0.496) solid ;
+}
+
+
 
 /* media queries ************************/
 @media (max-width: 768px) and (min-width: 480px) { /* iPad and smaller */
