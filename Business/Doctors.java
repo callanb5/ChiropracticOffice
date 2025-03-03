@@ -127,6 +127,8 @@ public class Doctors {
 
     public void insertDB(Int docid, Int pwd, String firstname, String lastname, String email, Boolean admin) {
 
+        Boolean value = getadmin()
+
         try {
             //Load Driver
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
