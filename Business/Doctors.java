@@ -58,10 +58,10 @@ public class Doctors {
 
         try {
             //Load Driver
-            Class.forName
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             //Creating Connection
-             Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
 
             //SqL statement
             String sql = "SELECT * FROM Doctors WHERE DocID = '" + docid + "'";
@@ -96,8 +96,10 @@ public class Doctors {
 
         try {
             //Load Driver
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             //Creating Connection
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
 
             //Create Statement
             PreparedStatement stmt = con.prepareStatement(sql);
@@ -127,8 +129,10 @@ public class Doctors {
 
         try {
             //Load Driver
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             //Creating Connection
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
         
             //SQL statement
             String sql = ("INSERT INTO Doctors(DocID, Pwd, FirstName, Lastname, Email, Admin) Values(?,?,?,?,?,?)");
@@ -163,8 +167,10 @@ public class Doctors {
 
         try {
             //Load Driver
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             //Creating Connection
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
 
             //SQL statement
             String sql = ("DELETE * FROM Doctors WHERE DocID = '" + DocID + "'");
