@@ -58,8 +58,10 @@ public class Doctors {
 
         try {
             //Load Driver
+            Class.forName
 
             //Creating Connection
+             Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
 
             //SqL statement
             String sql = "SELECT * FROM Doctors WHERE DocID = '" + docid + "'";
