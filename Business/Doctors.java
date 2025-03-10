@@ -54,6 +54,10 @@ public class Doctors {
     public void setemail(String EMAIL) {email = EMAIL;}                     //Email
     public void setadmin(Boolean ADMIN) {admin = ADMIN;}                    //Admin
 
+    /**
+     * Selects from the database by doctor id and stores doctor information in variables.
+     * @param DOCID doctor id
+     */
     public void selectDB(String DOCID) {
         docid = DOCID;
 
@@ -92,6 +96,14 @@ public class Doctors {
 
     }//end selectDB()
 
+    /**
+     * Updates database with provided doctor information.
+     * @param DOCID doctor id
+     * @param PWD doctor password
+     * @param FIRSTNAME doctor first name
+     * @param LASTNAME doctor last name
+     * @param EMAIL doctor email
+     */
     public void updateDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
         docid = DOCID;
 
@@ -126,11 +138,16 @@ public class Doctors {
 
     }//end updateDB()
 
+    /**
+     * Inserts into database with provided doctor information.
+     * @param DOCID doctor id
+     * @param PWD doctor password
+     * @param FIRSTNAME doctor first name
+     * @param LASTNAME doctor last name
+     * @param EMAIL doctor email
+     * @param ADMIN admin boolean
+     */
     public void insertDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL, Boolean ADMIN) {
-
-
-
-
         try {
             //Load Driver
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -166,6 +183,10 @@ public class Doctors {
 
     }//end insertDB()
 
+    /**
+     * Deletes from database by provided doctor id.
+     * @param DOCID doctor id
+     */
     public void deleteDB(String DOCID) {
         docid = DOCID;
 
