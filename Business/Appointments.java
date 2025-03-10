@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 
 public class Appointments {
 
-    private String ApptID
+    private int ApptID
     private Timestamp ApptDateTime;
     private String PatID;
     private String DocID;
@@ -70,8 +70,8 @@ public class Appointments {
             rs.next();
             this.ApptID = rs.getInt(1);
             this.ApptDateTime = rs.getTimestamp(2);
-            this.PatID = rs.getInt(3);
-            this.DocID = rs.getInt(4);
+            this.PatID = rs.getString(3);
+            this.DocID = rs.getString(4);
             this.Notes = rs.getString(5);
 
             con.close();
@@ -98,8 +98,8 @@ public class Appointments {
             rs.next();
             this.ApptID = rs.getInt(1);
             this.ApptDateTime = rs.getTimestamp(2);
-            this.PatID = rs.getInt(3);
-            this.DocID = rs.getInt(4);
+            this.PatID = rs.getString(3);
+            this.DocID = rs.getString(4);
             this.Notes = rs.getString(5);
 
             con.close();
@@ -146,7 +146,7 @@ public class Appointments {
      * @param notes appointment notes
      * @return True on success, False on fail.
      */
-    public boolean insertDB(String apptId, Timestamp apptDateTime, int docid, String patId, String notes) {
+    public boolean insertDB(int apptId, Timestamp apptDateTime, String docid, String patId, String notes) {
         try {
             this.ApptID
             this.ApptDateTime = apptDateTime;
