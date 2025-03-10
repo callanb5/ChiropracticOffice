@@ -48,6 +48,10 @@ public class Patients {
     public void setlastname(String LASTNAME) {lastname = LASTNAME;}         //LastName
     public void setemail(String EMAIL) {email = EMAIL;}                     //Email
 
+    /**
+     * Selects from the database by patient id and stores appointment information in variables.
+     * @param PATID patient id
+     */
     public void selectDB(String PATID) {
         patid = PATID;
 
@@ -85,6 +89,14 @@ public class Patients {
 
     }//end selectDB()
 
+    /**
+     * Updates database with provided patient information.
+     * @param PATID patient id
+     * @param PWD patient password
+     * @param FIRSTNAME patient first name
+     * @param LASTNAME patient last name
+     * @param EMAIL patient email
+     */
     public void updateDB(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
         patid = PATID;
 
