@@ -49,7 +49,7 @@ public class Patients {
     public void setemail(String EMAIL) {email = EMAIL;}                     //Email
 
     /**
-     * Selects from the database by patient id and stores appointment information in variables.
+     * Selects from the database by patient id and stores patient information in variables.
      * @param PATID patient id
      */
     public void selectDB(String PATID) {
