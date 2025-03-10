@@ -10,10 +10,10 @@ import java.sql.Timestamp;
 
 public class Appointments {
 
-    private int ApptID
+    private String ApptID
     private Timestamp ApptDateTime;
-    private int PatID;
-    private int DocID;
+    private String PatID;
+    private String DocID;
     private String Notes;
 
 
@@ -38,19 +38,20 @@ public class Appointments {
     //Getter methods
     public String getApptID() {return ApptID;}
     public Timestamp getApptDateTime() { return ApptDateTime;}                             //ApptDateTime
-    public int getPatID() {return PatID;}                                                      //PatID
-    public int getDocID() {return DocID;}                                                      //DocID
+    public String getPatID() {return PatID;}                                                      //PatID
+    public String getDocID() {return DocID;}                                                      //DocID
     public String getNotes() {return Notes;}                                                   //Notes
 
 
     //Setter methods
-    public void setApptID(int apptid) {ApptID}
+    public void setApptID(String apptid) {ApptID}
     public void setApptDateTime(long apptdatetime) {ApptDateTime = new Timestamp(apptdatetime);}     //ApptDateTime
-    public void setPatID(int patid) {PatID = patid;}                                           //PatID
-    public void setDocId(int docid) {DocID = docid;}                                           //DocID
+    public void setPatID(String patid) {PatID = patid;}                                           //PatID
+    public void setDocId(String docid) {DocID = docid;}                                           //DocID
     public void setNotes(String notes) {Notes = notes;}                                      //Notes
     
 
+    
     /**
      * Selects from the database by patient id and stores appointment information in variables.
      * @param patid patient id
@@ -119,7 +120,7 @@ public class Appointments {
 
             Statement statement = con.createStatement();
 
-            String sql = "UPDATE Appointments SET ApptID='"+Integer.toString(this.ApptID)+"', ApptDateTime="+this.ApptDateTime+","+" PatID='"+Integer.toString(this.PatID)+"',"+" DocID='"+Integer.toString(this.DocID)+"',"+" Notes='"+this.Notes+"' WHERE ApptID='"+this.ApptID+"'";
+            String sql = "UPDATE Appointments SET ApptID='"+this.ApptID+"', ApptDateTime="+this.ApptDateTime+","+" PatID='"+this.PatID+"',"+" DocID='"+this.DocID+"',"+" Notes='"+this.Notes+"' WHERE ApptID='"+this.ApptID+"'";
             System.out.println(sql);
             int n = statement.executeUpdate(sql);
             if (n==1) {
