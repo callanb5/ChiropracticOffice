@@ -1,18 +1,18 @@
 <%-- ==================================================
     Lucas Lawless
     CT-Chiroprtic
-    index.jsp
+    Doctor-Home_page.jsp
  ======================================================  --%>
  <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CT-Chiroprtic New_P-Acount-Page</title>
+        <title>CT-Chiroprtic Pationt-profile-Page</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
 
-   <body>  
+    <body>  
         <nav class="navbar">
             <div class="logo">
                 <a href="">
@@ -20,7 +20,7 @@
                 </a>   
             </div>
 
-             <div class="mNav">
+              <div class="mNav">
                 <ul>
                     <li><a href="index.jsp">HOME</a></li>
                     <li><a href="Patient-Login">APPOINTMENTS</a></li>
