@@ -22,15 +22,15 @@
             <div class="mNav">
                 <ul>
                     <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="Patient-Login">APPOINTMENTS</a></li>
+                    <li><a href="Just-Appointments">APPOINTMENTS</a></li>
                     <li><a href="F&Q.jsp">CONTACT US</a></li>
-                    <li><a href="F&Q.jsp">HELP</a></li>
+                    <li><a href="Patient-Home.jsp">Work around HELP</a></li>
                 </ul>
             </div>
             
             <div class="sNav">
                 <ul>
-                    <li><a href="Patient-Login.jsp" class="logBtn">Login<div>&#8594;</div></a></li>
+                    <li><a href="Doctor-Login.jsp" class="logBtn">Doctor Login<div>&#8594;</div></a></li>
                     <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
                 </ul>
             </div>

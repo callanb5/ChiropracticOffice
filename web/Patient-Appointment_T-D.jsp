@@ -1,17 +1,18 @@
 <%-- ==================================================
     Lucas Lawless
     CT-Chiroprtic
-    index.jsp
+    Doctor-Home_page.jsp
  ======================================================  --%>
  <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CT-Chiroprtic landing-Page</title>
-        <link href="styles.css" rel="stylesheet" > 
+        <title>CT-Chiroprtic Pationt-calander-Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
 
-    <body>  
+  <body>  
         <nav class="navbar">
             <div class="logo">
                 <a href="">
@@ -19,9 +20,10 @@
                 </a>   
             </div>
 
-            <div class="mNav">
+             <div class="mNav">
                 <ul>
                     <li><a href="index.jsp">HOME</a></li>
+                    <li><a href="Patient-Login">APPOINTMENTS</a></li>
                     <li><a href="F&Q.jsp">CONTACT US</a></li>
                     <li><a href="F&Q.jsp">HELP</a></li>
                 </ul>
@@ -33,14 +35,26 @@
                     <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
                 </ul>
             </div>
-    
     </nav> 
         <main>
                <section class="mb">
                 <div class="mb1">
                     <section>
-                        <h2>Chattahoochee Tech Chiroprtic</h2>
-                        <p>You should be contibale in your baody. CT-Chiroptic offers a full suite of cosmetic services to give your body releaf. With treatments tailored to your unique needs, our team can help you achieve the confort you need.</p>
+                        <h2>Cosmetic Dentistry At Legacy Dental</h2>
+                        <p>Your smile should be the source of your confidence. Legacy Dental offers a full suite of cosmetic services to give you a flawless smile. With treatments tailored to your unique needs, our team can help you achieve the bright, balanced smile you deserve.</p>
+                        <a href="">
+                            <button>Learn More</button>
+                        </a>
+                    </section>
+                    
+                    <section>
+                        <h2>Check Out Our New Dental Services</h2>
+                        <ul>
+                            <li>Composite Fillings</li>
+                            <li>Dental Bridges</li>
+                            <li>Porcelain Veneers</li>
+                            <li>Teeth Whitening</li>
+                        </ul>
                         <a href="">
                             <button>Learn More</button>
                         </a>
@@ -52,9 +66,9 @@
 
                     <section>
                         <h2>Our Mission</h2>
-                        <p> Maintaining a healthy body is essential throughout life and CT-Chiroprtic is committed to providing comprehensive care to all. From checkups to advanced treatments, we ensure your physical health lasts!</p>
-                        <a href="New_P-Account.jsp">
-                            <button>Sign Up Now</button>
+                        <p> Maintaining a healthy smile is essential throughout life and Legacy Dental is committed to providing comprehensive care to all. From checkups to advanced treatments, we ensure your oral health lasts!</p>
+                        <a href="">
+                            <button>Join us</button>
                         </a>
                     </section>
                 </div>
@@ -116,5 +130,5 @@
             </section>
         </footer>
     </body>
-</html>
 
+</html>
