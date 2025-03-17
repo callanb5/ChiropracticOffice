@@ -1,10 +1,13 @@
 package org.example;
-/**
+/*
  * ASP (Chiropractor)
  * Last Editor: Victorino Martinez
  * Date: 1/27/2025
  */
+
 import java.sql.*;
+
+
 public class Patients {
 
     private String patid;
@@ -12,6 +15,7 @@ public class Patients {
     private String firstname;
     private String lastname;
     private String email;
+    public ApptList aList = new ApptList();
 
     public Patients() {
         patid = "";
@@ -48,19 +52,17 @@ public class Patients {
     public void setlastname(String LASTNAME) {lastname = LASTNAME;}         //LastName
     public void setemail(String EMAIL) {email = EMAIL;}                     //Email
 
-    /**
-     * Selects from the database by patient id and stores patient information in variables.
-     * @param PATID patient id
-     */
     public void selectDB(String PATID) {
         patid = PATID;
 
         try {
             //Load Driver
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            System.out.println("Driver Loaded");
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//OneDrive//School//Advanced System Projects (ASP)//ChiropracticDB.accdb");
+            System.out.println("Connection created");
 
             //SqL statement
             String sql = "SELECT * FROM Patients WHERE PatID = '" + patid + "'";
@@ -73,30 +75,59 @@ public class Patients {
             ResultSet rs;
             rs = stmt.executeQuery(sql);
 
-            rs.next();
-            patid = rs.getString(1);
-            pwd = rs.getString(2);
-            firstname = rs.getString(3);
-            lastname = rs.getString(4);
-            email = rs.getString(5);
-
+            while (rs.next()) {
+                patid = rs.getString(1);
+                pwd = rs.getString(2);
+                firstname = rs.getString(3);
+                lastname = rs.getString(4);
+                email = rs.getString(5);
+            }
 
             //Close Connection
             con.close();
         } catch (Exception e) {
-            System.out.println("Exception:" + e);
+            e.printStackTrace();
         }//end try/catch
+
+        //getAppointments(patid);
 
     }//end selectDB()
 
-    /**
-     * Updates database with provided patient information.
-     * @param PATID patient id
-     * @param PWD patient password
-     * @param FIRSTNAME patient first name
-     * @param LASTNAME patient last name
-     * @param EMAIL patient email
-     */
+    public void insertDB(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
+
+        try {
+            //Load Driver
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+            //Creating Connection
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//OneDrive//School//Java III//ChattBankACCDB.accdb");
+
+
+            String sql = ("INSERT INTO Patients(PatID,Pwd,FirstName,LastName,Email) Values(?,?,?,?,?,?)");
+            System.out.println(sql);
+
+            //Create Statement
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setString(1, PATID);
+            stmt.setString(2, PWD);
+            stmt.setString(3, FIRSTNAME);
+            stmt.setString(4, LASTNAME);
+            stmt.setString(5, EMAIL);
+
+            //Execute Statement
+            stmt.executeUpdate();
+
+
+            //Close Connection
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }//end catch
+
+    }//end insertDB()
+
     public void updateDB(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
         patid = PATID;
 
@@ -105,7 +136,7 @@ public class Patients {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//OneDrive//School//Advanced System Projects (ASP)//ChiropracticDB.accdb");
 
             //SQL statement
             String sql = ("UPDATE Patients SET Pwd = ?, FirstName = ?, LastName = ?, Email = ? WHERE PatID = ?");
@@ -126,9 +157,63 @@ public class Patients {
             con.close();
 
         } catch (Exception e) {
-            System.out.println("Exception:" + e);
+            e.printStackTrace();
         }//end try/catch
 
     }//end updateDB()
+
+    public void getAppointments(String PATID) {
+        patid = PATID;
+
+        try {
+            //Load Driver
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+            //Creating Connection
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//OneDrive//School//Advanced System Projects (ASP)//ChiropracticDB.accdb");
+
+            String sql = ("SELECT ApptID from Appointments WHERE PatID = '" + patid + "'");
+            Statement stmt = con.createStatement();
+
+            //Create Statement
+            ResultSet rs;
+            rs = stmt.executeQuery(sql);
+
+            String an;
+            Appointments a1;
+
+            while (rs.next()) {
+                an = rs.getString(1);
+                a1 = new Appointments();
+                a1.selectDB(an);
+                aList.addAppointment(a1);
+
+            }
+
+            //Close Connection
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }//end catch
+    }
+
+    public void display(){
+
+        System.out.println("====================================");
+        System.out.println("Patient ID: "+ patid);
+        System.out.println("Patient Password: "+ pwd);
+        System.out.println("Patient First Name: "+ firstname);
+        System.out.println("Patient Last Name: " + lastname);
+        System.out.println("Customer Email: "+ email);
+        System.out.println("====================================");
+    }
+
+    public static void main(String[] Args) {
+        Patients p1 = new Patients();
+        p1.selectDB("0001");
+        p1.display();
+
+    }
 
 }
