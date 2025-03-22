@@ -5,12 +5,16 @@ package org.example;
  * Date: 3/10/2025
  */
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.time.*;
 import java.sql.Timestamp;
 
 public class Appointments {
 
-    private int ApptID
+    private int ApptID;
     private Timestamp ApptDateTime;
     private String PatID;
     private String DocID;
@@ -20,13 +24,13 @@ public class Appointments {
     public Appointments() {
         ApptID = 0;
         ApptDateTime = new Timestamp(0);
-        PatID = 0;
-        DocID = 0;
+        PatID = "";
+        DocID = "";
         Notes = "";
     }
 
 
-    public Appointments(String apptid, Timestamp apptdatetime, int patid, int docid, String notes) {
+    public Appointments(int apptid, Timestamp apptdatetime, String patid, String docid, String notes) {
         ApptID = apptid;
         ApptDateTime = apptdatetime;
         PatID = patid;
@@ -36,7 +40,7 @@ public class Appointments {
 
 
     //Getter methods
-    public String getApptID() {return ApptID;}
+    public int getApptID() {return ApptID;}
     public Timestamp getApptDateTime() { return ApptDateTime;}                             //ApptDateTime
     public String getPatID() {return PatID;}                                                      //PatID
     public String getDocID() {return DocID;}                                                      //DocID
@@ -44,7 +48,7 @@ public class Appointments {
 
 
     //Setter methods
-    public void setApptID(String apptid) {ApptID}
+    public void setApptID(int apptid) {ApptID = apptid;}
     public void setApptDateTime(long apptdatetime) {ApptDateTime = new Timestamp(apptdatetime);}     //ApptDateTime
     public void setPatID(String patid) {PatID = patid;}                                           //PatID
     public void setDocId(String docid) {DocID = docid;}                                           //DocID
@@ -146,9 +150,9 @@ public class Appointments {
      * @param notes appointment notes
      * @return True on success, False on fail.
      */
-    public boolean insertDB(int apptId, Timestamp apptDateTime, String docid, String patId, String notes) {
+    public boolean insertDB(int apptId, Timestamp apptDateTime, String docId, String patId, String notes) {
         try {
-            this.ApptID
+            this.ApptID = apptId;
             this.ApptDateTime = apptDateTime;
             this.DocID = docId;
             this.PatID = patId;
