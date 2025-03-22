@@ -20,7 +20,6 @@ public class Appointments {
     private String DocID;
     private String Notes;
 
-
     public Appointments() {
         ApptID = 0;
         ApptDateTime = new Timestamp(0);
@@ -49,9 +48,10 @@ public class Appointments {
 
     //Setter methods
     public void setApptID(int apptid) {ApptID = apptid;}
-    public void setApptDateTime(long apptdatetime) {ApptDateTime = new Timestamp(apptdatetime);}     //ApptDateTime
+    //public void setApptDateTime(long apptdatetime) {ApptDateTime = new Timestamp(apptdatetime);}     //ApptDateTime
+    public void setApptDateTime (Timestamp apptdatetime) {ApptDateTime = apptdatetime;}
     public void setPatID(String patid) {PatID = patid;}                                           //PatID
-    public void setDocId(String docid) {DocID = docid;}                                           //DocID
+    public void setDocID(String docid) {DocID = docid;}                                           //DocID
     public void setNotes(String notes) {Notes = notes;}                                      //Notes
     
 
@@ -64,7 +64,7 @@ public class Appointments {
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
@@ -92,7 +92,7 @@ public class Appointments {
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
@@ -120,7 +120,7 @@ public class Appointments {
     try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
@@ -160,7 +160,7 @@ public class Appointments {
 
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
@@ -191,7 +191,7 @@ public class Appointments {
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
@@ -213,4 +213,25 @@ public class Appointments {
         }
     }
     
+    public void display() {
+        System.out.println("ApptId " + getApptID());
+        System.out.println("ApptDateTime " + getApptDateTime());
+        System.out.println("PatID " + getPatID());
+        System.out.println("DocID " + getDocID());
+        System.out.println("Notes " + getNotes());
+    }
+    
+    public static void main(String[] args) {
+        Appointments a = new Appointments();
+        
+        long epochSeconds = 1741152000L;
+        Timestamp timestamp = new Timestamp(epochSeconds * 1000);
+        
+        a.setApptID(3);
+        a.setApptDateTime(timestamp);
+        a.setPatID("PATIENTIDHOLDER");
+        a.setDocID("DOCTORIDHOLDER");
+        a.setNotes("NOTESHOLDER");
+        a.display();
+    }
 }
