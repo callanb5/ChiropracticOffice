@@ -14,7 +14,7 @@
     <body>  
         <nav class="navbar">
             <div class="logo">
-                <a href="">
+                <a href="index.jsp">
                     <img src="img/CTC_Logo.png" alt="logo">
                 </a>   
             </div>
@@ -40,24 +40,34 @@
                <section class="mb">
                 <div class="mb1">
                     <section>
-                        <h2>Cosmetic Dentistry At Legacy Dental</h2>
-                        <p>Your smile should be the source of your confidence. Legacy Dental offers a full suite of cosmetic services to give you a flawless smile. With treatments tailored to your unique needs, our team can help you achieve the bright, balanced smile you deserve.</p>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
+                 <form action="LoginServlet">
+                 <div>
+                    <div class="logTab">
+                    <h1 class="logh1"> Customer Login  </h1>
+                    <table border="3">
+                        <tr>
+                            <td class="tableName">ID:</td>
+                            <td><input type="text" name="idtb" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tableName">Password:</td>
+                            <td><input class="tableName1" type="text" name="pwtb" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="Login" class="buttons"/></td>
+                            <td><input type="reset" value="Clear" class="buttons"/></td>
+                        </tr>
+                    </table>
+                </div>
+            </form>
                     </section>
                     
                     <section>
-                        <h2>Check Out Our New Dental Services</h2>
-                        <ul>
-                            <li>Composite Fillings</li>
-                            <li>Dental Bridges</li>
-                            <li>Porcelain Veneers</li>
-                            <li>Teeth Whitening</li>
-                        </ul>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
+                        <div>
+                        <h2>Main Hook for this section</h2>
+                        <p>This is what i was waiting for, this is waht i was waiting for.
+                        testing the limit of the text size to determin how to fill this space along with making it more barabol.</p>
+                        </div>
                     </section>
                 </div>
                 
@@ -65,8 +75,6 @@
                     <section></section>
 
                     <section>
-                        <h2>Our Mission</h2>
-                        <p> Maintaining a healthy smile is essential throughout life and Legacy Dental is committed to providing comprehensive care to all. From checkups to advanced treatments, we ensure your oral health lasts!</p>
                         <a href="">
                             <button>Join us</button>
                         </a>
@@ -108,7 +116,7 @@
                         <ul>
                             <li><a href="">(404) 456-7890</a></li>
                             <li><a href="">info@CT-Chiroprtic.com</a></li>
-                            <li><a href="">Our </a></li>
+                            <li><a href=""></a></li>
                             <li><a href=""></a></li>
                         </ul>
                     </div>

@@ -1,36 +1,36 @@
 <%-- ==================================================
     Lucas Lawless
-    Callan Bramblett
-    CTC-Chiropractic
-    index.jsp
+    CT-Chiroprtic
+    Pataint-Home_page.jsp
  ======================================================  --%>
  <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CTC Chiropractic - Landing Page</title>
-        <link href="styles.css" rel="stylesheet" > 
+        <title>CT-Chiroprtic Pationt-Login-Page</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
 
     <body>  
         <nav class="navbar">
             <div class="logo">
-                <a href="">
+                <a href="index.jsp">
                     <img src="img/CTC_Logo.png" alt="logo">
                 </a>   
             </div>
 
-            <div class="mNav">
+             <div class="mNav">
                 <ul>
-                    <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="F&Q.jsp">CONTACT US</a></li>
-                    <li><a href="F&Q.jsp">HELP</a></li>
+                    <li><a href="Patient-Home.jsp">DASHBOARD</a></li>
+                     <li><a href="Patient-Appointment_List.jsp">APPOINTMENTS</a></li>
+                    <li><a href="Patient-profile.jsp">PROFILE</a></li>
                 </ul>
             </div>
             
             <div class="sNav">
                 <ul>
-                    <li><a href="Patient-Login.jsp" class="logBtn">Login<div>&#8594;</div></a></li>
+                    <li><a href="Patient-Login.jsp" class="logBtn">Sign Out</a></li>
                     <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
                 </ul>
             </div>
@@ -40,10 +40,16 @@
                <section class="mb">
                 <div class="mb1">
                     <section>
-                        <h2>Chattahoochee Tech Chiropractic</h2>
-                        <p>You should be in control of your body. CTC Chiropractic offers a full suite of cosmetic services to give your body relief. With treatments tailored to your unique needs, our team can help you achieve the comfort you desire.</p>
-                        <a href="Patient-Login.jsp">
-                            <button>Learn More</button>
+                        <h2>Filter By Date and Time</h2>
+                        <a href="Patient-Appointment_Doc.jsp">
+                            <button>filter by Doctor</button>
+                        </a>
+                    </section>
+                    
+                    <section>
+                        <h2>Filter By Doctor</h2>
+                        <a href="Patient-Appointment_T-D.jsp">
+                            <button>Filter by Date and Time</button>
                         </a>
                     </section>
                 </div>
@@ -52,36 +58,14 @@
                     <section></section>
 
                     <section>
-                        <h2><b>Our Mission</b></h2>
-                        <p> Maintaining a healthy body is essential throughout life and CTC Chiropractic is committed to providing comprehensive care to all. From checkups to advanced treatments, we ensure your physical health lasts!</p>
-                        <a href="New_P-Account.jsp">
-                            <button>Sign Up Now</button>
+                        <h2>Filter By Date/Time and Doctors</h2>
+                        <a href="Patient-Appointment_T-D-Doc.jsp">
+                            <button>Filter by Date/Time and Doctor</button>
                         </a>
                     </section>
                 </div>
             </section>
 
-            <section class="Testimonials">
-            <h1>Testimonials from Patients like You!</h1>
-
-            <div class="slides">
-                <h3>Kingsley Knapp</h3>
-                <p></p>
-            </div>
-            
-            <div class="slides">
-                <h3>Anaya Garner</h3>
-                <p></p>
-            </div>
-
-            <div class="slides">
-                <h3>Hamzah Odonell</h3>
-                <p>Dr. Odom is someone I have come to trust with handling my lower back problems. 
-                </p>
-
-            </div>
-            
-            </section>
         </main>
         
         <footer>
@@ -92,7 +76,7 @@
                 
                 <section class="sFoot">
                     <div>
-                        <h4>Campaign</h4>
+                        <h4>Campain</h4>
                         <ul>
                             <li><a href="">Appointments</a></li>
                             <li><a href="">Pharmacy</a></li>
@@ -115,7 +99,7 @@
                         <h4>Contact us</h4>
                         <ul>
                             <li><a href="">(404) 456-7890</a></li>
-                            <li><a href="">info@CTC-Chiropractic.com</a></li>
+                            <li><a href="">info@CT-Chiroprtic.com</a></li>
                             <li><a href=""></a></li>
                             <li><a href=""></a></li>
                         </ul>
@@ -134,8 +118,9 @@
             </section>
     
             <section>
-                <p>&copy;CTC Chiropractic 2025. All rights reserved.</p>
+                <p>&copy;CT-Chiroprtic 2025. All rights reserved.</p>
             </section>
         </footer>
     </body>
+
 </html>

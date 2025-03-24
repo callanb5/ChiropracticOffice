@@ -53,6 +53,7 @@ nav div ul{
 nav div ul li{
   list-style-type: none;
   padding: 0 2px;
+
 }
 
 nav div ul li a{
@@ -62,9 +63,12 @@ nav div ul li a{
   justify-content: center;
   height: 100%;
   width: auto;
-  padding: 0 45px;
+  padding: 0 60px;
   color: black;
   font-size: 14px;
+
+  
+ 
 }
 
 nav div ul li a:hover{
@@ -92,6 +96,16 @@ nav .sNav ul li div{
   display: inline-block;
   font-size: 26px;
   padding: 0 0 4px 9px;
+}
+
+nav .mNav ul li{
+  width: auto;
+  background-color: #AA8C00;
+  margin: 5px;
+  border-top: solid;
+  border-bottom: solid;
+  border-radius: 10px;
+  border-color: #AA8C00;
 }
 /* Header **********************************************/
 
@@ -181,6 +195,70 @@ main .mb .mb2 section:nth-of-type(2) p{
   opacity: 80%;
   font-size: 15px;
   line-height: 20px;
+}
+
+/* Testimonials section **********************************/
+
+
+
+/* Form **************************************************/
+
+
+.table, td{
+  height: 60px;
+  border-spacing: 0px;
+  border: 2px solid black;
+ 
+  outline: none;
+}
+
+table{
+  width: 600px;
+  font-size: 20px;
+}
+
+
+.tableName{
+  text-align: center;
+  background-color: white;
+}
+
+.tableName1{
+  text-align: left;
+  background-color: white;
+}
+
+input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 20px;
+}
+
+.buttons{
+  background-color: #1ac5b0;
+  color: white;
+  font-size: 15px;
+}
+
+main a{
+  display: inline-block;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  width: 600px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+h1.logh2{
+  margin-top: 5%;
+  text-align: center;
+  border: solid 4px black;
+  background-color: white;
+  max-width: 100%;
+  font-size: 166.5%;
 }
 
 /* Footer ************************************************/

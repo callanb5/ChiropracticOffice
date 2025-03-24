@@ -40,31 +40,35 @@
                 <div class="mb1">
                     <section>
                         <h2>Frequntly Asked Questions</h2>
-                         <ul>
-                            <li><h1>Appointments</h1></li>
-                            <li><h1>Pharmacy</h1></li>
-                            <li><h2></h2></li>
-                            <li><h2></h2></li>
+                         <ul class="mb1">
+                            <li><h1>How Do I set an Appointment?</h1></li>
+                            <h1> To set an Appointment with us you need to create an Account and then select the "Set Appointment" button.
+                            testing how for unstill the words come back.</h1> 
                         </ul>
         
-                         <ul>
-                            <li><h1>Appointments</h1></li>
-                            <li><h1>Pharmacy</h1></li>
-                            <li><h2></h2></li>
-                            <li><h2></h2></li>
+                         <ul class="mb1">
+                            <li><h1>Why am I not receving any emails?</h1></li>
+                            <h1>Login into your account and select the "Profile" button to double check if the correct email was enter.</h1>
                         </ul>
                     </section>
+
+                    
                 </div>
                 
-                <div class="mb2">
-                    <section></section>
-
+                <div class="mb1">
+                  
                     <section>
-                        <h2>Our Mission</h2>
-                        <p> Maintaining a healthy body is essential throughout life and CT-Chiroprtic is committed to providing comprehensive care to all. From checkups to advanced treatments, we ensure your physical health lasts!</p>
-                        <a href="Pataint-Login.jsp">
-                            <button>Join us</button>
-                        </a>
+                      <h2>Frequntly Asked Questions</h2>
+                         <ul class="mb1">
+                            <li><h1>How Do I set an Appointment?</h1></li>
+                            <h1> To set an Appointment with us you need to create an Account and then select the "Set Appointment" button.
+                            testing how for unstill the words come back.</h1> 
+                        </ul>
+        
+                         <ul class="mb1">
+                            <li><h1>Why am I not receving any emails?</h1></li>
+                            <h1>Login into your account and select the "Profile" button to double check if the correct email was enter.</h1>
+                        </ul>
                     </section>
                 </div>
             </section>
@@ -103,7 +107,7 @@
                         <ul>
                             <li><a href="">(404) 456-7890</a></li>
                             <li><a href="">info@CT-Chiroprtic.com</a></li>
-                            <li><a href="">Our </a></li>
+                            <li><a href=""></a></li>
                             <li><a href=""></a></li>
                         </ul>
                     </div>
