@@ -23,7 +23,6 @@
              <div class="mNav">
                 <ul>
                     <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="Just-Appointments.jsp">APPOINTMENTS</a></li>
                     <li><a href="F&Q.jsp">CONTACT US</a></li>
                     <li><a href="F&Q.jsp">HELP</a></li>
                 </ul>
@@ -38,31 +37,47 @@
     
     </nav> 
         <main>
-               <section class="mb">
-                <div class="mb1">
-                    <section>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                    
-                    <section>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                </div>
-                
-                <div class="mb2">
-                    <section></section>
-
-                    <section>
-                       <a href="">
-                            <button>Join us</button>
-                        </a>
-                     </section>
-                </div>
-            </section>
+            
+       <!-- Code for Table below-->
+ <%-- <%
+        Patient p1 = (Patient)session.getAttribute("p1");
+        p1.display();
+        
+    %> --%>
+<form class="New-Acc">
+        <h1>Change Patient Info Page</h1>
+        <table border="3">
+            <tr>
+                <td>ID:</td>
+                <td><input type="text" name="id" value="" /></td>
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="fn" value="" /></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="ln" value="" /></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" name="ad" value="" /></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="em" value="" /></td>
+            </tr>
+            <tr>
+                <td>Insurance Co.:</td>
+                <td><input type="text" name="ic" value="" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="update"  value="Create Account" /></td>
+                <td><input type="reset" value="Clear" /></td>
+            </tr>
+            
+        </table>
+    </form>
 
         </main>
         

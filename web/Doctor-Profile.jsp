@@ -30,7 +30,7 @@
             
             <div class="sNav">
                 <ul>
-                    <li><a href="landingPage.jsp" class="logBtn">Login<div>&#8594;</div></a></li>
+                    <li><a href="Doctor-Login.jsp" class="logBtn">Sign Out</a></li>
                     <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
                 </ul>
             </div>
@@ -38,27 +38,46 @@
     </nav> 
         <main>
                <section class="mb">
-                <div class="mb1">
-                    <section>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                    
-                    <section>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                </div>
                 
                 <div class="mb2">
                     <section></section>
 
                     <section>
-                        <a href="">
-                            <button>Join us</button>
-                        </a>
+                       <form>           
+               <%
+                   Account a1;
+                   
+                   a1 = (Account)session.getAttribute("a1");
+                   
+                   a1.display();
+                   
+               %>
+               
+               
+                <h1  class="logh1"> Account Lookup Page  </h1>
+                <table border="3">
+                    <tr>
+                       <td class="tableName">Acct No:</td>
+                       <td><input type="text" name="an" value="<%=a1.getAcctNo() %>" /></td>
+                    </tr>
+                    <tr>
+                       <td class="tableName">Customer ID:</td>
+                       <td><input type="text" name="custtb" value="<%=a1.getCid()%>" /></td>
+                    </tr>
+                    <tr>
+                       <td class="tableName">Type:</td>
+                       <td><input type="text" name="typetb" value="<%=a1.getType() %>" /></td>
+                    </tr>
+                    <tr>
+                       <td class="tableName">Balance:</td>
+                       <td><input type="text" name="baltb" value="<%=a1.getBalance() %>" /></td>
+                    </tr>
+                    <tr>
+                       <td><input type="submit" value="Find" class="button"/></td>
+                       <td><input type="reset" value="Clear" class="button"/></td>
+                    </tr>
+                </table>
+            </form>
                     </section>
                 </div>
             </section>

@@ -7,7 +7,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CT-Chiroprtic Pationt-Login-Page</title>
+        <title>Doctor-Login-Page</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
@@ -23,7 +23,6 @@
                <div class="mNav">
                 <ul>
                     <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="Patient-Login">APPOINTMENTS</a></li>
                     <li><a href="F&Q.jsp">CONTACT US</a></li>
                     <li><a href="Doctor-Home.jsp">Work around HELP</a></li>
                 </ul>
@@ -37,27 +36,42 @@
             </div>
     
     </nav> 
-        <main>
+       <main>
                <section class="mb">
                 <div class="mb1">
                     <section>
-                        <form>
-                            <label for="User-Email">Username or @Email</label><br>
-                            <input type="text" id="fname" value=""><br>
-                             <label for="Pass">Password:</label><br>
-                             <input type="text" id="Password" value=""><br><br>
-                             <input type="submit" value="Submit">
-                         </form> 
-                    </section>
+                    <div  class="logIn">
+                       <form action="LoginServlet">
+                 <div>
+                    <div class="logTab">
+                    <h1 class="logh1"> Doctor Login  </h1>
+                    <table border="3">
+                        <tr>
+                            <td class="tableName">ID:</td>
+                            <td><input type="text" name="idtb" /></td>
+                        </tr>
+                        <tr>
+                            <td class="tableName">Password:</td>
+                            <td><input class="tableName1" type="text" name="pwtb" /></td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" value="Login" class="button"/></td>
+                            <td><input type="reset" value="Clear" class="button"/></td>
+                        </tr>
+                    </table>
                 </div>
-                
-                <div class="mb2">
-                    <section></section>
-
+            </form>
+                         </div>
+                    </section>
+                    
                     <section>
-                        <a href="">
-                            <button>Join us</button>
+                        <div>
+                        <h2>IF you mistakenly got onto this page, click the button below to get back to the Home page!</h2><br>
+                        <h2>Or click the Patient Button an the navigation bar to login into you account!</h2><br>
+                        <a href="index.jsp">
+                            <button>Back Home!</button>
                         </a>
+                        </div>
                     </section>
                 </div>
             </section>

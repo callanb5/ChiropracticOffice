@@ -40,7 +40,8 @@
                <section class="mb">
                 <div class="mb1">
                     <section>
-                 <form action="LoginServlet">
+                    <div  class="logIn">
+                       <form action="LoginServlet">
                  <div>
                     <div class="logTab">
                     <h1 class="logh1"> Customer Login  </h1>
@@ -54,30 +55,22 @@
                             <td><input class="tableName1" type="text" name="pwtb" /></td>
                         </tr>
                         <tr>
-                            <td><input type="submit" value="Login" class="buttons"/></td>
-                            <td><input type="reset" value="Clear" class="buttons"/></td>
+                            <td><input type="submit" value="Login" class="button"/></td>
+                            <td><input type="reset" value="Clear" class="button"/></td>
                         </tr>
                     </table>
                 </div>
             </form>
+                         </div>
                     </section>
                     
                     <section>
                         <div>
-                        <h2>Main Hook for this section</h2>
-                        <p>This is what i was waiting for, this is waht i was waiting for.
-                        testing the limit of the text size to determin how to fill this space along with making it more barabol.</p>
-                        </div>
-                    </section>
-                </div>
-                
-                <div class="mb2">
-                    <section></section>
-
-                    <section>
-                        <a href="">
-                            <button>Join us</button>
+                         <h2>Don't Have an Account with us? Sign Up Now By Clicking The Button Below!</h2><br>
+                        <a href="New_P-Account.jsp">
+                            <button>Sign Up</button>
                         </a>
+                        </div>
                     </section>
                 </div>
             </section>

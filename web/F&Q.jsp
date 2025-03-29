@@ -22,7 +22,6 @@
               <div class="mNav">
                 <ul>
                     <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="Just-Appointments.jsp">APPOINTMENTS</a></li>
                     <li><a href="F&Q.jsp">CONTACT US</a></li>
                     <li><a href="F&Q.jsp">HELP</a></li>
                 </ul>
@@ -39,11 +38,10 @@
                <section class="mb">
                 <div class="mb1">
                     <section>
-                        <h2>Frequntly Asked Questions</h2>
+                        <h2>Frequntly Asked Questions</h2><br>
                          <ul class="mb1">
                             <li><h1>How Do I set an Appointment?</h1></li>
-                            <h1> To set an Appointment with us you need to create an Account and then select the "Set Appointment" button.
-                            testing how for unstill the words come back.</h1> 
+                            <h1> To set an Appointment with us you need to create an Account and then select the "Set Appointment" button.</h1> 
                         </ul>
         
                          <ul class="mb1">
@@ -57,17 +55,15 @@
                 
                 <div class="mb1">
                   
-                    <section>
-                      <h2>Frequntly Asked Questions</h2>
+                    <section><br>
                          <ul class="mb1">
-                            <li><h1>How Do I set an Appointment?</h1></li>
-                            <h1> To set an Appointment with us you need to create an Account and then select the "Set Appointment" button.
-                            testing how for unstill the words come back.</h1> 
+                            <li><h1>How would a Chiropractor even help me?</h1></li>
+                            <h1> A Chiropractor is someone who helps you discover your bodies unique features and helps realign them once more.</h1> 
                         </ul>
         
                          <ul class="mb1">
-                            <li><h1>Why am I not receving any emails?</h1></li>
-                            <h1>Login into your account and select the "Profile" button to double check if the correct email was enter.</h1>
+                            <li><h1>Help! I don't know how to get back to the Login!</h1></li>
+                            <h1>A simple fix, just click the green button or the Company Logo on the navigation bar or the button that says return to home.</h1>
                         </ul>
                     </section>
                 </div>

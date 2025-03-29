@@ -7,7 +7,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CT-Chiroprtic Pationt-Login-Page</title>
+        <title>Admin-NewDoctorProfile</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
@@ -23,7 +23,6 @@
             <div class="mNav">
                 <ul>
                     <li><a href="landingPage.jsp">HOME</a></li>
-                    <li><a href="">APPOINTMENTS</a></li>
                     <li><a href="">CONTACT US</a></li>
                     <li><a href="">HELP</a></li>
                 </ul>
@@ -31,37 +30,47 @@
             
             <div class="sNav">
                 <ul>
-                    <li><a href="landingPage.jsp" class="logBtn">Login<div>&#8594;</div></a></li>
+                     <li><a href="Doctor-Login.jsp" class="logBtn">Sign Out</a></li>
                     <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
                 </ul>
             </div>
     
     </nav> 
         <main>
-               <section class="mb">
-                <div class="mb1">
-                    <section>
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                    
-                    <section>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                </div>
-                
-                <div class="mb2">
-                    <section></section>
-
-                    <section>
-                        <a href="">
-                            <button>Join us</button>
-                        </a>
-                    </section>
-                </div>
-            </section>
+           <form class="New-Acc">
+        <h1>Change Patient Info Page</h1>
+        <table border="3">
+            <tr>
+                <td>ID:</td>
+                <td><input type="text" name="id" value="" /></td>
+            </tr>
+            <tr>
+                <td>First Name:</td>
+                <td><input type="text" name="fn" value="" /></td>
+            </tr>
+            <tr>
+                <td>Last Name:</td>
+                <td><input type="text" name="ln" value="" /></td>
+            </tr>
+            <tr>
+                <td>Address:</td>
+                <td><input type="text" name="ad" value="" /></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><input type="text" name="em" value="" /></td>
+            </tr>
+            <tr>
+                <td>Insurance Co.:</td>
+                <td><input type="text" name="ic" value="" /></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="update"  value="Create Account" /></td>
+                <td><input type="reset" value="Clear" /></td>
+            </tr>
+            
+        </table>
+    </form>
 
         </main>
         

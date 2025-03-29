@@ -31,7 +31,7 @@
             
             <div class="sNav">
                 <ul>
-                    <li><a href="landingPage.jsp" class="logBtn">Login<div>&#8594;</div></a></li>
+                     <li><a href="Doctor-Login.jsp" class="logBtn">Sign Out</a></li>
                     <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
                 </ul>
             </div>

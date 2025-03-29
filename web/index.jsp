@@ -8,7 +8,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CTC Chiropractic - Landing Page</title>
+        <title>Landing Page</title>
         <link href="styles.css" rel="stylesheet" > 
     </head>
 
@@ -41,7 +41,9 @@
                 <div class="mb1">
                     <section>
                         <h2>Chattahoochee Tech Chiropractic</h2>
-                        <p>You should be in control of your body. CTC Chiropractic offers a full suite of cosmetic services to give your body relief. With treatments tailored to your unique needs, our team can help you achieve the comfort you desire.</p>
+                        <p><b>You should be in control of your body. CTC Chiropractic offers a full
+                         suite of cosmetic services to give your body relief. With treatments tailored
+                          to your unique needs, our team can help you achieve the comfort you desire.</b></p>
                         <a href="Patient-Login.jsp">
                             <button>Learn More</button>
                         </a>
@@ -53,7 +55,9 @@
 
                     <section>
                         <h2><b>Our Mission</b></h2>
-                        <p> Maintaining a healthy body is essential throughout life and CTC Chiropractic is committed to providing comprehensive care to all. From checkups to advanced treatments, we ensure your physical health lasts!</p>
+                        <p><b> Maintaining a healthy body is essential throughout life and CTC Chiropractic
+                         is committed to providing comprehensive care to all. From checkups to advanced 
+                         treatments, we ensure your physical health lasts!</b></p>
                         <a href="New_P-Account.jsp">
                             <button>Sign Up Now</button>
                         </a>
@@ -62,26 +66,51 @@
             </section>
 
             <section class="Testimonials">
-            <h1>Testimonials from Patients like You!</h1>
-
-            <div class="slides">
-                <h3>Kingsley Knapp</h3>
-                <p></p>
-            </div>
             
-            <div class="slides">
-                <h3>Anaya Garner</h3>
-                <p></p>
+<div class="slideshow-container">
+<h1>Testimonials from Patients like You!</h1><br>
+  <!-- Full-width images with number and caption text -->
+  <div class="Slides fade">
+   <div class="slides">
+                <h3>Kingsley Knapp</h3>
+                <p> Just started going to CT-Chiropractic and alreaad I'm noticing a differance with my neck pain.
+                </p>
             </div>
+  </div>
 
-            <div class="slides">
+  <div class="Slides fade">
+  <div class="slides">
+                <h3>Anaya Garner</h3>
+                <p> Been going to seeing Dr. Dean once a month for the past year and I feel like I regained
+                10 years back!  
+                </p>
+            </div>
+  </div>
+
+  <div class="Slides fade">
+     <div class="slides">
                 <h3>Hamzah Odonell</h3>
                 <p>Dr. Odom is someone I have come to trust with handling my lower back problems. 
                 </p>
 
             </div>
+  </div><br>
+
+  <%-- <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br> --%>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+          
             
-            </section>
+            </section><br>
         </main>
         
         <footer>
@@ -137,5 +166,34 @@
                 <p>&copy;CTC Chiropractic 2025. All rights reserved.</p>
             </section>
         </footer>
+
+
+         <script>
+
+         //auto slide code for slide
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 10000); // Change Div every ten seconds
+}
+
+</script>
+
     </body>
+
+   
 </html>

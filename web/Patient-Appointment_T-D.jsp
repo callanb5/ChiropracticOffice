@@ -23,7 +23,6 @@
              <div class="mNav">
                 <ul>
                     <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="Patient-Login">APPOINTMENTS</a></li>
                     <li><a href="F&Q.jsp">CONTACT US</a></li>
                     <li><a href="F&Q.jsp">HELP</a></li>
                 </ul>
