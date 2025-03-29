@@ -11,6 +11,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 
@@ -106,9 +107,73 @@ public class ApptList {
         }
     }
     
+    public void selectDBApptDate(String patid, Timestamp apptdate) {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String apptDateString = dateFormat.format(apptdate);
+            
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
+
+            Statement statement = con.createStatement();
+
+            String sql = "SELECT * FROM Appointments WHERE PatId='" + patid + "' AND DateValue(ApptDateTime) = DateValue(#" + apptDateString + "#)";
+
+            ResultSet rs = statement.executeQuery(sql);
+            while(rs.next()) {
+                Appointments a = new Appointments();
+                a.setApptID(rs.getInt(1));
+                a.setApptDateTime(rs.getTimestamp(2));
+                a.setPatID(rs.getString(3));
+                a.setDocID(rs.getString(4));
+                a.setNotes(rs.getString(5));
+                addAppointment(a);
+            }
+            
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+    
+    public void selectDBApptDateDoc(String patid, String docid, Timestamp apptdate) {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String apptDateString = dateFormat.format(apptdate);
+
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
+
+            Statement statement = con.createStatement();
+
+            String sql = "SELECT * FROM Appointments WHERE PatId='" + patid + "' AND DocId='" + docid + "' AND DateValue(ApptDateTime) = DateValue(#" + apptDateString + "#)";
+
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                Appointments a = new Appointments();
+                a.setApptID(rs.getInt(1));
+                a.setApptDateTime(rs.getTimestamp(2));
+                a.setPatID(rs.getString(3));
+                a.setDocID(rs.getString(4));
+                a.setNotes(rs.getString(5));
+                addAppointment(a);
+            }
+
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+    
     public static void main(String[] args) {
+        String dateStr = "2025-03-11";
+        Timestamp ts = Timestamp.valueOf(dateStr + " 00:00:00");
+        System.out.println("Timestamp: " + ts);
+        
         ApptList al = new ApptList();
-        al.selectDBDocId("001");
-        al.displayList();       
+        al.selectDBApptDateDoc("0001", "001", ts);
+        al.displayList();
     }
 }
