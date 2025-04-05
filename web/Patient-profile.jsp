@@ -78,7 +78,7 @@
                     <TD><INPUT TYPE = "text" name = "emtb" value="<%=p1.getemail()%>" readonly></TD>
                 </TR>
             </section>
-            <a href="PatientProfileEdit.jsp">Edit Profile</a>
+            <a href="PatientProfileEdit.jsp">Edit Information</a>
         </div>
 </main>
 
