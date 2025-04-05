@@ -17,7 +17,7 @@
 
     p1 = (Patients)session.getAttribute("p1");
 
-    p1.display();
+    String patName = p1.getfirstname() + " " + p1.getlastname();
 
 
 %>
@@ -39,7 +39,8 @@
 
     <div class="sNav">
         <ul>
-            <li><a href="Patient-Login.jsp" class="logBtn">Login<div>&#8594;</div></a></li>
+            <h3><%=patName%></h3>
+            <li><a href="Patient-Login.jsp" class="logBtn">Sign Out</a></li>
             <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
         </ul>
     </div>
@@ -48,35 +49,36 @@
 <main>
         <div class="mb1">
             <section>
-                 <TR>
-                    <TD>First Name:</TD>
-                    <TD><INPUT TYPE = "text" name = "fntb#" value="<%=p1.getfirstname()%>"></TD>
-                 </TR>
-            </section>
-            <section>
-                <TR>
-                    <TD>Last Name:</TD>
-                    <TD><INPUT TYPE = "text" name = "lntb" value="<%=p1.getlastname()%>"></TD>
-                </TR>
-            </section>
-            <section>
-                <TR>
-                    <TD>Email:</TD>
-                    <TD><INPUT TYPE = "text" name = "emtb" value="<%=p1.getemail()%>"></TD>
-                </TR>
-            </section>
-            <section>
                 <TR>
                     <TD>Patient ID:</TD>
-                    <TD><INPUT TYPE = "text" name = "idtb#" value="<%=p1.getpatid()%>"></TD>
+                    <TD><INPUT TYPE = "text" name = "idtb" value="<%=p1.getpatid()%>" readonly></TD>
                 </TR>
             </section>
             <section>
                 <TR>
                     <TD>Password:</TD>
-                    <TD><INPUT TYPE = "text" name = "pwtb" value="<%=p1.getpwd()%>"></TD>
+                    <TD><INPUT TYPE = "text" name = "pwtb" value="<%=p1.getpwd()%>" readonly></TD>
                 </TR>
             </section>
+            <section>
+                 <TR>
+                    <TD>First Name:</TD>
+                    <TD><INPUT TYPE = "text" name = "fntb" value="<%=p1.getfirstname()%>" readonly></TD>
+                 </TR>
+            </section>
+            <section>
+                <TR>
+                    <TD>Last Name:</TD>
+                    <TD><INPUT TYPE = "text" name = "lntb" value="<%=p1.getlastname()%>" readonly></TD>
+                </TR>
+            </section>
+            <section>
+                <TR>
+                    <TD>Email:</TD>
+                    <TD><INPUT TYPE = "text" name = "emtb" value="<%=p1.getemail()%>" readonly></TD>
+                </TR>
+            </section>
+            <a href="PatientProfileEdit.jsp">Edit Profile</a>
         </div>
 </main>
 
@@ -88,7 +90,7 @@
 
         <section class="sFoot">
             <div>
-                <h4>Campain</h4>
+                <h4>Campaign</h4>
                 <ul>
                     <li><a href="">Appointments</a></li>
                     <li><a href="">Pharmacy</a></li>
