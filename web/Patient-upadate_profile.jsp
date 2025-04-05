@@ -1,4 +1,4 @@
-<%@ page import="org.example.chiropractorproject.BusinessObjects.Doctors" %><%-- ==================================================
+<%@ page import="org.example.Patients" %><%-- ==================================================
     Lucas Lawless
     CT-Chiroprtic
     Doctor-Home_page.jsp
@@ -12,11 +12,11 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
 </head>
 <%
-  Doctors p1;
+  Patients p1;
 
-  p1 = (Doctors)session.getAttribute("p1");
+  p1 = (Patients)session.getAttribute("p1");
 
-  String docName = p1.getfirstname() + " " + p1.getlastname();
+  String patName = p1.getfirstname() + " " + p1.getlastname();
 
 %>
 
@@ -30,14 +30,14 @@
 
   <div class="mNav">
     <ul>
-      <li><a href="Doctor-Home.jsp">DASHBOARD</a></li>
-      <li><a href="Patient-Appointment_List.jsp">APPOINTMENTS</a></li>
+      <li><a href="Patient-Home.jsp">DASHBOARD</a></li>
+      <li><a href="Patient-APPMain.jsp">APPOINTMENTS</a></li>
     </ul>
   </div>
 
   <div class="sNav">
     <ul>
-      <h3><%=docName%></h3>
+      <h3><%=patName%></h3>
       <li><a href="Patient-Login.jsp" class="logBtn">Sign Out</a></li>
       <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
     </ul>
@@ -46,11 +46,11 @@
 </nav>
 <main>
   <div class="mb1">
-    <form action = "DAccountInfoServlet">
+    <form action = "PAccountInfoServlet">
       <section>
         <TR>
-          <TD>Doctor ID:</TD>
-          <TD><INPUT TYPE = "text" name = "idtb" value="<%=p1.getdocid()%>" readonly></TD>
+          <TD>Patient ID:</TD>
+          <TD><INPUT TYPE = "text" name = "idtb" value="<%=p1.getpatid()%>" readonly></TD>
         </TR>
       </section>
       <section>
@@ -142,4 +142,3 @@
 </body>
 
 </html>
-
