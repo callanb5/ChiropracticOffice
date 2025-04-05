@@ -54,8 +54,7 @@
                     </section>
                 </div>
                 
-                <div class="mb2">
-                    <section></section>
+                <div class="mb1">
 
                     <section>
                         <h2>Filter By Date/Time and Doctors</h2>
@@ -63,6 +62,14 @@
                             <button>Filter by Date/Time and Doctor</button>
                         </a>
                     </section>
+                    
+                    <section>
+                        <h2>View All Appointments</h2>
+                        <form form action="http://localhost:8080/CTC-Chiropratic/SearchAppointmentPatientServlet" method="post">
+                            <button type="submit" value="View All Appointments" class="search-button">View All Appointments</button>
+                        </form>
+                    </section>
+                    
                 </div>
             </section>
 

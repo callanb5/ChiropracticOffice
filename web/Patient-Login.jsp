@@ -41,18 +41,18 @@
                 <div class="mb1">
                     <section>
                     <div  class="logIn">
-                       <form action="LoginServlet">
+                       <form action="http://localhost:8080/CTC-Chiropratic/PatientLoginServlet" method="post">
                  <div>
                     <div class="logTab">
                     <h1 class="logh1"> Customer Login  </h1>
                     <table border="3">
                         <tr>
                             <td class="tableName">ID:</td>
-                            <td><input type="text" name="idtb" /></td>
+                            <td><input type="text" id="CID" name="CID" /></td>
                         </tr>
                         <tr>
                             <td class="tableName">Password:</td>
-                            <td><input class="tableName1" type="text" name="pwtb" /></td>
+                            <td><input class="tableName1" type="text" id="PASS" name="PASS" /></td>
                         </tr>
                         <tr>
                             <td><input type="submit" value="Login" class="button"/></td>

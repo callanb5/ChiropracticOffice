@@ -11,7 +11,11 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
-
+    <%@page import="org.example.Patients"%>
+    <%
+        Patients pat = (Patients) session.getAttribute("p1");
+        String patName = pat.getfirstname() + " " + pat.getlastname();
+    %>
     <body>  
         <nav class="navbar">
             <div class="logo">
@@ -30,6 +34,7 @@
              --%>
             <div class="sNav">
                 <ul>
+                    <li>Signed in as <%=patName%></li>
                     <li><a href="Patient-Login.jsp" class="logBtn">Sign Out</a></li>
                     <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
                 </ul>
@@ -37,6 +42,8 @@
     
     </nav> 
         <main>
+            <br>
+            <h1>Welcome, <%=patName%></h1>
                <section class="mb">
                 <div class="mb1">
                     <section>
@@ -47,8 +54,8 @@
                     </section>
                     
                     <section>
-                        <h2>Reveiw prevous and current Appointments</h2>
-                        <a href="Patient-Appointment_List.jsp">
+                        <h2>View Appointments</h2>
+                        <a href="Patient-APPMain.jsp">
                             <button>View Appointments</button>
                         </a>
                     </section>
@@ -58,8 +65,8 @@
                     <section></section>
 
                     <section>
-                        <h2>Set future Appointments</h2>
-                        <a href="Patient-APPMain.jsp">
+                        <h2>Schedule Appointment</h2>
+                        <a href=".jsp">
                             <button>Make Appointment</button>
                         </a>
                     </section>
@@ -118,7 +125,7 @@
             </section>
     
             <section>
-                <p>&copy;CT-Chiroprtic 2025. All rights reserved.</p>
+                <p>&copy;CTC Chiropractic 2025. All rights reserved.</p>
             </section>
         </footer>
     </body>

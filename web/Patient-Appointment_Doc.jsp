@@ -40,25 +40,13 @@
                <section class="mb">
                 <div class="mb1">
                     <section>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                    
-                    <section>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                </div>
-                
-                <div class="mb2">
-                    <section></section>
-
-                    <section>
-                        <a href="">
-                            <button>Join us</button>
-                        </a>
+                            <form form action="http://localhost:8080/CTC-Chiropratic/SearchAppointmentDoctorServlet" method="post">
+                                <label for="dent">Doctor Last Name:</label>
+                                <input type="text" id="docln" name="docln"><br><br>
+                                <input type="submit" value="Search" class="search-button">
+                            </form><br><br><br><br><br>
+                            
+                            <a href="Patient-APPMain.jsp" class="back">Back</a>
                     </section>
                 </div>
             </section>
