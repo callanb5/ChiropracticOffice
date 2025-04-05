@@ -12,6 +12,7 @@ public class Patients {
     private String firstname;
     private String lastname;
     private String email;
+    public ApptList a1 = new ApptList();
 
     public Patients() {
         patid = "";
