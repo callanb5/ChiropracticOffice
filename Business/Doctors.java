@@ -155,40 +155,50 @@ public class Doctors {
         }
     }
 
-    public void updateDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
+   public boolean updateDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
         docid = DOCID;
+        pwd = PWD;
+        firstname = FIRSTNAME;
+        lastname = LASTNAME;
+        email = EMAIL;
+
 
         try {
             //Load Driver
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            System.out.println("Driver Loaded");
+
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//Documents//ChiropracticDB.accdb");
+            System.out.println("Connection created");
+
 
             //SQL statement
-            String sql = ("UPDATE Doctors SET Pwd = ?, FirstName = ?, LastName = ?, Email = ? WHERE DocID = ?");
+            String sql = ("UPDATE Doctors SET DocID = '" + this.docid + "',Pwd = '" + this.pwd + "', FirstName = '" + this.firstname + "', LastName = '" + this.lastname + "', Email = '" + this.email + "' WHERE DocID = '" + this.docid + "'");
 
             //Create Statement
             PreparedStatement stmt = con.prepareStatement(sql);
 
-            stmt.setString(2, PWD);
-            stmt.setString(3, FIRSTNAME);
-            stmt.setString(4, LASTNAME);
-            stmt.setString(5, EMAIL);
-
-
             //Execute Statement
-            stmt.executeUpdate();
+            int n = stmt.executeUpdate();
+            if (n==1) {
+                System.out.println("Doctor " + DOCID + " information has been changed");
+            } else {
+                System.out.println("Doctor " + DOCID + " information change failed");
+            }
 
             //Close Connection
             con.close();
+            return true;
 
         } catch (Exception e) {
-            System.out.println("Exception:" + e);
+            e.printStackTrace();
+            return false;
         }//end try/catch
 
     }//end updateDB()
-
+    
     public void insertDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL, Boolean ADMIN) {
 
 
