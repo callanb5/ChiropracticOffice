@@ -161,7 +161,7 @@ public class Patients {
 
     }//end insertDB()
 
-    public void updateDB(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
+    public boolean updateDB(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
         patid = PATID;
         pwd = PWD;
         firstname = FIRSTNAME;
@@ -173,28 +173,31 @@ public class Patients {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//Documents//ChiropracticDB.accdb");
 
             //SQL statement
-            String sql = ("UPDATE Patients SET Pwd = ?, FirstName = ?, LastName = ?, Email = ? WHERE PatID = ?");
+            String sql = ("UPDATE Patients SET PatID = '" + this.patid + "',Pwd = '" + this.pwd + "', FirstName = '" + this.firstname + "', LastName = '" + this.lastname + "', Email = '" + this.email + "' WHERE PatID = '" + this.patid + "'");
+            System.out.println(sql);
 
             //Create Statement
             PreparedStatement stmt = con.prepareStatement(sql);
 
-            stmt.setString(2, PWD);
-            stmt.setString(3, FIRSTNAME);
-            stmt.setString(4, LASTNAME);
-            stmt.setString(5, EMAIL);
-
-
             //Execute Statement
-            stmt.executeUpdate();
+            int n = stmt.executeUpdate();
+            if (n==1) {
+                System.out.println("Patient " + PATID + " information has been changed");
+            } else {
+                System.out.println("Patient " + PATID + " information change failed");
+            }
 
             //Close Connection
             con.close();
+            return true;
 
         } catch (Exception e) {
-            System.out.println("Exception:" + e);
+            e.printStackTrace();
+            return false;
+
         }//end try/catch
 
     }//end updateDB()
