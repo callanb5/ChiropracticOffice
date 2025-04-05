@@ -23,7 +23,7 @@ public class DoctorLoginServlet extends HttpServlet {
 
         try {
             id = request.getParameter("idtb");
-            pw = request.getParameter("pass");
+            pw = request.getParameter("pwtb");
             System.out.println("---Password Received---");
 
             //Doctor Business Object
@@ -34,24 +34,33 @@ public class DoctorLoginServlet extends HttpServlet {
             d1.selectDB(id);
             String CID = d1.getdocid();
             String PASS = d1.getpwd();
-            System.out.println("Customer ID: " + d1.getdocid());
+            Boolean ADMIN = d1.getadmin();
+            System.out.println("Doctor ID: " + d1.getdocid());
             System.out.println("Password: " + d1.getpwd());
+            if (ADMIN = true) {
+                System.out.println("Admin: True");
+            } else if (ADMIN = false) {
+                System.out.println("Admin: False");
+            }
 
             //Putting Customer object into the Session
             HttpSession ses1;
             ses1 = request.getSession();
             ses1.setAttribute("d1", d1);
-            System.out.println("Patient added to Session/scheduling DoctorHomePage.jsp");
+            System.out.println("Patient added to Session/scheduling Doctor-Home.jsp or Admin-Home.jsp");
 
 
-            //forward page to AccountLookup.jsp if login matches database/ else forward to ErrorPage.jsp
-            if (pw.equals(PASS) && id.equals(CID)) {
-                RequestDispatcher rd = request.getRequestDispatcher("/DoctorHomePage.jsp");
+            //forward page to Doctor-Home.jsp if login matches database/ else forward to ErrorPage.jsp
+            if (pw.equals(PASS) && id.equals(CID) && ADMIN.equals(false)) {
+                RequestDispatcher rd = request.getRequestDispatcher("/Doctor-Home.jsp");
+                rd.forward(request, response);
+
+            } else if (pw.equals(PASS) && id.equals(CID) && ADMIN.equals(true)) {
+                RequestDispatcher rd = request.getRequestDispatcher("/Admin-Home.jsp");
                 rd.forward(request, response);
 
             } else {
-                RequestDispatcher rd = request.getRequestDispatcher("/ErrorPage.jsp");
-                rd.forward(request, response);
+                System.out.println("Error Occurred");
             }
 
 
@@ -72,4 +81,4 @@ public class DoctorLoginServlet extends HttpServlet {
 
     }
 
-}//end LoginServlet()
+}//end DoctorLoginServlet()
