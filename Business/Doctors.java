@@ -91,6 +91,40 @@ public class Doctors {
         }//end try/catch
 
     }//end selectDB()
+
+    public void selecthighIDDB() {
+
+        try {
+            //Load Driver
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            System.out.println("Driver Loaded");
+
+            //Creating Connection
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//Documents//ChiropracticDB.accdb");
+            System.out.println("Connection created");
+
+            //SqL statement
+            String sql = "SELECT MAX(DocID) FROM Doctors ";
+            System.out.println(sql);
+
+            //Create Statement
+            Statement stmt = con.createStatement();
+
+            //Execute Statement
+            ResultSet rs;
+            rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                docid = rs.getString(1);
+            }
+
+            //Close Connection
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }//end try/catch
+
+    }//end selectDB()
     
         /**
      * Selects from the database by patient id and stores appointment information in variables.
