@@ -23,7 +23,7 @@ public class PatientLoginServlet extends HttpServlet {
 
         try {
             id = request.getParameter("idtb");
-            pw = request.getParameter("pawtb");
+            pw = request.getParameter("pwtb");
             System.out.println("---Password Received---");
 
             //Patients Business Object
