@@ -22,8 +22,8 @@ public class PatientLoginServlet extends HttpServlet {
         String pw = "";
 
         try {
-            id = request.getParameter("CID");
-            pw = request.getParameter("PASS");
+            id = request.getParameter("idtb");
+            pw = request.getParameter("pawtb");
             System.out.println("---Password Received---");
 
             //Patients Business Object
