@@ -48,11 +48,11 @@
                     <table border="3">
                         <tr>
                             <td class="tableName">ID:</td>
-                            <td><input type="text" id="CID" name="CID" /></td>
+                            <td><input type="text" id="idtb" name="idtb" /></td>
                         </tr>
                         <tr>
                             <td class="tableName">Password:</td>
-                            <td><input class="tableName1" type="text" id="PASS" name="PASS" /></td>
+                            <td><input class="tableName1" type="text" id="pwtb" name="pwtb" /></td>
                         </tr>
                         <tr>
                             <td><input type="submit" value="Login" class="button"/></td>
