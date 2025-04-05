@@ -1,4 +1,4 @@
-package org.example.chiropractorproject;
+package org.example;
 
 /*
     Last Modified: 3/17/2025
@@ -6,12 +6,12 @@ package org.example.chiropractorproject;
 */
 import java.io.*;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
 
-import org.example.chiropractorproject.BusinessObjects.Patients;
+import org.example.Patients;
 
 @WebServlet(name = "PAccountInfoServlet", urlPatterns = {"/PAccountInfoServlet"})
 public class PAccountInfoServlet extends HttpServlet {
@@ -48,7 +48,7 @@ public class PAccountInfoServlet extends HttpServlet {
 
             //forward page to Patient-Home.jsp if all patient fields are filled out/ not null
             if (id != null && pw != null && fn != null && ln != null && email != null) {
-                RequestDispatcher rd = request.getRequestDispatcher("/Patient-Profile.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("/Patient-profile.jsp");
                 rd.forward(request, response);
 
             } else {
