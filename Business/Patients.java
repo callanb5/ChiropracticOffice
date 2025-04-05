@@ -121,9 +121,51 @@ public class Patients {
 
 
     }//end selectDB()
+    
+     public void insertDB(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
+
+        try {
+            //Load Driver
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            System.out.println("Driver Loaded");
+
+            //Creating Connection
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//Documents//ChiropracticDB.accdb");
+            System.out.println("Connection created");
+
+
+            String sql = ("INSERT INTO Patients(PatID,Pwd,FirstName,LastName,Email) Values(?,?,?,?,?)");
+            System.out.println(sql);
+
+            //Create Statement
+            PreparedStatement stmt = con.prepareStatement(sql);
+
+            stmt.setString(1, PATID);
+            stmt.setString(2, PWD);
+            stmt.setString(3, FIRSTNAME);
+            stmt.setString(4, LASTNAME);
+            stmt.setString(5, EMAIL);
+
+            //Execute Statement
+            stmt.executeUpdate();
+            System.out.println("Patient" + PATID + "has been added to the database");
+
+
+            //Close Connection
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }//end catch
+
+    }//end insertDB()
 
     public void updateDB(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
         patid = PATID;
+        pwd = PWD;
+        firstname = FIRSTNAME;
+        lastname = LASTNAME;
+        email = EMAIL;
 
         try {
             //Load Driver
