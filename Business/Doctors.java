@@ -1,5 +1,4 @@
 package org.example;
-
 /**
  * ASP (Chiropractor)
  * Last Editor: Victorino Martinez
@@ -15,7 +14,6 @@ public class Doctors {
     private String lastname;
     private String email;
     private Boolean admin;
-    public PatientList pList = new PatientList();
 
 
     public Doctors() {
@@ -64,7 +62,7 @@ public class Doctors {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             //SqL statement
             String sql = "SELECT * FROM Doctors WHERE DocID = '" + docid + "'";
@@ -93,6 +91,35 @@ public class Doctors {
         }//end try/catch
 
     }//end selectDB()
+    
+        /**
+     * Selects from the database by patient id and stores appointment information in variables.
+     * @param patid patient id
+     */
+    public void selectDBDocLN(String docln) {
+        try {
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
+
+            Statement statement = con.createStatement();
+
+            String sql = "SELECT * FROM Doctors WHERE LastName='" + docln + "'";
+
+            ResultSet rs = statement.executeQuery(sql);
+            rs.next();
+            this.docid = rs.getString(1);
+            this.pwd = rs.getString(2);
+            this.firstname = rs.getString(3);
+            this.lastname = rs.getString(4);
+            this.email = rs.getString(5);
+            this.admin = rs.getBoolean(6);
+
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
 
     public void updateDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
         docid = DOCID;
@@ -102,7 +129,7 @@ public class Doctors {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             //SQL statement
             String sql = ("UPDATE Doctors SET Pwd = ?, FirstName = ?, LastName = ?, Email = ? WHERE DocID = ?");
@@ -123,19 +150,22 @@ public class Doctors {
             con.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Exception:" + e);
         }//end try/catch
 
     }//end updateDB()
 
     public void insertDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL, Boolean ADMIN) {
 
+
+
+
         try {
             //Load Driver
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             //SQL statement
             String sql = ("INSERT INTO Doctors(DocID, Pwd, FirstName, Lastname, Email, Admin) Values(?,?,?,?,?,?)");
@@ -160,7 +190,7 @@ public class Doctors {
             con.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Exception:" + e);
         }//end try/catch
 
     }//end insertDB()
@@ -173,7 +203,7 @@ public class Doctors {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             //SQL statement
             String sql = ("DELETE * FROM Doctors WHERE DocID = '" + docid + "'");
@@ -189,56 +219,9 @@ public class Doctors {
             con.close();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Exception:" + e);
         }//end try/catch
 
     }//end deleteDB()
-
-    public void getPatients (String DOCID) {
-        docid = DOCID;
-
-        try {
-            //Load Driver
-            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-
-            //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://../ChiropracticDB.accdb");
-
-            String sql = ("SELECT PatID from Appointments WHERE DocID = '" + docid + "'");
-            Statement stmt = con.createStatement();
-
-            //Create Statement
-            ResultSet rs;
-            rs = stmt.executeQuery(sql);
-
-            String an;
-            Patients p1;
-
-            while (rs.next()) {
-                an = rs.getString(3);
-                p1 = new Patients();
-                p1.selectDB(an);
-                pList.addPatient(p1);
-
-            }
-
-            //Close Connection
-            con.close();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }//end catch
-    }
-
-    public void display(){
-
-        System.out.println("====================================");
-        System.out.println("Doctor ID: "+ docid);
-        System.out.println("Doctor Password: "+ pwd);
-        System.out.println("Doctor First Name: "+ firstname);
-        System.out.println("Doctor Last Name: " + lastname);
-        System.out.println("Doctor Email: "+ email);
-        System.out.println("====================================");
-    }
 
 }
