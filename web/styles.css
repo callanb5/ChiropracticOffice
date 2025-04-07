@@ -180,8 +180,8 @@ main .mb .mb1 section:nth-of-type(2) ul li{
   font-size: 15px;
 }
 
-main .mb .mb1 section a button,
-main .mb .mb2 section a button{
+main .mb .mb1 section button,
+main .mb .mb2 section button{
   border: none;
   border-radius: 6px;
   background-color: white;
@@ -197,7 +197,6 @@ main .mb .mb2 section:nth-of-type(2) p{
   font-size: 15px;
   line-height: 20px;
 }
-
 
 
 /* F&Q Main ************************************************/
@@ -269,8 +268,8 @@ main .nb .nb1 section:nth-of-type(2) ul li{
   font-size: 15px;
 }
 
-main .nb .nb1 section a button,
-main .nb .nb2 section a button{
+main .nb .nb1 section button,
+main .nb .nb2 section button{
   border: none;
   border-radius: 6px;
   background-color: white;
@@ -450,6 +449,18 @@ h1.logh2{
 
 
   cursor: pointer;
+}
+
+.Next{
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: auto;
+  padding: 0 60px;
+  color: black;
+  font-size: 14px;
 }
 
 /* Footer ************************************************/
