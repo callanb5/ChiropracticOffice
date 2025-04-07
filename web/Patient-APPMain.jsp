@@ -7,7 +7,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Patient-APPMain</title>
+        <title>CTC Chiropractic - Appointment Manager</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
@@ -57,9 +57,9 @@
                 <div class="mb1">
 
                     <section>
-                        <h2>Filter By Date/Time and Doctors</h2>
+                        <h2>Schedule Appointment</h2>
                         <a href="Patient-Appointment_T-D-Doc.jsp">
-                            <button>Filter by Date/Time and Doctor</button>
+                            <button>Schedule Appointment</button>
                         </a>
                     </section>
                     
