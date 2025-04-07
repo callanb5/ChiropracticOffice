@@ -22,9 +22,9 @@ import javax.servlet.http.HttpSession;
  *
  * @author Calla
  */
-@WebServlet(name = "SearchAppointmentDoctorTimeDateServlet", urlPatterns = {"/SearchAppointmentDoctorTimeDateServlet"})
-public class SearchAppointmentDoctorTimeDateServlet extends HttpServlet {
-
+@WebServlet(name = "ScheduleAppointmentServlet", urlPatterns = {"/ScheduleAppointmentServlet"})
+public class ScheduleAppointmentServlet extends HttpServlet {
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,43 +37,28 @@ public class SearchAppointmentDoctorTimeDateServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-
-        Doctors doc = new Doctors();
-        doc.selectDBDocLN(request.getParameter("docln"));
+        Patients pat = (Patients) session.getAttribute("p1");
+        Doctors doc = (Doctors) session.getAttribute("searchdoc");
+        String tsString = request.getParameter("timestamp");
+        Timestamp ts = Timestamp.valueOf(tsString);
         
-        String year = request.getParameter("year");
-        String month = request.getParameter("month");
-        String day = request.getParameter("day");
-        String dateStr = year + "-" + month + "-" + day;
-        
-        if ("".equals(doc.getdocid()) || doc.getdocid() == null || "".equals(dateStr) || dateStr == null) {
-            System.out.println("Error: Either docid is null/empty or dateStr is null/empty < 0");
-            System.out.println("docid: " + doc.getdocid());
-            System.out.println("dateStr: " + dateStr);
+        if ("".equals(doc.getdocid()) || doc.getdocid() == null || "".equals(pat.getpatid()) || pat.getpatid() == null || "".equals(tsString) || tsString == null) {
+            System.out.println("Error: null/empty string");
             RequestDispatcher r = request.getRequestDispatcher("/Error.jsp");
             r.forward(request, response);
         } else {
-            Timestamp today = Timestamp.valueOf(LocalDate.now().atStartOfDay());
-            Timestamp ts = Timestamp.valueOf(dateStr + " 00:00:00");
             System.out.println("Timestamp: " + ts);
-            System.out.println("Today: " + today);
-            
-            if (ts.before(today)) {
-                System.out.println("Error: Cannot show available appointments in a day before today");
-                RequestDispatcher r = request.getRequestDispatcher("/Error.jsp");
-                r.forward(request, response);
-            }
 
-            ApptList apptlist = new ApptList();
-            ArrayList<Timestamp> tsl = apptlist.getAvailableAppointments(doc.getdocid(), ts);
+            Appointments a = new Appointments();
+            a.selecthighIDDB();
+            a.setApptID(a.getApptID() + 1);
 
-            if (tsl.size() > 0) {
-                session.setAttribute("searchdoc", doc);
-                session.setAttribute("timelist", tsl);
-                RequestDispatcher r = request.getRequestDispatcher("/Schedule-Appointment.jsp");
+            if (a.insertDB(a.getApptID(), ts, doc.getdocid(), pat.getpatid(), "None")) {
+                session.setAttribute("appt", a);
+                RequestDispatcher r = request.getRequestDispatcher("/Schedule-Success.jsp");
                 r.forward(request, response);
             } else {
-                System.out.println("Error: tsl.size() < 0");
+                System.out.println("Error: Insert failed");
                 RequestDispatcher r = request.getRequestDispatcher("/Error.jsp");
                 r.forward(request, response);
             }

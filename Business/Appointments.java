@@ -64,7 +64,7 @@ public class Appointments {
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
@@ -92,7 +92,7 @@ public class Appointments {
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
@@ -120,7 +120,7 @@ public class Appointments {
     try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
@@ -160,11 +160,11 @@ public class Appointments {
 
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
-            String sql = "INSERT INTO Appointments values ('" + apptId + "', " + apptDateTime + ",'" + docId + "','" + patId + "','" + notes + "')";
+            String sql = "INSERT INTO Appointments values (" + apptId + ", #" + apptDateTime.toString().substring(0, 19).replace('T', ' ') + "#,'" + patId + "','" + docId + "','" + notes + "')";
 
             System.out.println(sql);
 
@@ -191,7 +191,7 @@ public class Appointments {
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
@@ -213,6 +213,40 @@ public class Appointments {
         }
     }
     
+    public void selecthighIDDB() {
+
+        try {
+            //Load Driver
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+            System.out.println("Driver Loaded");
+
+            //Creating Connection
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
+            System.out.println("Connection created");
+
+            //SqL statement
+            String sql = "SELECT MAX(ApptID) FROM Appointments";
+            System.out.println(sql);
+
+            //Create Statement
+            Statement stmt = con.createStatement();
+
+            //Execute Statement
+            ResultSet rs;
+            rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                ApptID = rs.getInt(1);
+            }
+
+            //Close Connection
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }//end try/catch
+
+    }
+    
     public void display() {
         System.out.println("ApptId " + getApptID());
         System.out.println("ApptDateTime " + getApptDateTime());
@@ -222,6 +256,7 @@ public class Appointments {
     }
     
     public static void main(String[] args) {
+        /*
         Appointments a = new Appointments();
         
         long epochSeconds = 1741152000L;
@@ -233,5 +268,10 @@ public class Appointments {
         a.setDocID("DOCTORIDHOLDER");
         a.setNotes("NOTESHOLDER");
         a.display();
+        */
+        
+        Appointments a = new Appointments();
+        a.selecthighIDDB();
+        System.out.println(a.ApptID);
     }
 }

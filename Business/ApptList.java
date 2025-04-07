@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 
 public class ApptList {
@@ -137,18 +138,18 @@ public class ApptList {
         }
     }
     
-    public void selectDBApptDateDoc(String patid, String docid, Timestamp apptdate) {
+    public void selectDBApptDateDoc(String docid, Timestamp apptdate) {
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String apptDateString = dateFormat.format(apptdate);
-
+            
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             Statement statement = con.createStatement();
 
-            String sql = "SELECT * FROM Appointments WHERE PatId='" + patid + "' AND DocId='" + docid + "' AND DateValue(ApptDateTime) = DateValue(#" + apptDateString + "#)";
+            String sql = "SELECT * FROM Appointments WHERE DocId='" + docid + "' AND DateValue(ApptDateTime) = DateValue(#" + apptDateString + "#)";
 
             ResultSet rs = statement.executeQuery(sql);
             while (rs.next()) {
@@ -167,13 +168,63 @@ public class ApptList {
         }
     }
     
+    public ArrayList<Timestamp> getAvailableAppointments(String docid, Timestamp apptdate) {
+        try {
+            selectDBApptDateDoc(docid, apptdate);
+            
+            ArrayList<Timestamp> freeSlots = new ArrayList<Timestamp>();
+            ArrayList<Timestamp> bookedSlots = new ArrayList<Timestamp>();
+            
+            for (int i = 0; i < count; i++) {
+                Appointments appt = appArrayList.get(i);
+                bookedSlots.add(appt.getApptDateTime());
+            }
+            
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(apptdate);
+            calendar.set(Calendar.HOUR_OF_DAY, 9);
+            calendar.set(Calendar.MINUTE, 0);
+            calendar.set(Calendar.SECOND, 0);
+            calendar.set(Calendar.MILLISECOND, 0);
+            
+            Calendar endCalendar = (Calendar) calendar.clone();
+            endCalendar.set(Calendar.HOUR_OF_DAY, 17);
+            
+            while (calendar.before(endCalendar)) {
+                Timestamp slot = new Timestamp(calendar.getTimeInMillis());
+                
+                boolean booked = false;
+                for (int i = 0; i < bookedSlots.size (); i++) {
+                    if (bookedSlots.get(i).equals(slot)) {
+                        booked = true;
+                        break;
+                    }
+                }
+                
+                if(!booked) {
+                    freeSlots.add(slot);
+                }
+                calendar.add(Calendar.MINUTE, 30);
+            }
+            
+            return freeSlots;
+            
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+            ArrayList<Timestamp> tsl = new ArrayList<Timestamp>();
+            return tsl;
+        }
+    }
+    
     public static void main(String[] args) {
         String dateStr = "2025-03-11";
         Timestamp ts = Timestamp.valueOf(dateStr + " 00:00:00");
         System.out.println("Timestamp: " + ts);
         
         ApptList al = new ApptList();
-        al.selectDBApptDateDoc("0001", "001", ts);
+        al.selectDBApptDateDoc("001", ts);
         al.displayList();
     }
+    
+    
 }
