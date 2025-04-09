@@ -1,3 +1,4 @@
+package org.example;
 /*
     Last Modified: 3/17/2025
     Author: Victorino Martinez
@@ -18,7 +19,7 @@ public class CreateDoctorAccountServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        int id = 0;
+        int id;
         String realid = null;
         String docid = "";
         String pw = "";
@@ -26,7 +27,7 @@ public class CreateDoctorAccountServlet extends HttpServlet {
         String ln = "";
         String email = "";
         String tempadmin;
-        Boolean admin = false;
+        Boolean admin;
 
 
         try {
@@ -40,7 +41,7 @@ public class CreateDoctorAccountServlet extends HttpServlet {
 
             if (tempadmin != null && tempadmin.equals("true")) {
                 admin = true;
-            } else  {
+            } else {
                 admin = false;
             }
 
