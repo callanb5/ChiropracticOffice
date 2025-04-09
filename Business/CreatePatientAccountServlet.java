@@ -21,6 +21,7 @@ public class CreatePatientAccountServlet extends HttpServlet {
         PrintWriter out = response.getWriter();
         int id = 0;
         String realid = null;
+        String patid = "";
         String pw = "";
         String fn = "";
         String ln = "";
@@ -28,6 +29,7 @@ public class CreatePatientAccountServlet extends HttpServlet {
 
 
         try {
+            patid = request.getParameter("idtb");
             pw = request.getParameter("pwtb");
             fn = request.getParameter("fntb");
             ln = request.getParameter("lntb");
@@ -68,20 +70,22 @@ public class CreatePatientAccountServlet extends HttpServlet {
 
             //inserting new patient information into database
             p2.insertDB(realid,pw,fn,ln,email);
+            p2.selectDB(realid);
 
             //Putting Customer object into the Session
             HttpSession ses1;
             ses1 = request.getSession();
-            ses1.setAttribute("p1", p1);
+            ses1.setAttribute("p1", p2);
             System.out.println("Customer added to Session/scheduling Patient-Home.jsp");
 
             //forward page to Patient-Home.jsp if all patient fields are filled out/ not null
-            if (pw != null && fn != null && ln != null && email != null) {
+            if (patid != null && pw != null && fn != null && ln != null && email != null) {
                 RequestDispatcher rd = request.getRequestDispatcher("/Patient-Home.jsp");
                 rd.forward(request, response);
 
             } else {
-                System.out.println("Error Occurred");
+                RequestDispatcher rd = request.getRequestDispatcher("/ErrorPage.jsp");
+                rd.forward(request, response);
             }
 
 
