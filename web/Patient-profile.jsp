@@ -1,4 +1,4 @@
-<%@ page import="org.example.chiropractorproject.BusinessObjects.Patients" %>
+<%@ page import="org.example.Patients" %>
 <%-- ==================================================
     Lucas Lawless
     CT-Chiroprtic
@@ -8,10 +8,11 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>CT-Chiropractic Patient-Profile-Page</title>
+    <title>Patient-Appointment_Doc</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
 </head>
+
 <%
     Patients p1;
 
@@ -33,7 +34,7 @@
     <div class="mNav">
         <ul>
             <li><a href="Patient-Home.jsp">DASHBOARD</a></li>
-            <li><a href="Patient-Appointment_List.jsp">APPOINTMENTS</a></li>
+            <li><a href="Patient-APPMain.jsp">APPOINTMENTS</a></li>
         </ul>
     </div>
 
@@ -46,40 +47,42 @@
     </div>
 
 </nav>
-<main>
-        <div class="mb1">
-            <section>
+<main><br><br>
+        <Form class="New-Acc">
+            <table>
+
                 <TR>
                     <TD>Patient ID:</TD>
                     <TD><INPUT TYPE = "text" name = "idtb" value="<%=p1.getpatid()%>" readonly></TD>
                 </TR>
-            </section>
-            <section>
+          
                 <TR>
                     <TD>Password:</TD>
                     <TD><INPUT TYPE = "text" name = "pwtb" value="<%=p1.getpwd()%>" readonly></TD>
                 </TR>
-            </section>
-            <section>
+            
                  <TR>
                     <TD>First Name:</TD>
                     <TD><INPUT TYPE = "text" name = "fntb" value="<%=p1.getfirstname()%>" readonly></TD>
                  </TR>
-            </section>
-            <section>
+            
                 <TR>
                     <TD>Last Name:</TD>
                     <TD><INPUT TYPE = "text" name = "lntb" value="<%=p1.getlastname()%>" readonly></TD>
                 </TR>
-            </section>
-            <section>
+            
                 <TR>
                     <TD>Email:</TD>
                     <TD><INPUT TYPE = "text" name = "emtb" value="<%=p1.getemail()%>" readonly></TD>
                 </TR>
-            </section>
-            <a href="PatientProfileEdit.jsp">Edit Information</a>
-        </div>
+           </table>
+
+            
+            
+            </From>
+         <a class="Next" href="Patient-update_profile.jsp"><button>Edit</button></a>
+        </div><br>
+         
 </main>
 
 <footer>
