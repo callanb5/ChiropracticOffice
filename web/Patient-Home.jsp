@@ -27,14 +27,14 @@
              <div class="mNav">
                 <ul>
                     <li><a href="Patient-Home.jsp">DASHBOARD</a></li>
-                     <li><a href="Patient-Appointment_List.jsp">APPOINTMENTS</a></li>
+                     <li><a href="Patient-APPMain.jsp">APPOINTMENTS</a></li>
                     <li><a href="Patient-profile.jsp">PROFILE</a></li>
                 </ul>
             </div>
              --%>
             <div class="sNav">
                 <ul>
-                    <li>Signed in as <%=patName%></li>
+                    <li class="Sign">Signed in as <%=patName%></li>
                     <li><a href="Patient-Login.jsp" class="logBtn">Sign Out</a></li>
                     <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
                 </ul>
@@ -43,7 +43,7 @@
     </nav> 
         <main>
             <br>
-            <h1>Welcome, <%=patName%></h1>
+            <h1 class="Welcome">Welcome, <%=patName%></h1>
                <section class="mb">
                 <div class="mb1">
                     <section>
@@ -59,20 +59,8 @@
                             <button>View Appointments</button>
                         </a>
                     </section>
-                </div>
-                
-                <div class="mb2">
-                    <section></section>
-
-                    <section>
-                        <h2>Schedule Appointment</h2>
-                        <a href=".jsp">
-                            <button>Make Appointment</button>
-                        </a>
-                    </section>
-                </div>
-            </section>
-
+                </div><br>
+              
         </main>
         
         <footer>
