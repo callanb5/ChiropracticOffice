@@ -1,3 +1,4 @@
+<%@ page import="org.example.chiropractorproject.BusinessObjects.Doctors" %>
 <%-- ==================================================
     Lucas Lawless
     CT-Chiroprtic
