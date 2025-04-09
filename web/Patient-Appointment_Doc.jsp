@@ -22,10 +22,9 @@
 
              <div class="mNav">
                 <ul>
-                    <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="Patient-Login">APPOINTMENTS</a></li>
-                    <li><a href="F&Q.jsp">CONTACT US</a></li>
-                    <li><a href="F&Q.jsp">HELP</a></li>
+                    <li><a href="Patient-Home.jsp">DASHBOARD</a></li>
+                     <li><a href="Patient-APPMain.jsp">APPOINTMENTS</a></li>
+                    <li><a href="Patient-profile.jsp">PROFILE</a></li>
                 </ul>
             </div>
             
@@ -36,20 +35,32 @@
                 </ul>
             </div>
     </nav> 
-        <main>
-               <section class="mb">
-                <div class="mb1">
-                    <section>
+        <main><br><br><br><br><br>
+             
+               
                             <form form action="http://localhost:8080/CTC-Chiropratic/SearchAppointmentDoctorServlet" method="post">
-                                <label for="dent">Doctor Last Name:</label>
-                                <input type="text" id="docln" name="docln"><br><br>
-                                <input type="submit" value="Search" class="search-button">
-                            </form><br><br><br><br><br>
                             
-                            <a href="Patient-APPMain.jsp" class="back">Back</a>
-                    </section>
-                </div>
-            </section>
+                                
+                                <table class="New-Acc">
+                                <tr>
+                               <td> <label for="dent">Doctor Last Name:</label> </td>
+                                </tr>
+                                <tr>
+                               <td> <input type="text" id="docln" name="docln"></td>
+                               </tr>
+                               <tr>
+                               <td> <input type="submit" value="Search" class="search-button"></td>
+                             
+                           
+                            </tr>
+                                </table>
+                                 
+                            </form>
+                           <a href="Patient-APPMain.jsp" class="Next">
+                            <button>Back</button></a><br><br><br><br><br>
+
+                  
+              
 
         </main>
         

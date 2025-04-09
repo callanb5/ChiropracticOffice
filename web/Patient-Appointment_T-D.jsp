@@ -20,11 +20,11 @@
                 </a>   
             </div>
 
-             <div class="mNav">
+            <div class="mNav">
                 <ul>
-                    <li><a href="index.jsp">HOME</a></li>
-                    <li><a href="F&Q.jsp">CONTACT US</a></li>
-                    <li><a href="F&Q.jsp">HELP</a></li>
+                    <li><a href="Patient-Home.jsp">DASHBOARD</a></li>
+                     <li><a href="Patient-APPMain.jsp">APPOINTMENTS</a></li>
+                    <li><a href="Patient-profile.jsp">PROFILE</a></li>
                 </ul>
             </div>
             
@@ -35,20 +35,21 @@
                 </ul>
             </div>
     </nav> 
-                <main>
-               <section class="mb">
-                <div class="mb1">
-                    <section>
+                <main><br><br><br>
+              
                             <form form action="http://localhost:8080/CTC-Chiropratic/SearchAppointmentTimeDateServlet" method="post">
-                                <label for="year">Year:</label>
+                            <table class="New-Acc">
+                            <tr>
+                                <td><label for="year">Year:</label>
                                 <select name="year" id="year">
                                     <option value="2026">2027</option>
                                     <option value="2026">2026</option>
                                     <option value="2025">2025</option>
                                     <option value="2024">2024</option>
                                     <option value="2023">2023</option>
-                                </select><br><br>
-                                <label for="month">Month:</label>
+                                </select></td></tr>
+                                <tr>
+                                <td><label for="month">Month:</label>
                                 <select name="month" id="month">
                                     <option value="01">01</option>
                                     <option value="02">02</option>
@@ -62,8 +63,9 @@
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
-                                </select><br><br>
-                                <label for="day">Day:</label>
+                                </select></td></tr>
+                                <tr>
+                                <td><label for="day">Day:</label>
                                 <select name="day" id="day">
                                     <option value="01">01</option>
                                     <option value="02">02</option>
@@ -96,14 +98,16 @@
                                     <option value="29">29</option>
                                     <option value="30">30</option>
                                     <option value="31">31</option>
-                                </select><br><br>
-                                <input type="submit" value="Search" class="search-button">
-                            </form><br><br><br><br><br>
+                                </select></td></tr>
+                               <tr>
+                                <td><input type="submit" value="Search" class="search-button"></td>
+                                </tr>
+
+                                </table>
+                            </form><br><br><br>
                             
                             <a href="Patient-APPMain.jsp" class="back">Back</a><br><br>
-                    </section>
-                </div>
-            </section>
+                    
 
         </main>
         

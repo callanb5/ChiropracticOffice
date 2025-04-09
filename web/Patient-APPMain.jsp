@@ -23,7 +23,6 @@
              <div class="mNav">
                 <ul>
                     <li><a href="Patient-Home.jsp">DASHBOARD</a></li>
-                     <li><a href="Patient-Appointment_List.jsp">APPOINTMENTS</a></li>
                     <li><a href="Patient-profile.jsp">PROFILE</a></li>
                 </ul>
             </div>
@@ -40,14 +39,14 @@
                <section class="mb">
                 <div class="mb1">
                     <section>
-                        <h2>Filter By Date and Time</h2>
+                        <h2>Filter By Doctor</h2>
                         <a href="Patient-Appointment_Doc.jsp">
-                            <button>filter by Doctor</button>
+                            <button>Filter by Doctor</button>
                         </a>
                     </section>
                     
                     <section>
-                        <h2>Filter By Doctor</h2>
+                        <h2> Filter By Date and Time</h2>
                         <a href="Patient-Appointment_T-D.jsp">
                             <button>Filter by Date and Time</button>
                         </a>
