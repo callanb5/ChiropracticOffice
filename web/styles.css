@@ -108,6 +108,15 @@ nav .mNav ul li{
   border-color: #AA8C00;
 }
 
+.Sign{
+ 
+  color: antiquewhite;
+  
+  text-align: center;
+  align-items: center;
+  height: 200%;   
+ 
+}
 
 /* Main ************************************************/
 main{
@@ -198,94 +207,15 @@ main .mb .mb2 section:nth-of-type(2) p{
   line-height: 20px;
 }
 
-
-/* F&Q Main ************************************************/
-
-main .nb{
-  display: flex;
-  flex-direction: column;
-  gap: 13px;
-  padding: 60px 0;
-  background-color:  #00328C;
-}
-
-main .nb .nb1, main .nb .nb2{
-  display: flex;
-  justify-content: space-between;
-  height: 250px;
-  width: 90%;
-  margin: 0 auto;
-}
-main .nb .nb1 section, main .nb .nb2 section{
-  height: 50px;
-  border-radius: 10px;
-}
-main .nb .nb2 section:nth-of-type(2),
-main .nb .nb1 section:nth-of-type(1){
-display: flex;
-flex-direction: column;
-justify-content: center;
-gap: 20px;
-
-padding: 0 50px;
-width: 100%;
-
-text-align: center;
-align-items: center;
-
-height: auto;   
-background-color: lightsteelblue;
-}
-main .nb .nb2 section:nth-of-type(2){
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  background-color: rgb(38, 44, 48);
-  color: white;
-}
-main .nb .nb1 section:nth-of-type(2){
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
+.Welcome{
+ 
+  color: antiquewhite;
   
   text-align: center;
-
-  height: auto;
-  width: 100%;
-  background-color: steelblue;
-  color:white;
+  align-items: center;
+  height: 200%;   
+ 
 }
-
-main .nb .nb1 section:nth-of-type(2) ul{
-  list-style-type: none;
-}
-
-main .nb .nb1 section:nth-of-type(2) ul li{
-  opacity: 80%;
-  line-height: 20px;
-  font-size: 15px;
-}
-
-main .nb .nb1 section button,
-main .nb .nb2 section button{
-  border: none;
-  border-radius: 6px;
-  background-color: white;
-  color: black;
-  padding: 13px 50px;
-  font-size: 15px;
-}
-
-main .nb .nb1 section:nth-of-type(1) p,
-main .nb .nb2 section:nth-of-type(2) p{
-  width: 600px;
-  opacity: 80%;
-  font-size: 15px;
-  line-height: 20px;
-}
-
 /* Testimonials section **********************************/
 section.Testimonials{
   display: flex;
@@ -367,7 +297,7 @@ section.Testimonials{
  margin-top: 1%;
  margin-bottom: 1%;
 
- background-color: lightsteelblue;
+ background-color:#717171 ;
 
  padding: 5px;
 
@@ -378,7 +308,7 @@ section.Testimonials{
   height: 60px;
   border-spacing: 0px;
   border: 2px solid black;
- background-color: #717171;
+ background-color: lightsteelblue ;
   outline: none;
 }
 
@@ -456,6 +386,36 @@ h1.logh2{
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
+  width: auto;
+  padding: 0 60px;
+  color: black;
+  font-size: 14px;
+}
+
+button{
+  border: none;
+  border-radius: 6px;
+  background-color: white;
+  color: black;
+  padding: 13px 50px;
+  font-size: 15px;
+}
+
+button .fill{
+  border: none;
+  background-color: white;
+  color: black;
+  padding: 20% 20%;
+  font-size: 15px;
+}
+
+
+.left{
+  text-decoration: none;
+  display: flex;
+  align-items: left;
+  justify-content: left;
   height: 100%;
   width: auto;
   padding: 0 60px;
