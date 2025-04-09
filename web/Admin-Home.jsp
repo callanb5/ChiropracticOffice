@@ -1,3 +1,4 @@
+<%@ page import="org.example.chiropractorproject.BusinessObjects.Doctors" %>
 <%-- ==================================================
     Lucas Lawless
     CT-Chiroprtic
@@ -47,7 +48,7 @@
 
 </nav>
 <main>
-    <section class="mb">
+    <div class="mb">
         <div class="mb1">
             <section>
                 <h2>Review Profile and Login Information</h2>
@@ -79,6 +80,23 @@
                 </a>
             </section>
         </div>
+
+        <div class="mb2">
+            <section>
+                <h2>Create Doctor Account</h2>
+                <a href="New_D-Account.jsp">
+                    <button>Create Account</button>
+                </a>
+            </section>
+
+            <section>
+                <h2>View/Change Weekly Schedule</h2>
+                <a href="">
+                    <button>View Appointments</button>
+                </a>
+            </section>
+        </div>
+
     </section>
 
 </main>
@@ -139,3 +157,4 @@
 </body>
 
 </html>
+
