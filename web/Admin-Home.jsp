@@ -41,7 +41,7 @@
     <div class="sNav">
         <ul>
             <h3><%=docName%></h3>
-            <li><a href="landingPage.jsp" class="logBtn">Sign Out</a></li>
+            <li><a href="index.jsp" class="logBtn">Sign Out</a></li>
             <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
         </ul>
     </div>
