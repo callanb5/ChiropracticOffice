@@ -21,13 +21,10 @@
             </div>
 
             <div class="mNav">
-                <ul>
-                    <li><a href="landingPage.jsp">HOME</a></li>
-                    <li><a href="">APPOINTMENTS</a></li>
-                    <li><a href="">CONTACT US</a></li>
-                    <li><a href="">HELP</a></li>
-                </ul>
-            </div>
+        <ul>
+            <li><a href="Admin-Home.jsp">DASHBOARD</a></li>
+        </ul>
+    </div>
             
             <div class="sNav">
                 <ul>

@@ -1,4 +1,4 @@
-<%@ page import="org.example.chiropractorproject.BusinessObjects.Doctors" %>
+
 <%-- ==================================================
     Lucas Lawless
     CT-Chiroprtic
@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
 </head>
+<%@ page import="org.example.Doctors" %>
 <%
     Doctors d1;
 
@@ -29,18 +30,16 @@
         </a>
     </div>
 
-    <div class="mNav">
+   <div class="mNav">
         <ul>
-            <li><a href="Admin-Home.jsp">HOME</a></li>
-            <li><a href="">APPOINTMENTS</a></li>
-            <li><a href="">CONTACT US</a></li>
-            <li><a href="">HELP</a></li>
+            <li><a href="Admin-Home.jsp">DASHBOARD</a></li>
+            <li><a href="Patient-Appointment_List.jsp">APPOINTMENTS</a></li>
         </ul>
     </div>
 
     <div class="sNav">
         <ul>
-            <h3><%=docName%></h3>
+            <li class="Sign">Signed in as <%=docName%></li>
             <li><a href="index.jsp" class="logBtn">Sign Out</a></li>
             <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
         </ul>
@@ -48,6 +47,9 @@
 
 </nav>
 <main>
+<div class="clean">
+           <h1 class="Welcome">Welcome, <%=docName%></h1>
+            </div><br>
     <div class="mb">
         <div class="mb1">
             <section>
@@ -65,7 +67,7 @@
             </section>
         </div>
 
-        <div class="mb2">
+        <div class="mb1">
             <section>
                 <h2>View Appointments for the day</h2>
                 <a href="">
@@ -81,7 +83,7 @@
             </section>
         </div>
 
-        <div class="mb2">
+        <div class="mb1">
             <section>
                 <h2>Create Doctor Account</h2>
                 <a href="New_D-Account.jsp">
@@ -96,8 +98,6 @@
                 </a>
             </section>
         </div>
-
-    </section>
 
 </main>
 

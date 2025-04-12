@@ -23,13 +23,17 @@
 
     <div class="mNav">
         <ul>
-            <li><a href="index.jsp">HOME</a></li>
-            <li><a href="F&Q.jsp">CONTACT US</a></li>
-            <li><a href="F&Q.jsp">HELP</a></li>
+            <li><a href="Admin-Home.jsp">DASHBOARD</a></li>
         </ul>
     </div>
 
-
+ <div class="sNav">
+        <ul>
+            <li class="Sign">Signed in as <%=docName%></li>
+            <li><a href="Doctor-Login.jsp" class="logBtn">Sign Out</a></li>
+            <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
+        </ul>
+    </div>
 
 </nav>
 <main>
