@@ -35,7 +35,7 @@
                 </ul>
             </div>
     </nav> 
-                <main>
+                <main><br>
               
                             <form form action="http://localhost:8080/CTC-Chiropratic/SearchAppointmentDoctorTimeDateServlet" method="post">
                                 <form form action="http://localhost:8080/CTC-Chiropratic/SearchAppointmentTimeDateServlet" method="post">
@@ -103,20 +103,23 @@
                                         <option value="31">31</option>
                                     </select></td>
                                     </tr>
-                                    <tr>
+                                    <%-- <tr>
                                 <td><label for="docln">Doctor Last Name:</label></td>
-                                </tr>
+                                </tr> --%>
                                 <tr>
-                                <td><input type="text" id="docln" name="docln"></td>
+                                <td><input type="text" id="docln" name="docln" placeholder="Doctor's Last Name"></td>
                                 </tr>
                                 <tr>
                                 <td><input type="submit" value="Search" class="search-button"></td>
                                 </tr>
                                 </table>
-                            </form><br>
+                            </form>
+
                             
-                            <a href="Patient-APPMain.jsp" class="back">Back</a>
-                   
+                            <div class="fix">
+                             <a class="Next" href="Patient-APPMain.jsp"><button>Back</button></a>
+                            </div><br><br>
+                            
 
         </main>
         
