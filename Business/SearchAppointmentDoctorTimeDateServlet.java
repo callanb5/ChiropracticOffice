@@ -20,8 +20,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Calla
  */
-@WebServlet(name = "SearchAppointmentTimeDateServlet", urlPatterns = {"/SearchAppointmentTimeDateServlet"})
-public class SearchAppointmentTimeDateServlet extends HttpServlet {
+@WebServlet(name = "SearchAppointmentDoctorDateServlet", urlPatterns = {"/SearchAppointmentDoctorDateServlet"})
+public class SearchAppointmentDoctorDateServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,14 +36,15 @@ public class SearchAppointmentTimeDateServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        Patients pat = (Patients) session.getAttribute("p1");
+        Doctors doc = (Doctors) session.getAttribute("d1");
 
         String year = request.getParameter("year");
         String month = request.getParameter("month");
         String day = request.getParameter("day");
         String dateStr = year + "-" + month + "-" + day;
-        
+
         if ("".equals(dateStr) || dateStr == null) {
+            System.out.println("dateStr empty or null");
             RequestDispatcher r = request.getRequestDispatcher("/Error.jsp");
             r.forward(request, response);
         } else {
@@ -51,18 +52,17 @@ public class SearchAppointmentTimeDateServlet extends HttpServlet {
             System.out.println("Timestamp: " + ts);
 
             ApptList apptlist = new ApptList();
-            apptlist.selectDBApptDatePat(pat.getpatid(), ts);
+            apptlist.selectDBApptDateDoc(doc.getdocid(), ts);
 
             if (apptlist.count > 0) {
                 session.setAttribute("apptlist", apptlist);
-                RequestDispatcher r = request.getRequestDispatcher("/SearchResults.jsp");
+                RequestDispatcher r = request.getRequestDispatcher("/DoctorSearchResults.jsp");
                 r.forward(request, response);
             } else {
                 RequestDispatcher r = request.getRequestDispatcher("/Error.jsp");
                 r.forward(request, response);
             }
         }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
