@@ -30,11 +30,10 @@
         </a>
     </div>
 
-   <div class="mNav">
+   <%-- <div class="mNav">
         <ul>
             <li><a href="Admin-Home.jsp">DASHBOARD</a></li>
-            <li><a href="Patient-Appointment_List.jsp">APPOINTMENTS</a></li>
-        </ul>
+        </ul> --%>
     </div>
 
     <div class="sNav">
