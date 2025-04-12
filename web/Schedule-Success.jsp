@@ -14,7 +14,11 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
     <body>
-        <h1>Appointment Scheduling Succeeded.</h1>
-        <a href="Patient-APPMain.jsp">Back</button>
+<br><br><br><br><br><br><br><br>
+        <h1 class="Welcome">Appointment Scheduling Succeeded.</h1>
+        <div class="Fix">
+        <a class="Next" href="Patient-APPMain.jsp"><button>Back</button></a>
+        </div>
+<br><br><br><br><br><br><br><br>
     </body>
 </html>
