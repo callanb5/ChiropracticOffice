@@ -7,7 +7,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>CT-Chiroprtic Pationt-Login-Page</title>
+        <title>Doctor-Page</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
@@ -24,14 +24,14 @@
                 </a>   
             </div>
 
-            <div class="mNav">
+            <%-- <div class="mNav">
                 <ul>
                     <li><a href="landingPage.jsp">HOME</a></li>
                     <li><a href="">APPOINTMENTS</a></li>
                     <li><a href="">CONTACT US</a></li>
                     <li><a href="">HELP</a></li>
                 </ul>
-            </div>
+            </div> --%>
             
             <div class="sNav">
                 <ul>

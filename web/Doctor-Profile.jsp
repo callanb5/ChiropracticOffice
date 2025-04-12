@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>CT-Chiropractic Doctor-Profile-Page</title>
+    <title>Doctor-Profile-Page</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
 </head>
@@ -39,7 +39,7 @@
 
     <div class="sNav">
         <ul>
-            <h3><%=docName%></h3>
+            <li class="Sign">Signed in as <%=docName%></li>
             <li><a href="Doctor-Login.jsp" class="logBtn">Sign Out</a></li>
             <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
         </ul>

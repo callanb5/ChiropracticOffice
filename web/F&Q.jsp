@@ -7,7 +7,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>F&Q</title>
+        <title>F&Q Page</title>
         <link rel="stylesheet" href="styles.css">
     </head>
 
