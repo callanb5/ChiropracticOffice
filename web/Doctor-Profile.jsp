@@ -47,40 +47,41 @@
 
 </nav>
 <main>
-    <div class="mb1">
-        <section>
+    <br><br>
+        <Form class="New-Acc">
+            <table>
             <TR>
                 <TD>Doctor ID:</TD>
                 <TD><INPUT TYPE = "text" name = "idtb" value="<%=d1.getdocid()%>" readonly></TD>
             </TR>
-        </section>
-        <section>
+       
             <TR>
                 <TD>Password:</TD>
                 <TD><INPUT TYPE = "text" name = "pwtb" value="<%=d1.getpwd()%>" readonly></TD>
             </TR>
-        </section>
-        <section>
+       
             <TR>
                 <TD>First Name:</TD>
                 <TD><INPUT TYPE = "text" name = "fntb#" value="<%=d1.getfirstname()%> " readonly></TD>
             </TR>
-        </section>
-        <section>
+        
             <TR>
                 <TD>Last Name:</TD>
                 <TD><INPUT TYPE = "text" name = "lntb" value="<%=d1.getlastname()%>" readonly></TD>
             </TR>
-        </section>
-        <section>
+        
             <TR>
                 <TD>Email:</TD>
                 <TD><INPUT TYPE = "text" name = "emtb" value="<%=d1.getemail()%>" readonly></TD>
             </TR>
-        </section>
-
-        <a href="DoctorProfileEdit.jsp">Edit Profile</a>
-    </div>
+       </table>
+            </Form>
+        <div class="fix">
+     <a class="Next" href="DoctorProfileEdit.jsp"><button>Edit Profile</button></a>
+     </div>
+        <br>
+            
+   
 </main>
 
 <footer>

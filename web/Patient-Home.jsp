@@ -7,7 +7,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Pationt-Home</title>
+        <title>Patient-Home</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
@@ -42,8 +42,9 @@
     
     </nav> 
         <main>
-            <br>
+            <div class="clean">
             <h1 class="Welcome">Welcome, <%=patName%></h1>
+            </div><br>
                <section class="mb">
                 <div class="mb1">
                     <section>
@@ -60,10 +61,12 @@
                         </a>
                     </section>
                 </div><br>
-              
+                
+               
         </main>
-        
+
         <footer>
+
             <section class="mFoot">
                 <div class="fLogo">
                     <img src="img/CTC_Logo.png" alt="">
