@@ -35,7 +35,7 @@
             
             <div class="sNav">
                 <ul>
-                    <li>Signed in as <%=docName%></li>
+                    <li class="Sign">Signed in as <%=docName%></li>
                      <li><a href="Doctor-Login.jsp" class="logBtn">Sign Out</a></li>
                     <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
                 </ul>
@@ -43,8 +43,9 @@
     
     </nav> 
         <main>
-            <br>
-            <center><h1>Welcome, <%=docName%></h1></center>
+             <div class="clean">
+           <h1 class="Welcome">Welcome, <%=docName%></h1>
+            </div><br>
                <section class="mb">
                 <div class="mb1">
                     <section>
