@@ -108,7 +108,7 @@ public class ApptList {
         }
     }
     
-    public void selectDBApptDate(String patid, Timestamp apptdate) {
+    public void selectDBApptDatePat(String patid, Timestamp apptdate) {
         try {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             String apptDateString = dateFormat.format(apptdate);
@@ -132,6 +132,36 @@ public class ApptList {
                 addAppointment(a);
             }
             
+            con.close();
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+    
+    public void selectDBApptDate(Timestamp apptdate) {
+        try {
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            String apptDateString = dateFormat.format(apptdate);
+
+            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
+
+            Statement statement = con.createStatement();
+
+            String sql = "SELECT * FROM Appointments WHERE DateValue(ApptDateTime) = DateValue(#" + apptDateString + "#)";
+
+            ResultSet rs = statement.executeQuery(sql);
+            while (rs.next()) {
+                Appointments a = new Appointments();
+                a.setApptID(rs.getInt(1));
+                a.setApptDateTime(rs.getTimestamp(2));
+                a.setPatID(rs.getString(3));
+                a.setDocID(rs.getString(4));
+                a.setNotes(rs.getString(5));
+                addAppointment(a);
+            }
+
             con.close();
         } catch (Exception e) {
             System.out.println("Error: " + e);
@@ -209,6 +239,54 @@ public class ApptList {
             
             return freeSlots;
             
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+            ArrayList<Timestamp> tsl = new ArrayList<Timestamp>();
+            return tsl;
+        }
+    }
+    
+    public ArrayList<Timestamp> getAvailableAppointmentsDate(Timestamp apptdate) {
+        try {
+            selectDBApptDate(apptdate);
+
+            ArrayList<Timestamp> freeSlots = new ArrayList<Timestamp>();
+            ArrayList<Timestamp> bookedSlots = new ArrayList<Timestamp>();
+
+            for (int i = 0; i < count; i++) {
+                Appointments appt = appArrayList.get(i);
+                bookedSlots.add(appt.getApptDateTime());
+            }
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(apptdate);
+            calendar.set(Calendar.HOUR_OF_DAY, 9);
+            calendar.set(Calendar.MINUTE, 0);
+            calendar.set(Calendar.SECOND, 0);
+            calendar.set(Calendar.MILLISECOND, 0);
+
+            Calendar endCalendar = (Calendar) calendar.clone();
+            endCalendar.set(Calendar.HOUR_OF_DAY, 17);
+
+            while (calendar.before(endCalendar)) {
+                Timestamp slot = new Timestamp(calendar.getTimeInMillis());
+
+                boolean booked = false;
+                for (int i = 0; i < bookedSlots.size(); i++) {
+                    if (bookedSlots.get(i).equals(slot)) {
+                        booked = true;
+                        break;
+                    }
+                }
+
+                if (!booked) {
+                    freeSlots.add(slot);
+                }
+                calendar.add(Calendar.MINUTE, 30);
+            }
+
+            return freeSlots;
+
         } catch (Exception e) {
             System.out.println("Error: " + e);
             ArrayList<Timestamp> tsl = new ArrayList<Timestamp>();

@@ -20,8 +20,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Calla
  */
-@WebServlet(name = "SearchAppointmentTimeDateServlet", urlPatterns = {"/SearchAppointmentTimeDateServlet"})
-public class SearchAppointmentTimeDateServlet extends HttpServlet {
+@WebServlet(name = "SearchAppointmentPatientDoctorServlet", urlPatterns = {"/SearchAppointmentPatientDoctorServlet"})
+public class SearchAppointmentPatientDoctorServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,25 +33,18 @@ public class SearchAppointmentTimeDateServlet extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+        throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        Patients pat = (Patients) session.getAttribute("p1");
+        Patients pat = new Patients();
+        pat.selectDB(request.getParameter("patid"));
 
-        String year = request.getParameter("year");
-        String month = request.getParameter("month");
-        String day = request.getParameter("day");
-        String dateStr = year + "-" + month + "-" + day;
-        
-        if ("".equals(dateStr) || dateStr == null) {
+        if ("".equals(pat.getpatid()) || pat.getpatid() == null) {
             RequestDispatcher r = request.getRequestDispatcher("/Error.jsp");
             r.forward(request, response);
-        } else {
-            Timestamp ts = Timestamp.valueOf(dateStr + " 00:00:00");
-            System.out.println("Timestamp: " + ts);
-
+        } else {      
             ApptList apptlist = new ApptList();
-            apptlist.selectDBApptDatePat(pat.getpatid(), ts);
+            apptlist.selectDBPatId(pat.getpatid());
 
             if (apptlist.count > 0) {
                 session.setAttribute("apptlist", apptlist);
@@ -62,7 +55,6 @@ public class SearchAppointmentTimeDateServlet extends HttpServlet {
                 r.forward(request, response);
             }
         }
-        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
