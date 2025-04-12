@@ -27,11 +27,16 @@
                 Patients pat = patlist.patArrayList.get(i);
 
         %>
-        <h4>Patient ID: <%=pat.getpatid()%></h4>
-        <h4>Patient Name: <%=pat.getfirstname() + " " + pat.getlastname()%></h4>
-        <h4>Patient Email: <%=pat.getemail()%></h4>
-        <hr>
+        <div class="New-Acc">
+        <form class="New-Acc">
+        <table>
+        <tr> <td>  <h4>Patient ID: <%=pat.getpatid()%></h4>                                 </td> </tr>
+        <tr> <td>  <h4>Patient Name: <%=pat.getfirstname() + " " + pat.getlastname()%></h4> </td> </tr>
+        <tr> <td>  <h4>Patient Email: <%=pat.getemail()%></h4>                              </td> </tr>
+         </table>
+         </form>
         <%}%>
+        </dv>
         <button onclick="history.back()">Back</button>
     </body>
 </html>
