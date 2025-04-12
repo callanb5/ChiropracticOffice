@@ -41,25 +41,13 @@
                <section class="mb">
                 <div class="mb1">
                     <section>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                    
-                    <section>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                </div>
-                
-                <div class="mb2">
-                    <section></section>
+                        <form form action="http://localhost:8080/CTC-Chiropratic/SearchAppointmentPatientDoctorServlet" method="post">
+                            <label for="dent">Patient ID:</label>
+                            <input type="text" id="patid" name="patid"><br><br>
+                            <input type="submit" value="Search" class="search-button">
+                        </form><br><br><br><br><br>
 
-                    <section>
-                        <a href="">
-                            <button>Join us</button>
-                        </a>
+                        <button onclick="history.back()">Back</button>
                     </section>
                 </div>
             </section>
