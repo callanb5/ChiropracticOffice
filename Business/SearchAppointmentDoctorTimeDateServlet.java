@@ -8,6 +8,8 @@ package org.example;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.util.ArrayList;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,8 +22,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Calla
  */
-@WebServlet(name = "SearchAppointmentDoctorDateServlet", urlPatterns = {"/SearchAppointmentDoctorDateServlet"})
-public class SearchAppointmentDoctorDateServlet extends HttpServlet {
+@WebServlet(name = "SearchAppointmentDoctorTimeDateServlet", urlPatterns = {"/SearchAppointmentDoctorTimeDateServlet"})
+public class SearchAppointmentDoctorTimeDateServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,31 +36,44 @@ public class SearchAppointmentDoctorDateServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        Doctors doc = (Doctors) session.getAttribute("d1");
 
+        Doctors doc = new Doctors();
+        doc.selectDBDocLN(request.getParameter("docln"));
+        
         String year = request.getParameter("year");
         String month = request.getParameter("month");
         String day = request.getParameter("day");
         String dateStr = year + "-" + month + "-" + day;
-
-        if ("".equals(dateStr) || dateStr == null) {
-            System.out.println("dateStr empty or null");
+        
+        if ("".equals(doc.getdocid()) || doc.getdocid() == null || "".equals(dateStr) || dateStr == null) {
+            System.out.println("Error: Either docid is null/empty or dateStr is null/empty < 0");
+            System.out.println("docid: " + doc.getdocid());
+            System.out.println("dateStr: " + dateStr);
             RequestDispatcher r = request.getRequestDispatcher("/Error.jsp");
             r.forward(request, response);
         } else {
+            Timestamp today = Timestamp.valueOf(LocalDate.now().atStartOfDay());
             Timestamp ts = Timestamp.valueOf(dateStr + " 00:00:00");
             System.out.println("Timestamp: " + ts);
+            System.out.println("Today: " + today);
+            
+            if (ts.before(today)) {
+                System.out.println("Error: Cannot show available appointments in a day before today");
+                RequestDispatcher r = request.getRequestDispatcher("/Error.jsp");
+                r.forward(request, response);
+            }
 
             ApptList apptlist = new ApptList();
-            apptlist.selectDBApptDateDoc(doc.getdocid(), ts);
+            ArrayList<Timestamp> tsl = apptlist.getAvailableAppointments(doc.getdocid(), ts);
 
-            if (apptlist.count > 0) {
-                session.setAttribute("apptlist", apptlist);
-                RequestDispatcher r = request.getRequestDispatcher("/DoctorSearchResults.jsp");
+            if (tsl.size() > 0) {
+                session.setAttribute("searchdoc", doc);
+                session.setAttribute("timelist", tsl);
+                RequestDispatcher r = request.getRequestDispatcher("/Schedule-Appointment.jsp");
                 r.forward(request, response);
             } else {
+                System.out.println("Error: tsl.size() < 0");
                 RequestDispatcher r = request.getRequestDispatcher("/Error.jsp");
                 r.forward(request, response);
             }
