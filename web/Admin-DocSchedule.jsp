@@ -132,6 +132,7 @@
                             <h1>
                             <?php
                             $Monday="";
+                            echo "$Monday";
                             ?>
                             </h1>
 
