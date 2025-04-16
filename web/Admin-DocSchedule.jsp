@@ -67,7 +67,7 @@
                 for (int i = 0; i < doclist.count; i++) {
                     Doctors doc = doclist.docArrayList.get(i);
             %>
-                <option value="<%=doc.getlastname()%>"></option>
+                <option value="<%=doc.getlastname()%>"><%=doc.getlastname()%></option>
             <%}%>
             </select>
 
