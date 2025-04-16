@@ -45,7 +45,7 @@
         
     %> --%>
 <form class="New-Acc">
-        <h1>Change Patient Info Page</h1>
+        <h1>New Patient Info Page</h1>
         <table border="3">
             <tr>
                 <td>ID:</td>
@@ -89,7 +89,7 @@
                 
                 <section class="sFoot">
                     <div>
-                        <h4>Campain</h4>
+                        <h4>Campaign</h4>
                         <ul>
                             <li><a href="">Appointments</a></li>
                             <li><a href="">Pharmacy</a></li>
