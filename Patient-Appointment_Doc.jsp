@@ -43,11 +43,16 @@
                                 
                                 <table class="New-Acc">
                                 <tr>
+                               <td> <label for="dent" style="Center"> Search by Doctor's Last Name.</label> </td>
+                                </tr>
+                                <tr>
                                <td><input type="text" id="docln" name="docln" placeholder="Doctor's Last Name:"></td>
                                </tr>
                                <tr>
                                <td> <input type="submit" value="Search" class="search-button"></td>
-                               </tr>
+                             
+                           
+                            </tr>
                                 </table>
                                  
                             </form>
