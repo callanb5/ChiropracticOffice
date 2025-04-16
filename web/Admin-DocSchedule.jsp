@@ -28,6 +28,7 @@
             
             <div class="sNav">
                 <ul>
+                    <li class="Sign">Signed in as <%=docName%></li>
                     <li><a href="Doctor-Login.jsp" class="logBtn">Sign Out</a></li>
                     <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
                 </ul>
@@ -35,32 +36,12 @@
     
     </nav> 
         <main>
-               <section class="mb">
-                <div class="mb1">
-                    <section>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                    
-                    <section>
-                        <a href="">
-                            <button>Learn More</button>
-                        </a>
-                    </section>
-                </div>
-                
-                <div class="mb2">
-                    <section></section>
+              
 
-                    <section>
-                        <a href="">
-                            <button>Join us</button>
-                        </a>
-                    </section>
-                </div>
-            </section>
 
+
+
+              
         </main>
         
         <footer>
@@ -71,7 +52,7 @@
                 
                 <section class="sFoot">
                     <div>
-                        <h4>Campain</h4>
+                        <h4>Campaign</h4>
                         <ul>
                             <li><a href="">Appointments</a></li>
                             <li><a href="">Pharmacy</a></li>
