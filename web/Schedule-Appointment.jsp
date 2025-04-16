@@ -61,7 +61,7 @@
       <form form action="http://localhost:8080/CTC-Chiropratic/ScheduleAppointmentServlet" method="post">
            <input type="hidden" name="timestamp" value="<%=ts%>">  </td> </tr>
       <tr> <td>     <button type="submit">Schedule Appointment</button>  </td> </tr>
-      <tr> <td>     </table>
+        </table>
         </form>
        
         <%}%>
