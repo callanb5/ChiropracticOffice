@@ -59,11 +59,13 @@
             <label for="Saturday">Saturday  </label>
             <label for="Sunday">Sunday</label></td></tr>
 
-        <tr><td>
-            <select name="Monday" id="Monday">
             <%
                 DoctorList doclist = new DoctorList();
                 doclist.selectDB();
+            %>
+        <tr><td>
+            <select name="Monday" id="Monday">
+            <%
                 for (int i = 0; i < doclist.count; i++) {
                     Doctors doc = doclist.docArrayList.get(i);
             %>
@@ -72,27 +74,57 @@
             </select>
 
             <select name="Tuesday" id="Tuesday">
-                <option value="Odom">Odom</option>
+            <%
+                for (int i = 0; i < doclist.count; i++) {
+                    Doctors doc = doclist.docArrayList.get(i);
+            %>
+                <option value="<%=doc.getlastname()%>"><%=doc.getlastname()%></option>
+            <%}%>
             </select>
 
             <select name="Wednesday" id="Wednesday">
-                <option value="Odom">Odom</option>
+            <%
+                for (int i = 0; i < doclist.count; i++) {
+                    Doctors doc = doclist.docArrayList.get(i);
+            %>
+                <option value="<%=doc.getlastname()%>"><%=doc.getlastname()%></option>
+            <%}%>
             </select>
 
             <select name="Thursday" id="Thursday">
-                <option value="Odom">Odom</option>
+            <%
+                for (int i = 0; i < doclist.count; i++) {
+                    Doctors doc = doclist.docArrayList.get(i);
+            %>
+                <option value="<%=doc.getlastname()%>"><%=doc.getlastname()%></option>
+            <%}%>
             </select>
 
             <select name="Friday" id="Friday">
-                <option value="Odom">Odom</option>
+            <%
+                for (int i = 0; i < doclist.count; i++) {
+                    Doctors doc = doclist.docArrayList.get(i);
+            %>
+                <option value="<%=doc.getlastname()%>"><%=doc.getlastname()%></option>
+            <%}%>
             </select>
 
             <select name="Saturday" id="Saturday">
-                <option value="Odom">Odom</option>
+            <%
+                for (int i = 0; i < doclist.count; i++) {
+                    Doctors doc = doclist.docArrayList.get(i);
+            %>
+                <option value="<%=doc.getlastname()%>"><%=doc.getlastname()%></option>
+            <%}%>
             </select>
 
             <select name="Sunday" id="Sunday">
-                <option value="Odom">Odom</option>
+            <%
+                for (int i = 0; i < doclist.count; i++) {
+                    Doctors doc = doclist.docArrayList.get(i);
+            %>
+                <option value="<%=doc.getlastname()%>"><%=doc.getlastname()%></option>
+            <%}%>
             </select></td></tr>
 
         <tr>
