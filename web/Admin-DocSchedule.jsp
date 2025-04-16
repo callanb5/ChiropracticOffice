@@ -28,7 +28,7 @@
             
             <div class="sNav">
                 <ul>
-                    <li class="Sign">Signed in as <%=docName%></li>
+                    <%-- <li class="Sign">Signed in as <%=docName%></li> --%>
                     <li><a href="Doctor-Login.jsp" class="logBtn">Sign Out</a></li>
                     <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
                 </ul>
@@ -39,16 +39,17 @@
               
                             <table class="New-Acc">
 
-                                <tr><td><label for="Monday">Monday</label>
-                                <label for="Tuesday">Tuesday</label>
-                                <label for="Wednesday">Wednesday</label>
-                                <label for="Thursday">Thursday:</label>
-                                <label for="Friday">Friday:</label>
-                                <label for="Saturday">Saturday:</label>
-                                <label for="Sunday">Sunday:</label></td></tr>
+                                <tr><td><label for="Monday"> Monday </label>
+                                <label for="Tuesday"> Tuesday </label>
+                                <label for="Wednesday"> Wednesday </label>
+                                <label for="Thursday"> Thursday </label>
+                                <label for="Friday"> Friday label>
+                                <label for="Saturday"> Saturday </label>
+                                <label for="Sunday"> Sunday </label></td></tr>
 
                                 <tr><td>
                                 <select name="Monday" id="Monday">
+                                    <option value="monday">Monday</option>
                                     <option value="Odom">Odom</option>
                                     <option value="Lucero">Lucero</option>
                                     <option value="Dean">Dean</option>
@@ -60,6 +61,7 @@
                                 </select>
                                 
                                 <select name="Tuesday" id="Tuesday">
+                                    <option value="tuesday">Tuesday</option>
                                     <option value="Odom">Odom</option>
                                     <option value="Lucero">Lucero</option>
                                     <option value="Dean">Dean</option>
@@ -70,6 +72,7 @@
                                     </select>
                                 
                                 <select name="Wednesday" id="Wednesday">
+                                    <option value="wednesday">Wednesday</option>
                                     <option value="Odom">Odom</option>
                                     <option value="Lucero">Lucero</option>
                                     <option value="Dean">Dean</option>
@@ -80,6 +83,7 @@
                                 </select>
                                 
                                 <select name="Thursday" id="Thursday">
+                                    <option value="thursday">Thursday</option>
                                     <option value="Odom">Odom</option>
                                     <option value="Lucero">Lucero</option>
                                     <option value="Dean">Dean</option>
@@ -91,6 +95,7 @@
                                 </select>
                                 
                                 <select name="Friday" id="Friday">
+                                    <option value="friday">Friday</option>
                                     <option value="Odom">Odom</option>
                                     <option value="Lucero">Lucero</option>
                                     <option value="Dean">Dean</option>
@@ -102,6 +107,7 @@
                                 </select>
                                 
                                 <select name="Saturday" id="Saturday">
+                                    <option value="saturday">Saturday</option>
                                     <option value="Odom">Odom</option>
                                     <option value="Lucero">Lucero</option>
                                     <option value="Dean">Dean</option>
@@ -113,6 +119,7 @@
                                 </select>
                                 
                                 <select name="Sunday" id="Sunday">
+                                    <option value="sunday">Sunday</option>
                                     <option value="Odom">Odom</option>
                                     <option value="Lucero">Lucero</option>
                                     <option value="Dean">Dean</option>
@@ -131,7 +138,7 @@
                             <table class="New-Acc">
                             <h1>
                             <?php
-                            $Monday="";
+                            $Monday= Monday;
                             echo "$Monday";
                             ?>
                             </h1>
