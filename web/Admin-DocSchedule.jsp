@@ -18,13 +18,6 @@
     Doctors d1;
     d1 = (Doctors)session.getAttribute("d1");
     String docName = d1.getfirstname() + " " + d1.getlastname();
-    
-
-    DoctorList doclist = new DoctorList();
-    doclist.selectDB();
-    for (int i = 0; i < doclist.count; i++) {
-        Doctors doc = doclist.docArrayList.get(i);
-    }
 
 %>
 
@@ -68,7 +61,14 @@
 
         <tr><td>
             <select name="Monday" id="Monday">
-                <option value="<%=doc.getdocid()%>"></option>
+            <%
+                DoctorList doclist = new DoctorList();
+                doclist.selectDB();
+                for (int i = 0; i < doclist.count; i++) {
+                    Doctors doc = doclist.docArrayList.get(i);
+            %>
+                <option value="<%=doc.getlastname()%>"></option>
+            <%}%>
             </select>
 
             <select name="Tuesday" id="Tuesday">
