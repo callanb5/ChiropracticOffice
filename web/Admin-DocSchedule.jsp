@@ -37,11 +37,107 @@
     </nav> 
         <main>
               
+                            <table class="New-Acc">
+
+                                <tr><td><label for="Monday">Monday</label>
+                                <label for="Tuesday">Tuesday</label>
+                                <label for="Wednesday">Wednesday</label>
+                                <label for="Thursday">Thursday:</label>
+                                <label for="Friday">Friday:</label>
+                                <label for="Saturday">Saturday:</label>
+                                <label for="Sunday">Sunday:</label></td></tr>
+
+                                <tr><td>
+                                <select name="Monday" id="Monday">
+                                    <option value="Odom">Odom</option>
+                                    <option value="Lucero">Lucero</option>
+                                    <option value="Dean">Dean</option>
+                                    <option value="Melendez">Melendez</option>
+                                    <option value="Keller">Keller</option>
+                                    <option value="Emilie">Emilie</option>
+                                    <option value="House">House</option>
+                                    
+                                </select>
+                                
+                                <select name="Tuesday" id="Tuesday">
+                                    <option value="Odom">Odom</option>
+                                    <option value="Lucero">Lucero</option>
+                                    <option value="Dean">Dean</option>
+                                    <option value="Melendez">Melendez</option>
+                                    <option value="Keller">Keller</option>
+                                    <option value="Emilie">Emilie</option>
+                                    <option value="House">House</option>
+                                    </select>
+                                
+                                <select name="Wednesday" id="Wednesday">
+                                    <option value="Odom">Odom</option>
+                                    <option value="Lucero">Lucero</option>
+                                    <option value="Dean">Dean</option>
+                                    <option value="Melendez">Melendez</option>
+                                    <option value="Keller">Keller</option>
+                                    <option value="Emilie">Emilie</option>
+                                    <option value="House">House</option>
+                                </select>
+                                
+                                <select name="Thursday" id="Thursday">
+                                    <option value="Odom">Odom</option>
+                                    <option value="Lucero">Lucero</option>
+                                    <option value="Dean">Dean</option>
+                                    <option value="Melendez">Melendez</option>
+                                    <option value="Keller">Keller</option>
+                                    <option value="Emilie">Emilie</option>
+                                    <option value="House">House</option>
+
+                                </select>
+                                
+                                <select name="Friday" id="Friday">
+                                    <option value="Odom">Odom</option>
+                                    <option value="Lucero">Lucero</option>
+                                    <option value="Dean">Dean</option>
+                                    <option value="Melendez">Melendez</option>
+                                    <option value="Keller">Keller</option>
+                                    <option value="Emilie">Emilie</option>
+                                    <option value="House">House</option>
+
+                                </select>
+                                
+                                <select name="Saturday" id="Saturday">
+                                    <option value="Odom">Odom</option>
+                                    <option value="Lucero">Lucero</option>
+                                    <option value="Dean">Dean</option>
+                                    <option value="Melendez">Melendez</option>
+                                    <option value="Keller">Keller</option>
+                                    <option value="Emilie">Emilie</option>
+                                    <option value="House">House</option>
+
+                                </select>
+                                
+                                <select name="Sunday" id="Sunday">
+                                    <option value="Odom">Odom</option>
+                                    <option value="Lucero">Lucero</option>
+                                    <option value="Dean">Dean</option>
+                                    <option value="Melendez">Melendez</option>
+                                    <option value="Keller">Keller</option>
+                                    <option value="Emilie">Emilie</option>
+                                    <option value="House">House</option>
+
+                                </select></td></tr>
+
+                                <tr>
+                                <td><input type="submit" value="Change" class="search-button"></td>
+                                </tr>
+                            </table>
+
+                            <table class="New-Acc">
+                            <h1>
+                            <?php
+                            $Monday="";
+                            ?>
+                            </h1>
 
 
 
-
-              
+                            </table>
         </main>
         
         <footer>
