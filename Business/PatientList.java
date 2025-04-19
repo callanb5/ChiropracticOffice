@@ -22,6 +22,10 @@ public class PatientList {
         patArrayList = new ArrayList<Patients>();
     }
 
+     /**
+     * Adds provided patient to patArrayList
+     * @param p1 
+     */
     public void addPatient(Patients p1) {
         patArrayList.add(p1);
         count++;
