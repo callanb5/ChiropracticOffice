@@ -2,7 +2,7 @@ package org.example;
 /**
  * ASP (Chiropractor)
  * Last Editor: Callan Bramblett
- * Date: 3/22/2025
+ * Date: 4/16/2025
  */
 
 import java.sql.Connection;
@@ -184,7 +184,7 @@ public class Appointments {
     }
 
     /**
-     * Deletes appointment from database from stored ApptID.
+     * Deletes appointment from database by stored ApptID.
      * @return True on succeed, False on fail.
      */
     public boolean deleteDB() {
@@ -212,7 +212,10 @@ public class Appointments {
             return false;
         }
     }
-    
+   
+    /**
+     * Selects the highest appointment id from database and stores in ApptID.
+     */
     public void selecthighIDDB() {
 
         try {
@@ -247,6 +250,9 @@ public class Appointments {
 
     }
     
+    /**
+     * Displays information currently stored to console.
+     */
     public void display() {
         System.out.println("ApptId " + getApptID());
         System.out.println("ApptDateTime " + getApptDateTime());
