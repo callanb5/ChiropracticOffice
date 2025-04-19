@@ -1,8 +1,8 @@
 package org.example;
 /**
  * ASP (Chiropractor)
- * Last Editor: Victorino Martinez
- * Date: 1/27/2025
+ * Last Editor: Callan Bramblett
+ * Date: 4/16/2025
  */
 
 import java.sql.*;
@@ -54,6 +54,11 @@ public class Doctors {
     public void setemail(String EMAIL) {email = EMAIL;}                     //Email
     public void setadmin(Boolean ADMIN) {admin = ADMIN;}                    //Admin
 
+    /**
+     * Selects appointments from the database by doctor id and stores in variables.
+     *
+     * @param DOCID doctor id
+     */
     public void selectDB(String DOCID) {
         docid = DOCID;
 
@@ -91,44 +96,10 @@ public class Doctors {
         }//end try/catch
 
     }//end selectDB()
-
-    public void selecthighIDDB() {
-
-        try {
-            //Load Driver
-            Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            System.out.println("Driver Loaded");
-
-            //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//Documents//ChiropracticDB.accdb");
-            System.out.println("Connection created");
-
-            //SqL statement
-            String sql = "SELECT MAX(DocID) FROM Doctors ";
-            System.out.println(sql);
-
-            //Create Statement
-            Statement stmt = con.createStatement();
-
-            //Execute Statement
-            ResultSet rs;
-            rs = stmt.executeQuery(sql);
-
-            while (rs.next()) {
-                docid = rs.getString(1);
-            }
-
-            //Close Connection
-            con.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }//end try/catch
-
-    }//end selectDB()
     
         /**
-     * Selects from the database by patient id and stores appointment information in variables.
-     * @param patid patient id
+     * Selects from the database by doctor last name and stores information in variables.
+     * @param docln doctor id
      */
     public void selectDBDocLN(String docln) {
         try {
@@ -154,51 +125,60 @@ public class Doctors {
             System.out.println("Error: " + e);
         }
     }
-
-   public boolean updateDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
+    
+    /**
+     * Updates database with values provided.
+     *
+     * @param DOCID doctor id
+     * @param PWD password
+     * @param FIRSTNAME first name
+     * @param LASTNAME last name
+     * @param EMAIL email
+     */
+    public void updateDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
         docid = DOCID;
-        pwd = PWD;
-        firstname = FIRSTNAME;
-        lastname = LASTNAME;
-        email = EMAIL;
-
 
         try {
             //Load Driver
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
-            System.out.println("Driver Loaded");
-
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//Documents//ChiropracticDB.accdb");
-            System.out.println("Connection created");
-
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             //SQL statement
-            String sql = ("UPDATE Doctors SET DocID = '" + this.docid + "',Pwd = '" + this.pwd + "', FirstName = '" + this.firstname + "', LastName = '" + this.lastname + "', Email = '" + this.email + "' WHERE DocID = '" + this.docid + "'");
+            String sql = ("UPDATE Doctors SET Pwd = ?, FirstName = ?, LastName = ?, Email = ? WHERE DocID = ?");
 
             //Create Statement
             PreparedStatement stmt = con.prepareStatement(sql);
 
+            stmt.setString(2, PWD);
+            stmt.setString(3, FIRSTNAME);
+            stmt.setString(4, LASTNAME);
+            stmt.setString(5, EMAIL);
+
+
             //Execute Statement
-            int n = stmt.executeUpdate();
-            if (n==1) {
-                System.out.println("Doctor " + DOCID + " information has been changed");
-            } else {
-                System.out.println("Doctor " + DOCID + " information change failed");
-            }
+            stmt.executeUpdate();
 
             //Close Connection
             con.close();
-            return true;
 
         } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+            System.out.println("Exception:" + e);
         }//end try/catch
 
     }//end updateDB()
-    
+
+    /**
+     * Inserts provided values into database.
+     *
+     * @param DOCID doctor id
+     * @param PWD password
+     * @param FIRSTNAME first name
+     * @param LASTNAME last name
+     * @param EMAIL email
+     * @param ADMIN administrator privileges
+     */
     public void insertDB(String DOCID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL, Boolean ADMIN) {
 
 
@@ -239,6 +219,11 @@ public class Doctors {
 
     }//end insertDB()
 
+        /**
+     * Deletes from the database by provided id.
+     *
+     * @param DOCID doctor id
+     */
     public void deleteDB(String DOCID) {
         docid = DOCID;
 
