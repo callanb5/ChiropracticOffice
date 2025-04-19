@@ -65,7 +65,7 @@
             for (int i = 0; i < tsl.size(); i++) {
                 Timestamp ts = tsl.get(i);
         %>
-        <div class="New-Acc">
+        <div class="New-Acc" style="margin: auto">
         <form class="New-Acc">
         <table>
       <tr> <td> <h4>Appointment Available At: <%=dateFormat.format(ts)%></h4>
