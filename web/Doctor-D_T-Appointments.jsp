@@ -118,6 +118,7 @@
                                 <td>
                                 <input type="submit" value="Search" class="search-button">
                                 </td></tr>
+                                </table>
                             </form>
 
                             <button onclick="history.back()">Back</button>
