@@ -27,6 +27,9 @@ public class PatientList {
         count++;
     }
     
+    /**
+     * Displays list to output
+     */
     public void displayList() {
         System.out.println("# of Patients: " + count);
         
@@ -66,7 +69,12 @@ public class PatientList {
             System.out.println("Error: " + e);
         }
     }
-    
+   
+    /**
+     * Recursively selects patients from the database by doctor id and patient id and adds to patArrayList.
+     *
+     * @param docid doctor id
+     */
     public void selectDBDocIdPatId(String docid, String patid) {
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
