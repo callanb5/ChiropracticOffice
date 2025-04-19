@@ -19,6 +19,17 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
+    
+    <%
+        Patients p1;
+
+        p1 = (Patients) session.getAttribute("p1");
+
+        String patName = p1.getfirstname() + " " + p1.getlastname();
+
+
+    %>
+    
     <body>
      <nav class="navbar">
             <div class="logo">
