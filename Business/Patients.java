@@ -1,8 +1,8 @@
 package org.example;
 /**
  * ASP (Chiropractor)
- * Last Editor: Victorino Martinez
- * Date: 1/27/2025
+ * Last Editor: Callan Bramblett
+ * Date: 04/19/2025
  */
 import java.sql.*;
 public class Patients {
@@ -48,7 +48,11 @@ public class Patients {
     public void setfirstname(String FIRSTNAME) {firstname = FIRSTNAME;}     //FirstName
     public void setlastname(String LASTNAME) {lastname = LASTNAME;}         //LastName
     public void setemail(String EMAIL) {email = EMAIL;}                     //Email
-
+    /**
+     * Selects appointments from the database by patient id and stores in variables.
+     *
+     * @param PATID patient id
+     */
     public void selectDB(String PATID) {
         patid = PATID;
 
@@ -86,6 +90,9 @@ public class Patients {
 
     }//end selectDB()
 
+    /**
+     * Selects patient with the highest patient id from the database
+     */
     public void selecthighIDDB() {
 
         try {
@@ -94,7 +101,7 @@ public class Patients {
             System.out.println("Driver Loaded");
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//Documents//ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
             System.out.println("Connection created");
 
             //SqL statement
@@ -122,7 +129,15 @@ public class Patients {
 
 
     }//end selectDB()
-    
+    /**
+     * Inserts provided values into database.
+     *
+     * @param PATID patient id
+     * @param PWD password
+     * @param FIRSTNAME first name
+     * @param LASTNAME last name
+     * @param EMAIL email
+     */
      public void insertDB(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
 
         try {
@@ -131,7 +146,7 @@ public class Patients {
             System.out.println("Driver Loaded");
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//Documents//ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
             System.out.println("Connection created");
 
 
@@ -160,8 +175,17 @@ public class Patients {
         }//end catch
 
     }//end insertDB()
-
-    public boolean updateDB(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
+     
+    /**
+     * Updates database with values provided.
+     *
+     * @param PATID patient id
+     * @param PWD password
+     * @param FIRSTNAME first name
+     * @param LASTNAME last name
+     * @param EMAIL email
+     */
+    public void updateDB(String PATID, String PWD, String FIRSTNAME, String LASTNAME, String EMAIL) {
         patid = PATID;
         pwd = PWD;
         firstname = FIRSTNAME;
@@ -173,31 +197,28 @@ public class Patients {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
             //Creating Connection
-            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C://Users//17706//Documents//ChiropracticDB.accdb");
+            Connection con = DriverManager.getConnection("jdbc:ucanaccess://C:/ChiropracticDB.accdb");
 
             //SQL statement
-            String sql = ("UPDATE Patients SET PatID = '" + this.patid + "',Pwd = '" + this.pwd + "', FirstName = '" + this.firstname + "', LastName = '" + this.lastname + "', Email = '" + this.email + "' WHERE PatID = '" + this.patid + "'");
-            System.out.println(sql);
+            String sql = ("UPDATE Patients SET Pwd = ?, FirstName = ?, LastName = ?, Email = ? WHERE PatID = ?");
 
             //Create Statement
             PreparedStatement stmt = con.prepareStatement(sql);
 
+            stmt.setString(2, PWD);
+            stmt.setString(3, FIRSTNAME);
+            stmt.setString(4, LASTNAME);
+            stmt.setString(5, EMAIL);
+
+
             //Execute Statement
-            int n = stmt.executeUpdate();
-            if (n==1) {
-                System.out.println("Patient " + PATID + " information has been changed");
-            } else {
-                System.out.println("Patient " + PATID + " information change failed");
-            }
+            stmt.executeUpdate();
 
             //Close Connection
             con.close();
-            return true;
 
         } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-
+            System.out.println("Exception:" + e);
         }//end try/catch
 
     }//end updateDB()
