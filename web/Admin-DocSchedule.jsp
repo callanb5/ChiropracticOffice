@@ -88,7 +88,7 @@
     <form action="AdminCreateScheduleServlet">
 
         <table class="New-Acc">
-
+                <h1 style="text-align: center;">Set SChedule<h1>
             <tr style="text-align: center;">
                 <td class="Sub-Acc"><label for="Monday"><p>Monday</p></label></td>
                 <td class="Sub-Acc"><label for="Tuesday"><p>Tuesday</p></label></td>
@@ -188,6 +188,7 @@
         </table>
 
         <table class="New-Acc">
+                        <h1 style="text-align: center;">Review SChedule<h1>
             <tr style="text-align: center;">
                 <td class="Sub-Acc"><label for="Monday"><p>Monday</p></label></td>
                 <td class="Sub-Acc"><label for="Tuesday"><p>Tuesday</p></label></td>
