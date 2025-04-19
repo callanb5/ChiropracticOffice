@@ -24,7 +24,7 @@ public class DoctorList {
 
     /**
      * Adds provided doctor to docArrayList
-     * @param d1 
+     * @param d1 doctor
      */
     public void addDoctor(Doctors d1) {
         docArrayList.add(d1);
