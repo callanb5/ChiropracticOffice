@@ -32,6 +32,10 @@ public class ApptList {
         appArrayList = new ArrayList<Appointments>();
     }
 
+    /**
+     * Adds provided appointment to apptArrayList
+     * @param a1 
+     */
     public void addAppointment(Appointments a1) {
         appArrayList.add(a1);
         count++;
