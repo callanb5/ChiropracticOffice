@@ -17,14 +17,15 @@ public class PatientList {
      */
     public ArrayList<Patients> patArrayList;
 
+    
     public PatientList() {
         count = 0;
         patArrayList = new ArrayList<Patients>();
     }
 
-     /**
+    /**
      * Adds provided patient to patArrayList
-     * @param p1 
+     * @param p1 patient
      */
     public void addPatient(Patients p1) {
         patArrayList.add(p1);
@@ -78,6 +79,7 @@ public class PatientList {
      * Recursively selects patients from the database by doctor id and patient id and adds to patArrayList.
      *
      * @param docid doctor id
+     * @param patid patient id
      */
     public void selectDBDocIdPatId(String docid, String patid) {
         try {
