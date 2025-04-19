@@ -65,13 +65,13 @@
             for (int i = 0; i < tsl.size(); i++) {
                 Timestamp ts = tsl.get(i);
         %>
-        <div class="New-Acc" style="margin: auto">
+        <div class="New-Acc">
         <form class="New-Acc">
-        <table>
-      <tr> <td> <h4>Appointment Available At: <%=dateFormat.format(ts)%></h4>
+        <table style="margin: auto">
+      <tr> <td> <center><h4>Appointment Available At: <%=dateFormat.format(ts)%></h4></center>
       <form form action="http://localhost:8080/CTC-Chiropratic/ScheduleAppointmentServlet" method="post">
            <input type="hidden" name="timestamp" value="<%=ts%>">  </td> </tr>
-      <tr> <td>     <button type="submit">Schedule Appointment</button>  </td> </tr>
+      <tr> <td>     <center><button type="submit">Schedule Appointment</button></center>  </td> </tr>
         </table>
         </form>
        
