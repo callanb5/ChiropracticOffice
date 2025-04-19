@@ -11,7 +11,16 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
+  <%@ page import="org.example.Doctors" %>
+<%
+    Doctors d1;
 
+    d1 = (Doctors)session.getAttribute("d1");
+
+    String docName = d1.getfirstname() + " " + d1.getlastname() + "\n" + "(Admin)";
+
+
+%>
     <body>  
         <nav class="navbar">
             <div class="logo">
@@ -22,10 +31,9 @@
 
             <div class="mNav">
                 <ul>
-                    <li><a href="landingPage.jsp">HOME</a></li>
-                    <li><a href="">APPOINTMENTS</a></li>
-                    <li><a href="">CONTACT US</a></li>
-                    <li><a href="">HELP</a></li>
+                    <li><a href="Doctor-Home.jsp">DASHBOARD</a></li>
+                     <%-- <li><a href="Doctor-P_L-Appointments.jsp">APPOINTMENTS</a></li> --%>
+                    <li><a href="Doctor-profile.jsp">PROFILE</a></li>
                 </ul>
             </div>
             
@@ -38,14 +46,15 @@
     
     </nav> 
         <main>
-               <section class="mb">
-                <div class="mb1">
-                    <section>
+             
                         <form form action="http://localhost:8080/CTC-Chiropratic/SearchAppointmentPatientDoctorServlet" method="post">
-                            <label for="dent">Patient ID:</label>
-                            <input type="text" id="patid" name="patid"><br><br>
-                            <input type="submit" value="Search" class="search-button">
-                        </form><br><br><br><br><br>
+                            <table class="New-Acc">
+                            <tr>
+                            <td><label for="dent">Patient ID:</label></td></tr>
+                           <tr><td><input type="text" id="patid" name="patid" placeholder="Patient's ID:"></td></tr>
+                           <tr><td><input type="submit" value="Search" class="search-button"></td></tr>
+                            </table>
+                        </form><br><br><br>
 
                         <button onclick="history.back()">Back</button>
                     </section>
@@ -62,7 +71,7 @@
                 
                 <section class="sFoot">
                     <div>
-                        <h4>Campain</h4>
+                        <h4>Campaign</h4>
                         <ul>
                             <li><a href="">Appointments</a></li>
                             <li><a href="">Pharmacy</a></li>
