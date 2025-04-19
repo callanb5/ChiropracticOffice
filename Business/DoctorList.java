@@ -1,4 +1,4 @@
-package org.example.chiropractorproject.BusinessObjects;
+package org.example;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -27,6 +27,9 @@ public class DoctorList {
         count++;
     }
 
+    /**
+     * Displays list to output
+     */
     public void displayList() {
         System.out.println("# of Doctors: " + count);
 
@@ -37,7 +40,7 @@ public class DoctorList {
     }
 
     /**
-     * Recursively selects patients from the database by doctor id and adds to patArrayList.
+     * Recursively selects doctors from the database and adds to docArrayList.
      */
     public void selectDB() {
         try {
