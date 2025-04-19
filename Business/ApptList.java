@@ -34,7 +34,7 @@ public class ApptList {
 
     /**
      * Adds provided appointment to apptArrayList
-     * @param a1 
+     * @param a1 appointment
      */
     public void addAppointment(Appointments a1) {
         appArrayList.add(a1);
@@ -220,11 +220,11 @@ public class ApptList {
     }
     
     /**
-     * Returns available appointments with specified doctor on day provided in apptdate. Returns ArrayList<Timestamp> format.
+     * Returns available appointments with specified doctor on day provided in apptdate.
      *
      * @param docid doctor id
      * @param apptdate date
-     * @return ArrayList<Timestamp> of available appointments
+     * @return ArrayList of available appointments
      */
     public ArrayList<Timestamp> getAvailableAppointments(String docid, Timestamp apptdate) {
         try {
@@ -275,11 +275,10 @@ public class ApptList {
     }
     
      /**
-     * Returns available appointments with any doctor on day provided in apptdate. Returns ArrayList<Timestamp> format.
+     * Returns available appointments with any doctor on day provided in apptdate.
      *
-     * @param docid doctor id
      * @param apptdate date
-     * @return ArrayList<Timestamp> of available appointments
+     * @return ArrayList of available appointments
      */
     public ArrayList<Timestamp> getAvailableAppointmentsDate(Timestamp apptdate) {
         try {
