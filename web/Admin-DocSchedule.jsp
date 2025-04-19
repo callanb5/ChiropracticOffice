@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>CT-Chiroprtic Pationt-Login-Page</title>
+    <title>CT-Chiropractic Admin-DocSchedule</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
 </head>
@@ -20,22 +20,45 @@
     String docName = d1.getfirstname() + " " + d1.getlastname();
 
     Schedule s1 = new Schedule();
+    Doctors d2 = new Doctors();
     s1.selectDB("Monday");
     String doc1 = s1.getdocid();
+    d2.selectDB(doc1);
+    doc1 = d2.getlastname();
+
     s1.selectDB("Tuesday");
     String doc2 = s1.getdocid();
+    d2.selectDB(doc2);
+    doc2 = d2.getlastname();
+
     s1.selectDB("Wednesday");
     String doc3 = s1.getdocid();
+    d2.selectDB(doc3);
+    doc3 = d2.getlastname();
+
     s1.selectDB("Thursday");
     String doc4 = s1.getdocid();
+    d2.selectDB(doc4);
+    doc4 = d2.getlastname();
+
     s1.selectDB("Friday");
     String doc5 = s1.getdocid();
+    d2.selectDB(doc5);
+    doc5 = d2.getlastname();
+
     s1.selectDB("Saturday");
     String doc6 = s1.getdocid();
+    d2.selectDB(doc6);
+    doc6 = d2.getlastname();
+
     s1.selectDB("Sunday");
     String doc7 = s1.getdocid();
+    d2.selectDB(doc7);
+    doc7 = d2.getlastname();
+
 
 %>
+
 
 <body>
 <nav class="navbar">
@@ -66,82 +89,98 @@
 
         <table class="New-Acc">
 
-            <tr><td>
-                <label for="Monday">Monday  </label>
-                <label for="Tuesday">Tuesday   </label>
-                <label for="Wednesday">Wednesday</label>
-                <label for="Thursday">Thursday </label>
-                <label for="Friday">Friday   </label>
-                <label for="Saturday">Saturday  </label>
-                <label for="Sunday">Sunday</label></td></tr>
+            <tr style="text-align: center;">
+                <td class="Sub-Acc"><label for="Monday"><p>Monday</p></label></td>
+                <td class="Sub-Acc"><label for="Tuesday"><p>Tuesday</p></label></td>
+                <td class="Sub-Acc"><label for="Wednesday"><p>Wednesday</p></label></td>
+                <td class="Sub-Acc"><label for="Thursday"><p>Thursday</p></label></td>
+                <td class="Sub-Acc"><label for="Friday"><p>Friday</p></label></td>
+                <td class="Sub-Acc"><label for="Saturday"><p>Saturday</p></label></td>
+                <td class="Sub-Acc"><label for="Sunday"><p>Sunday</p></label></td>
+            </tr>
 
             <%
                 DoctorList doclist = new DoctorList();
                 doclist.selectDB();
             %>
-            <tr><td>
-                <select name="Monday" id="Monday">
-                    <%
-                        for (int i = 0; i < doclist.count; i++) {
-                            Doctors doc = doclist.docArrayList.get(i);
-                    %>
-                    <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
-                    <%}%>
-                </select>
+            <tr style="text-align: center;">
+                <td>
+                    <select name="Monday" id="Monday">
+                        <%
+                          for (int i = 0; i < doclist.count; i++) {
+                               Doctors doc = doclist.docArrayList.get(i);
+                        %>
+                       <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
+                       <%}%>
+                    </select>
+                </td>
 
-                <select name="Tuesday" id="Tuesday">
-                    <%
-                        for (int i = 0; i < doclist.count; i++) {
-                            Doctors doc = doclist.docArrayList.get(i);
-                    %>
-                    <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
-                    <%}%>
-                </select>
+                <td>
+                    <select name="Tuesday" id="Tuesday">
+                        <%
+                            for (int i = 0; i < doclist.count; i++) {
+                                Doctors doc = doclist.docArrayList.get(i);
+                        %>
+                        <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
+                        <%}%>
+                    </select>
+                </td>
 
-                <select name="Wednesday" id="Wednesday">
-                    <%
-                        for (int i = 0; i < doclist.count; i++) {
-                            Doctors doc = doclist.docArrayList.get(i);
-                    %>
-                    <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
-                    <%}%>
-                </select>
+                <td>
+                    <select name="Wednesday" id="Wednesday">
+                        <%
+                            for (int i = 0; i < doclist.count; i++) {
+                                Doctors doc = doclist.docArrayList.get(i);
+                        %>
+                        <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
+                        <%}%>
+                    </select>
+                </td>
 
-                <select name="Thursday" id="Thursday">
-                    <%
-                        for (int i = 0; i < doclist.count; i++) {
-                            Doctors doc = doclist.docArrayList.get(i);
-                    %>
-                    <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
-                    <%}%>
-                </select>
+                <td>
+                    <select name="Thursday" id="Thursday">
+                        <%
+                            for (int i = 0; i < doclist.count; i++) {
+                                Doctors doc = doclist.docArrayList.get(i);
+                        %>
+                        <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
+                        <%}%>
+                    </select>
+                </td>
 
-                <select name="Friday" id="Friday">
-                    <%
-                        for (int i = 0; i < doclist.count; i++) {
-                            Doctors doc = doclist.docArrayList.get(i);
-                    %>
-                    <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
-                    <%}%>
-                </select>
+                <td>
+                    <select name="Friday" id="Friday">
+                        <%
+                            for (int i = 0; i < doclist.count; i++) {
+                                Doctors doc = doclist.docArrayList.get(i);
+                        %>
+                        <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
+                        <%}%>
+                    </select>
+                </td>
 
-                <select name="Saturday" id="Saturday">
-                    <%
-                        for (int i = 0; i < doclist.count; i++) {
-                            Doctors doc = doclist.docArrayList.get(i);
-                    %>
-                    <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
-                    <%}%>
-                </select>
+                <td>
+                    <select name="Saturday" id="Saturday">
+                        <%
+                            for (int i = 0; i < doclist.count; i++) {
+                                Doctors doc = doclist.docArrayList.get(i);
+                        %>
+                        <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
+                        <%}%>
+                    </select>
+                </td>
 
-                <select name="Sunday" id="Sunday">
-                    <%
-                        for (int i = 0; i < doclist.count; i++) {
-                            Doctors doc = doclist.docArrayList.get(i);
-                    %>
-                    <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
-                    <%}%>
-                </select></td></tr>
+                <td>
+                    <select name="Sunday" id="Sunday">
+                        <%
+                            for (int i = 0; i < doclist.count; i++) {
+                                Doctors doc = doclist.docArrayList.get(i);
+                        %>
+                        <option value="<%=doc.getdocid()%>"><%=doc.getlastname()%></option>
+                        <%}%>
+                    </select>
+                </td>
+            </tr>
 
             <tr>
                 <td><input type="submit" value="Change" class="search-button"></td>
@@ -149,41 +188,25 @@
         </table>
 
         <table class="New-Acc">
-            <tr><td>
-                <label for="Monday">Monday  </label>
-                <label for="Tuesday">Tuesday   </label>
-                <label for="Wednesday">Wednesday</label>
-                <label for="Thursday">Thursday </label>
-                <label for="Friday">Friday   </label>
-                <label for="Saturday">Saturday  </label>
-                <label for="Sunday">Sunday</label></td></tr>
+            <tr style="text-align: center;">
+                <td class="Sub-Acc"><label for="Monday"><p>Monday</p></label></td>
+                <td class="Sub-Acc"><label for="Tuesday"><p>Tuesday</p></label></td>
+                <td class="Sub-Acc"><label for="Wednesday"><p>Wednesday</p></label></td>
+                <td class="Sub-Acc"><label for="Thursday"><p>Thursday</p></label></td>
+                <td class="Sub-Acc"><label for="Friday"><p>Friday</p></label></td>
+                <td class="Sub-Acc"><label for="Saturday"><p>Saturday</p></label></td>
+                <td class="Sub-Acc"><label for="Sunday"><p>Sunday</p></label></td>
+            </tr>
 
-            <tr><td>
-                <label name="Monday" id="doc1">
-                    <option><%=doc1%></option>
-                </label>
-                <label name="Tuesday" id="doc2">
-                    <option><%=doc2%></option>
-                </label>
-                <label name="Wednesday" id="doc3">
-                    <option><%=doc3%></option>
-                </label>
-                <label name="Thursday" id="doc4">
-                    <option><%=doc4%></option>
-                </label>
-                <label name="Friday" id="doc5">
-                    <option><%=doc5%></option>
-                </label>
-                <label name="Saturday" id="doc6">
-                    <option><%=doc6%></option>
-                </label>
-                <label name="Sunday" id="doc7">
-                    <option><%=doc7%></option>
-                </label>
-        </table>
-
-
-
+            <tr style="text-align: center;">
+                <td><label id="doc1"><p><%=doc1%></p></label></td>
+                <td><label id="doc2"><p><%=doc2%></p></label></td>
+                <td><label id="doc3"><p><%=doc3%></p></label></td>
+                <td><label id="doc4"><p><%=doc4%></p></label></td>
+                <td><label id="doc5"><p><%=doc5%></p></label></td>
+                <td><label id="doc6"><p><%=doc6%></p></label></td>
+                <td><label id="doc7"><p><%=doc7%></p></label></td>
+            </tr>
         </table>
     </form>
 </main>
