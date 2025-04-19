@@ -11,6 +11,16 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
     </head>
+    <%@ page import="org.example.Doctors" %>
+<%
+    Doctors d1;
+
+    d1 = (Doctors)session.getAttribute("d1");
+
+    String docName = d1.getfirstname() + " " + d1.getlastname() + "\n" + "(Admin)";
+
+
+%>
 
     <body>  
         <nav class="navbar">
@@ -38,20 +48,23 @@
     
     </nav> 
         <main>
-               <section class="mb">
-                <div class="mb1">
-                    <section>
+               
+                    
                         <form form action="http://localhost:8080/CTC-Chiropratic/SearchAppointmentDoctorDateServlet" method="post">
                             <form form action="http://localhost:8080/CTC-Chiropratic/SearchAppointmentDoctorDateServlet" method="post">
-                                <label for="year">Year:</label>
+                                                         
+                                <table class="New-Acc">
+                                <tr>
+                                <td><label for="year">Year:</label>
                                 <select name="year" id="year">
                                     <option value="2026">2027</option>
                                     <option value="2026">2026</option>
                                     <option value="2025">2025</option>
                                     <option value="2024">2024</option>
                                     <option value="2023">2023</option>
-                                </select><br><br>
-                                <label for="month">Month:</label>
+                                </select></td></tr>
+                                <tr>
+                                <td><label for="month">Month:</label>
                                 <select name="month" id="month">
                                     <option value="01">01</option>
                                     <option value="02">02</option>
@@ -65,8 +78,9 @@
                                     <option value="10">10</option>
                                     <option value="11">11</option>
                                     <option value="12">12</option>
-                                </select><br><br>
-                                <label for="day">Day:</label>
+                                </select></td></tr>
+                                <tr>
+                                <td><label for="day">Day:</label>
                                 <select name="day" id="day">
                                     <option value="01">01</option>
                                     <option value="02">02</option>
@@ -99,14 +113,16 @@
                                     <option value="29">29</option>
                                     <option value="30">30</option>
                                     <option value="31">31</option>
-                                </select><br><br>
+                                </select></td></tr>
+                                <tr>
+                                <td>
                                 <input type="submit" value="Search" class="search-button">
-                            </form><br><br><br><br><br>
+                                </td></tr>
+                            </form>
 
                             <button onclick="history.back()">Back</button>
                     </section>
-                </div>
-            </section>
+              
 
         </main>
         
