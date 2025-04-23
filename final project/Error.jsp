@@ -37,13 +37,13 @@
                 </ul>
             </div>
     </nav> 
-
+<main>
     <div style="text-align: center">
         <h1>There was an error performing your operation.</h1>
         <p>Please contact an administrator for assistance.</p>
         <button onclick="history.back()">Return to Previous Page</button>
     </div>
-                
+</main>                
                 <footer>
             <section class="mFoot">
                 <div class="fLogo">
