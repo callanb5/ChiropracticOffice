@@ -81,7 +81,7 @@
 
         <section class="sFoot">
             <div>
-                <h4>Campain</h4>
+                <h4>Campaign</h4>
                 <ul>
                     <li><a href="">Appointments</a></li>
                     <li><a href="">Pharmacy</a></li>
