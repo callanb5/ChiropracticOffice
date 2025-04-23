@@ -1,0 +1,521 @@
+/*
+copy and paste into head of .jps files
+<link href="styles.css" rel="stylesheet>
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+header, main, footer{
+    display: flex;
+    flex-direction: column;
+}
+
+/* Font ****************/
+
+/* h1, h2, nav a, header a{
+  font-family: Major Mono Display;
+} */
+
+
+/* Nav **********************************************/
+
+nav{
+    background-color: #35679B;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 8;
+    height: 80px;
+}
+
+img{
+    width: 50%;
+    height: 50%;
+}
+
+nav .logo{
+    width: 140px;
+    margin-left: 1%;
+}
+
+nav div ul{
+    display: flex;
+    gap: 2px;
+    height: 50%;
+}
+
+nav div ul li{
+    list-style-type: none;
+    padding: 0 2px;
+
+}
+
+nav div ul li a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: auto;
+    padding: 0 60px;
+    color: black;
+    font-size: 14px;
+
+
+
+}
+
+nav div ul li a:hover{
+    cursor: pointer;
+}
+
+
+/* sub nav buttons ***************/
+nav .sNav ul li a{
+    border-radius: 4px;
+    margin-right: 100%;
+}
+nav .sNav ul li .logBtn{
+    background-color: #7EB54E;
+    color: black;
+    height: 40px;
+
+}
+nav .sNav ul li .signBtn{
+    background-color: transparent;
+    border: solid black 2px;
+    color: black;
+}
+nav .sNav ul li div{
+    display: inline-block;
+    font-size: 26px;
+    padding: 0 0 4px 9px;
+}
+
+nav .mNav ul li{
+    width: auto;
+    background-color: #AA8C00;
+    margin: 5px;
+    border-top: solid;
+    border-bottom: solid;
+    border-radius: 10px;
+    border-color: #AA8C00;
+}
+
+.Sign{
+
+    color: antiquewhite;
+
+    text-align: center;
+    align-items: center;
+    height: 200%;
+
+}
+
+/* Main ************************************************/
+main{
+    background-color:  #00328C;
+}
+main .mb{
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 60px 0;
+    background-color:  #00328C;
+}
+
+main .mb .mb1, main .mb .mb2{
+    display: flex;
+    justify-content: space-between;
+    height: 250px;
+    width: 90%;
+    margin: 0 auto;
+}
+main .mb .mb1 section, main .mb .mb2 section{
+    height: 50px;
+    border-radius: 10px;
+}
+main .mb .mb2 section:nth-of-type(2),
+main .mb .mb1 section:nth-of-type(1){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    padding: 0 50px;
+    width: 100%;
+
+    text-align: center;
+    align-items: center;
+
+    height: auto;
+    background-color: lightsteelblue;
+}
+main .mb .mb2 section:nth-of-type(2){
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    background-color: rgb(38, 44, 48);
+    color: white;
+}
+main .mb .mb1 section:nth-of-type(2){
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    text-align: center;
+
+    height: auto;
+    width: 100%;
+    background-color: steelblue;
+    color:white;
+}
+
+main .mb .mb1 section:nth-of-type(2) ul{
+    list-style-type: none;
+}
+
+main .mb .mb1 section:nth-of-type(2) ul li{
+    opacity: 80%;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+main .mb .mb2 section button{
+    border: none;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    padding: 13px 50px;
+    font-size: 15px;
+}
+
+main .mb .mb1 section:nth-of-type(1) p,
+main .mb .mb2 section:nth-of-type(2) p{
+    width: 600px;
+    opacity: 80%;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.Welcome{
+
+    color: antiquewhite;
+
+    text-align: center;
+    align-items: center;
+    height: 200%;
+
+}
+/* Testimonials section **********************************/
+section.Testimonials{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* gap: 30px; */
+
+    padding: 0 50px;
+    /* width: 100%; */
+
+    text-align: center;
+    align-items: center;
+
+    height: auto;
+    /* background-color: #00328C; */
+
+
+}
+.slideshow-container{
+    border: solid;
+    width: 100%;
+
+    text-align: center;
+    align-items: center;
+
+    height: 200%;
+    background-color: lightsteelblue;
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 1000px;
+    max-height: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Hide the Div by default */
+.mySlides {
+    display: none;
+}
+
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+/* Form **************************************************/
+.New-Acc{
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 1%;
+    margin-bottom: 1%;
+
+    background-color:#717171 ;
+
+    padding: 5px;
+
+}
+.Sub-Acc{
+
+    height: 60px;
+    border-spacing: 0px;
+    border: 2px solid black;
+    background-color: #AA8C00 ;
+    outline: none;
+
+}
+
+.table, td{
+    height: 60px;
+    border-spacing: 0px;
+    border: 2px solid black;
+    background-color: lightsteelblue ;
+    outline: none;
+}
+
+table{
+    width: 600px;
+    font-size: 20px;
+}
+
+
+.tableName{
+    text-align: center;
+    background-color: white;
+}
+
+.tableName1{
+    text-align: left;
+    background-color: white;
+}
+
+input{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+}
+
+.buttons{
+    background-color: #1ac5b0;
+    color: white;
+    font-size: 15px;
+}
+
+form table tr .linkBtn a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* main a{
+ display: inline-block;
+ text-decoration: none;
+ background-color: black;
+ color: white;
+ width: 600px;
+ padding: 20px 0;
+ text-align: center;
+}  */
+
+h1.logh2{
+    margin-top: 5%;
+    text-align: center;
+    /*border: solid 4px black;*/
+    background-color: white;
+    max-width: 100%;
+    font-size: 166.5%;
+}
+
+
+.butts{
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    padding: 13px 50px;
+    font-size: 15px;
+
+
+    cursor: pointer;
+}
+
+.Next{
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 0 60px;
+    color: black;
+    font-size: 14px;
+    margin: 0;
+    /*border: 2px solid black;*/
+}
+
+button{
+    border: none;
+    border-radius: 6px;
+    background-color: white;
+    color: black;
+    padding: 13px 50px;
+    font-size: 15px;
+    width: auto;
+    display: inline-block;
+}
+
+button .fill{
+    border: none;
+    background-color: white;
+    color: black;
+    padding: 20% 20%;
+    font-size: 15px;
+}
+
+
+.left{
+    text-decoration: none;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    height: 100%;
+    width: auto;
+    padding: 0 60px;
+    color: black;
+    font-size: 14px;
+}
+
+/* Footer ************************************************/
+
+footer {
+    background-color: #AA8C00;
+    height: auto;
+    padding: 80px 0 20px 0;
+    width: 100%;
+}
+
+
+.mFoot{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+}
+
+.mfoot, .fLogo img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+.mFoot h4{
+    font-size: 18px;
+}
+.mFoot ul{
+    list-style-type: none;
+}
+.mFoot ul li{
+    line-height: 40px;
+}
+.mFoot ul li a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    opacity: 70%;
+}
+.mFoot ul a:hover{
+    text-decoration: underline;
+}
+
+
+
+.sFoot{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: green; */
+    gap: 70px;
+}
+
+footer section:nth-of-type(2){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+footer section:nth-of-type(2) p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 90%;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px rgba(0, 0, 0, 0.496) solid ;
+}
+
+
+
+/* media queries ************************/
+@media (max-width: 768px) and (min-width: 480px) { /* iPad and smaller */
+
+
+}
+
+@media (max-width: 480px) { /* iPhone */
+
+
+}
+
+@media (min-width: 769px) { /* Desktop */
+
+}
