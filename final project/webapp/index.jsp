@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>CT-Chiropractic Landing-Page</title>
+    <title>CTC-Chiropractic Landing-Page</title>
     <link href="styles.css" rel="stylesheet" >
 </head>
 
@@ -41,7 +41,7 @@
         <div class="mb1">
             <section>
                 <h2>Chattahoochee Tech Chiropractic</h2>
-                <p>You should be comfortable in your body. CT-Chiropractic offers a full suite of cosmetic services to give your body relief. With treatments tailored to your unique needs, our team can help you achieve the comfort you need.</p>
+                <p>You should be comfortable in your body. CTC-Chiropractic offers a full suite of cosmetic services to give your body relief. With treatments tailored to your unique needs, our team can help you achieve the comfort you need.</p>
                 <a href="">
                     <button>Learn More</button>
                 </a>
@@ -53,7 +53,7 @@
 
             <section>
                 <h2>Our Mission</h2>
-                <p> Maintaining a healthy body is essential throughout life and CT-Chiropractic is committed to providing comprehensive care to all. From checkups to advanced treatments, we ensure your physical health lasts!</p>
+                <p> Maintaining a healthy body is essential throughout life and CTC-Chiropractic is committed to providing comprehensive care to all. From checkups to advanced treatments, we ensure your physical health lasts!</p>
                 <a href="New_P-Account.jsp">
                     <button>Sign Up Now</button>
                 </a>
@@ -113,7 +113,7 @@
     </section>
 
     <section>
-        <p>&copy;CT-Chiropractic 2025. All rights reserved.</p>
+        <p>&copy;CTC-Chiropractic 2025. All rights reserved.</p>
     </section>
 </footer>
 </body>

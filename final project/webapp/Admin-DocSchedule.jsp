@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>CT-Chiropractic Admin-DocSchedule</title>
+    <title>CTC-Chiropractic Admin-DocSchedule</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
 </head>
@@ -261,7 +261,7 @@
     </section>
 
     <section>
-        <p>&copy;CT-Chiropractic 2025. All rights reserved.</p>
+        <p>&copy;CTC-Chiropractic 2025. All rights reserved.</p>
     </section>
 </footer>
 </body>

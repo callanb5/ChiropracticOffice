@@ -108,7 +108,7 @@
                 <h4>Contact us</h4>
                 <ul>
                     <li><a href="">(404) 456-7890</a></li>
-                    <li><a href="">info@CT-Chiropractic.com</a></li>
+                    <li><a href="">info@CTC-Chiropractic.com</a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                 </ul>
@@ -127,7 +127,7 @@
     </section>
 
     <section>
-        <p>&copy;CT-Chiropractic 2025. All rights reserved.</p>
+        <p>&copy;CTC-Chiropractic 2025. All rights reserved.</p>
     </section>
 </footer>
 </body>

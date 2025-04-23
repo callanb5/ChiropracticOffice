@@ -116,7 +116,7 @@
     </section>
 
     <section>
-        <p>&copy;CT-Chiropractic 2025. All rights reserved.</p>
+        <p>&copy;CTC-Chiropractic 2025. All rights reserved.</p>
     </section>
 </footer>
 </body>
