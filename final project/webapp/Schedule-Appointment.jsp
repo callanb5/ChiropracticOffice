@@ -64,10 +64,9 @@
             Timestamp ts = tsl.get(i);
     %>
     <div class="New-Acc" >
-        <form class="New-Acc">
+        <form action="http://localhost:8080/CTC-Chiropratic/ScheduleAppointmentServlet" method="post" class="New-Acc">
             <table style="margin: auto">
                 <tr> <td> <h4>Appointment Available At: <%=dateFormat.format(ts)%></h4>
-                    <form action="http://localhost:8080/CTC-Chiropratic/ScheduleAppointmentServlet" method="post">
                         <input type="hidden" name="timestamp" value="<%=ts%>">  </td> </tr>
                 <tr> <td>     <button type="submit">Schedule Appointment</button>  </td> </tr>
             </table>
