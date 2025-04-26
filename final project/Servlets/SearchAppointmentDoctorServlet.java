@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.example.chiropractorproject;
+package org.example;
 
-import jakarta.servlet.RequestDispatcher;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
-import org.example.chiropractorproject.BusinessObjects.ApptList;
-import org.example.chiropractorproject.BusinessObjects.Doctors;
-import org.example.chiropractorproject.BusinessObjects.Patients;
-
-import java.io.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -29,6 +29,7 @@ public class SearchAppointmentDoctorServlet extends HttpServlet {
      * @param request servlet request
      * @param response servlet response
      * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -44,8 +45,10 @@ public class SearchAppointmentDoctorServlet extends HttpServlet {
         } else {
             ApptList apptlist = new ApptList();
             apptlist.selectDBDocId(doc.getdocid());
+            
+            apptlist.appArrayList.removeIf(appt -> !appt.getPatID().equals(pat.getpatid()));
 
-            if (apptlist.count > 0) {
+            if (apptlist.appArrayList.size() > 0) {
                 session.setAttribute("apptlist", apptlist);
                 RequestDispatcher r = request.getRequestDispatcher("/SearchResults.jsp");
                 r.forward(request, response);
