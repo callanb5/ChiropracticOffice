@@ -34,7 +34,7 @@
     <%
 
         ApptList apptlist = (ApptList) session.getAttribute("apptlist");
-        for (int i = 0; i < apptlist.count; i++) {
+        for (int i = 0; i < apptlist.appArrayList.size(); i++) {
             Appointments appt = apptlist.appArrayList.get(i);
             Patients pat = new Patients();
             pat.selectDB(appt.getPatID());
