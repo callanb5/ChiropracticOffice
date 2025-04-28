@@ -14,11 +14,16 @@
 </head>
 <%
     Doctors d1;
+    String docName;
 
     d1 = (Doctors)session.getAttribute("d1");
 
-    String docName = d1.getfirstname() + " " + d1.getlastname();
+    if (Boolean.TRUE.equals(d1.getadmin())) {
+        docName = d1.getfirstname() + " " + d1.getlastname() + "\n" + "(Admin)";
+    } else {
+        docName = d1.getfirstname() + " " + d1.getlastname();
 
+    }
 
 %>
 
@@ -26,68 +31,68 @@
 <nav class="navbar">
     <div class="logo">
         <a href="index.jsp">
-            <img src="img/CTC_Logo.png" alt="logo">
+            <img src="CTC_Logo.png" alt="logo">
         </a>
     </div>
 
     <div class="mNav">
         <ul>
-            <li><a href="Doctor-Home.jsp">DASHBOARD</a></li>
-            <li><a href="Patient-Appointment_List.jsp">APPOINTMENTS</a></li>
+            <li><a href="Doctor-Home.jsp">HOME</a></li>
+            <li><a href="F&Q.jsp">CONTACT US</a></li>
         </ul>
     </div>
 
     <div class="sNav">
         <ul>
-            <li class="Sign">Signed in as <%=docName%></li>
+            <h3><%=docName%></h3>
             <li><a href="Doctor-Login.jsp" class="logBtn">Sign Out</a></li>
-            <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
         </ul>
     </div>
 
 </nav>
 <main>
-    <br><br>
-        <Form class="New-Acc">
-            <table>
+    <h1 class="Welcome">Account Info </h1>
+
+    <Form class="New-Acc">
+        <table>
             <TR>
                 <TD>Doctor ID:</TD>
                 <TD><INPUT TYPE = "text" name = "idtb" value="<%=d1.getdocid()%>" readonly></TD>
             </TR>
-       
+
             <TR>
                 <TD>Password:</TD>
                 <TD><INPUT TYPE = "text" name = "pwtb" value="<%=d1.getpwd()%>" readonly></TD>
             </TR>
-       
+
             <TR>
                 <TD>First Name:</TD>
-                <TD><INPUT TYPE = "text" name = "fntb#" value="<%=d1.getfirstname()%> " readonly></TD>
+                <TD><INPUT TYPE = "text" name = "fntb" value="<%=d1.getfirstname()%> " readonly></TD>
             </TR>
-        
+
             <TR>
                 <TD>Last Name:</TD>
                 <TD><INPUT TYPE = "text" name = "lntb" value="<%=d1.getlastname()%>" readonly></TD>
             </TR>
-        
+
             <TR>
                 <TD>Email:</TD>
                 <TD><INPUT TYPE = "text" name = "emtb" value="<%=d1.getemail()%>" readonly></TD>
             </TR>
-       </table>
-            </Form>
-        <div class="fix">
-     <a class="Next" href="DoctorProfileEdit.jsp"><button>Edit Profile</button></a>
-     </div>
-        <br>
-            
-   
+        </table>
+    </Form>
+
+    <div class="Next" onclick="window.location.href='DoctorProfileEdit.jsp'">
+        <button>Edit</button>
+    </div>
+
+
 </main>
 
 <footer>
     <section class="mFoot">
         <div class="fLogo">
-            <img src="img/CTC_Logo.png" alt="">
+            <img src="CTC_Logo.png">
         </div>
 
         <section class="sFoot">
