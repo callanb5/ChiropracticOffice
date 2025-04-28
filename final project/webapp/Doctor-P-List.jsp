@@ -18,7 +18,7 @@
 
     d1 = (Doctors)session.getAttribute("d1");
 
-    if (d1.getadmin().equals(true)) {
+    if (Boolean.TRUE.equals(d1.getadmin())) {
         docName = d1.getfirstname() + " " + d1.getlastname() + "\n" + "(Admin)";
     } else {
         docName = d1.getfirstname() + " " + d1.getlastname();
