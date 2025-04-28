@@ -18,7 +18,7 @@
 
     d1 = (Doctors)session.getAttribute("d1");
 
-    if (d1.getadmin().equals(true)) {
+    if (Boolean.TRUE.equals(d1.getadmin())) {
         docName = d1.getfirstname() + " " + d1.getlastname() + "\n" + "(Admin)";
     } else {
         docName = d1.getfirstname() + " " + d1.getlastname();
@@ -51,7 +51,8 @@
 
 </nav>
 <main>
-    <br><br>
+    <h1 class="Welcome">Account Info </h1>
+
     <Form class="New-Acc">
         <table>
             <TR>
@@ -66,7 +67,7 @@
 
             <TR>
                 <TD>First Name:</TD>
-                <TD><INPUT TYPE = "text" name = "fntb#" value="<%=d1.getfirstname()%> " readonly></TD>
+                <TD><INPUT TYPE = "text" name = "fntb" value="<%=d1.getfirstname()%> " readonly></TD>
             </TR>
 
             <TR>
@@ -80,10 +81,10 @@
             </TR>
         </table>
     </Form>
-    <div class="Next" onclick="window.location.href='DoctorProfileEdit.jsp.jsp'">
+
+    <div class="Next" onclick="window.location.href='DoctorProfileEdit.jsp'">
         <button>Edit</button>
     </div>
-    <br>
 
 
 </main>
@@ -119,7 +120,7 @@
                 <h4>Contact us</h4>
                 <ul>
                     <li><a href="">(404) 456-7890</a></li>
-                    <li><a href="">info@CTC-Chiropractic.com</a></li>
+                    <li><a href="">info@CT-Chiroprtic.com</a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                 </ul>
@@ -138,7 +139,7 @@
     </section>
 
     <section>
-        <p>&copy;CTC-Chiropractic 2025. All rights reserved.</p>
+        <p>&copy;CT-Chiropractic 2025. All rights reserved.</p>
     </section>
 </footer>
 </body>
