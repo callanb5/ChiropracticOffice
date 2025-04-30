@@ -78,13 +78,12 @@
                 <TD>Email:</TD>
                 <TD><INPUT TYPE = "text" name = "emtb" value="<%=p1.getemail()%>" readonly></TD>
             </TR>
+
+            <tr>
+                <td><input class="button" onclick="window.location.href='PatientProfileEdit.jsp'" value="Edit"></td>
+            </tr>
         </table>
     </Form>
-
-        <div class="Next" onclick="window.location.href='PatientProfileEdit.jsp'">
-            <button>Edit</button>
-        </div>
-
 </main>
 
 <footer>
@@ -118,7 +117,7 @@
                 <h4>Contact us</h4>
                 <ul>
                     <li><a href="">(404) 456-7890</a></li>
-                    <li><a href="">info@CTC-Chiropractic.com</a></li>
+                    <li><a href="">info@CT-Chiroprtic.com</a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                 </ul>
@@ -137,7 +136,7 @@
     </section>
 
     <section>
-        <p>&copy;CTC-Chiropractic 2025. All rights reserved.</p>
+        <p>&copy;CT-Chiropractic 2025. All rights reserved.</p>
     </section>
 </footer>
 </body>
