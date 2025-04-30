@@ -79,14 +79,12 @@
                 <TD>Email:</TD>
                 <TD><INPUT TYPE = "text" name = "emtb" value="<%=d1.getemail()%>" readonly></TD>
             </TR>
+
+            <tr>
+                <td><input class="button" onclick="window.location.href='DoctorProfileEdit.jsp'" value="Edit"></td>
+            </tr>
         </table>
     </Form>
-
-    <div class="Next" onclick="window.location.href='DoctorProfileEdit.jsp'">
-        <button>Edit</button>
-    </div>
-
-
 </main>
 
 <footer>
