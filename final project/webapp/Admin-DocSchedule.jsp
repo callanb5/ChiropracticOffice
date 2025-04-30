@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>CTC-Chiropractic Admin-DocSchedule</title>
+    <title>CT-Chiropractic Admin-DocSchedule</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
 </head>
@@ -242,7 +242,7 @@
                 <h4>Contact us</h4>
                 <ul>
                     <li><a href="">(404) 456-7890</a></li>
-                    <li><a href="">info@CTC-Chiropractic.com</a></li>
+                    <li><a href="">info@CT-Chiroprtic.com</a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                 </ul>
@@ -261,7 +261,7 @@
     </section>
 
     <section>
-        <p>&copy;CTC-Chiropractic 2025. All rights reserved.</p>
+        <p>&copy;CT-Chiropractic 2025. All rights reserved.</p>
     </section>
 </footer>
 </body>
