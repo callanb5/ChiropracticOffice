@@ -43,7 +43,6 @@
         <ul>
             <h3><%=patName%></h3>
             <li><a href="Patient-Login.jsp" class="logBtn">Sign Out</a></li>
-            <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
         </ul>
     </div>
 
@@ -51,7 +50,8 @@
 
 <main>
     <h1 class="Welcome"> Account Info (Edit) </h1>
-    <Form class="New-Acc">
+
+    <Form class="New-Acc" action="PAccountInfoServlet" method="post">
         <table>
 
             <TR>
@@ -78,13 +78,12 @@
                 <TD>Email:</TD>
                 <TD><INPUT TYPE = "text" name = "emtb" value="<%=p1.getemail()%>" ></TD>
             </TR>
+
+            <tr>
+                <td><input class="button" type="submit" value="Confirm"></td>
+            </tr>
         </table>
     </Form>
-
-    <div class="Next" onclick="window.location.href='PatientProfile.jsp'">
-        <button>Confirm</button>
-    </div>
-
 </main>
 
 <footer>
@@ -118,7 +117,7 @@
                 <h4>Contact us</h4>
                 <ul>
                     <li><a href="">(404) 456-7890</a></li>
-                    <li><a href="">info@CTC-Chiropractic.com</a></li>
+                    <li><a href="">info@CT-Chiroprtic.com</a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                 </ul>
@@ -137,7 +136,7 @@
     </section>
 
     <section>
-        <p>&copy;CTC-Chiropractic 2025. All rights reserved.</p>
+        <p>&copy;CT-Chiropractic 2025. All rights reserved.</p>
     </section>
 </footer>
 </body>
