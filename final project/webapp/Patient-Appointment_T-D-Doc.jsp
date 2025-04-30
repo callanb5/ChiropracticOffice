@@ -1,3 +1,4 @@
+<%@ page import="org.example.chiropractorproject.BusinessObjects.Patients" %>
 <%-- ==================================================
     Lucas Lawless
     CT-Chiroprtic
@@ -11,7 +12,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica |Iceberg |Tangerine">
 </head>
-
+<%
+    Patients pat = (Patients) session.getAttribute("p1");
+    String patName = pat.getfirstname() + " " + pat.getlastname();
+%>
 <body>
 <nav class="navbar">
     <div class="logo">
@@ -30,6 +34,7 @@
 
     <div class="sNav">
         <ul>
+            <h3><%=patName%></h3>
             <li><a href="Patient-Login.jsp" class="logBtn">Login<div>&#8594;</div></a></li>
             <!-- <li><a href="" class="signBtn">SIGN UP</a></li> -->
         </ul>
@@ -115,7 +120,10 @@
             </table>
         </form><br>
 
-        <a href="Patient-APPMain.jsp" class="back">Back</a>
+        <div>
+            <button onclick="history.back()">Back</button>
+        </div>
+
     </form>
 
 
@@ -152,7 +160,7 @@
                 <h4>Contact us</h4>
                 <ul>
                     <li><a href="">(404) 456-7890</a></li>
-                    <li><a href="">info@CTC-Chiropractic.com</a></li>
+                    <li><a href="">info@CT-Chiroprtic.com</a></li>
                     <li><a href=""></a></li>
                     <li><a href=""></a></li>
                 </ul>
@@ -171,7 +179,7 @@
     </section>
 
     <section>
-        <p>&copy;CTC-Chiropractic 2025. All rights reserved.</p>
+        <p>&copy;CT-Chiropractic 2025. All rights reserved.</p>
     </section>
 </footer>
 </body>
