@@ -54,7 +54,7 @@
 <main>
   <h1 class="Welcome"> Account Info (Edit) </h1>
 
-  <form class="New-Acc" action="DAccountInfoServlet" method="post">
+  <Form class="New-Acc" action="DAccountInfoServlet" method="post">
     <table>
       <TR>
         <TD>Doctor ID:</TD>
@@ -80,14 +80,12 @@
         <TD>Email:</TD>
         <TD><INPUT TYPE = "text" name = "emtb" value="<%=d1.getemail()%>" ></TD>
       </TR>
+
+      <tr>
+        <td><input class="button" type="submit" value="Confirm"></td>
+      </tr>
     </table>
-
-      <div class="Next" value="submit" name="Confirm">
-        <button>Confirm</button>
-      </div>
-  </form>
-
-
+  </Form>
 </main>
 
 <footer>
